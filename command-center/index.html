@@ -324,13 +324,120 @@ table.tb2{width:100%;border-collapse:collapse;font-size:14px}
 details>summary{cursor:pointer;list-style:none}
 details>summary::-webkit-details-marker{display:none}
 .sumb{font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+/* ---------- маршрут ---------- */
+.route-bar{display:flex;gap:18px;align-items:center;flex-wrap:wrap;padding:14px 18px}
+.seg2{display:inline-flex;border:1px solid var(--seam-2);border-radius:2px;overflow:hidden;flex:0 0 auto}
+.seg2 button{font:600 12.5px var(--f-body);background:transparent;color:var(--tx-2);border:0;padding:7px 12px;cursor:pointer}
+.seg2 button+button{border-left:1px solid var(--seam-2)}
+.seg2 button.on{background:var(--amber);color:var(--amber-ink)}
+.formula{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:4px}
+.ft{display:flex;flex-direction:column;gap:3px;padding:10px 10px 12px;border:1px solid var(--seam);background:var(--pn);text-align:left;font:inherit;color:var(--tx-2);min-width:0}
+.ft i{font:400 22px/1 var(--f-display);color:var(--amber);font-style:normal}
+.ft b{font:600 14px/1.2 var(--f-body);color:var(--tx)}
+.ft span{font:500 10.5px/1.3 var(--f-mono);color:var(--tx-3);letter-spacing:.04em}
+.ft.done{border-color:rgba(147,195,145,.45);background:linear-gradient(180deg,var(--ok-soft),transparent)}
+.ft.done i{color:var(--ok)}
+.quiz .ft{cursor:pointer}
+.quiz .ft:hover:not([disabled]){border-color:var(--amber)}
+@media (max-width:760px){.formula{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.route{display:grid;grid-template-columns:286px minmax(0,1fr);gap:16px;align-items:start}
+.rnav{display:flex;flex-direction:column;border:1px solid var(--seam);background:var(--pn);position:sticky;top:60px;max-height:calc(100vh - 80px);overflow:auto}
+.rm{border-bottom:1px solid var(--seam)}
+.rm:last-child{border-bottom:0}
+.rm-h{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:center;width:100%;padding:11px 12px;background:transparent;border:0;color:var(--tx);font:inherit;text-align:left;cursor:pointer}
+.rm-h:hover{background:var(--pn-2)}
+.rm-h .rn{font:400 24px/1 var(--f-display);color:var(--amber)}
+.rm-h b{display:block;font:600 14px/1.25 var(--f-body)}
+.rm-h small{font:500 10.5px var(--f-mono);color:var(--tx-3)}
+.rm.open .rm-h{background:var(--pn-2)}
+.rs{list-style:none;margin:0;padding:4px 0 8px}
+.rs button{display:grid;grid-template-columns:40px minmax(0,1fr);gap:6px;width:100%;padding:7px 12px;background:transparent;border:0;color:var(--tx-2);font:inherit;font-size:13.5px;text-align:left;cursor:pointer;line-height:1.3}
+.rs button:hover{color:var(--tx)}
+.rs button i{font:500 10.5px/1.6 var(--f-mono);color:var(--tx-3);font-style:normal}
+.rs button.done{color:var(--tx-3)}
+.rs button.done i{color:var(--ok)}
+.rs button.cur{color:var(--tx);background:var(--amber-soft);box-shadow:inset 2px 0 0 var(--amber)}
+.rs button.cur i{color:var(--amber)}
+.rcard{display:flex;flex-direction:column;gap:16px;padding:24px;scroll-margin-top:70px}
+.rh{font:400 clamp(24px,3.2vw,34px)/1.08 var(--f-display);letter-spacing:.04em;text-transform:uppercase;margin:0;text-wrap:balance}
+.lesson{display:flex;flex-direction:column;gap:12px;font-size:16px;line-height:1.6;max-width:68ch}
+.lesson p{margin:0}
+.lesson b,.micro b,.callout b{color:var(--tx);font-weight:600}
+.micro{list-style:none;margin:0;padding:0;counter-reset:mi;display:flex;flex-direction:column;border-top:1px solid var(--seam)}
+.micro li{counter-increment:mi;border-bottom:1px solid var(--seam)}
+.micro label{display:grid;grid-template-columns:auto 22px minmax(0,1fr);gap:10px;align-items:start;padding:11px 0;cursor:pointer;font-size:15px;line-height:1.5}
+.micro label::before{content:counter(mi);grid-column:2;grid-row:1;font:500 12px/22px var(--f-mono);color:var(--amber);text-align:right}
+.micro label .tick{grid-column:1;grid-row:1}
+.micro label>span{grid-column:3;grid-row:1}
+.micro label.on>span{color:var(--tx-3)}
+.micro li>.gi{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;padding:10px 0;font-size:14.5px;line-height:1.5}
+.micro li>.gi::before{content:counter(mi);font:500 12px/22px var(--f-mono);color:var(--amber);text-align:right}
+.guide .micro{margin-top:12px}
+kbd{font:500 12px/1 var(--f-mono);border:1px solid var(--seam-2);border-bottom-width:2px;border-radius:3px;padding:2px 6px;background:var(--pn-2);color:var(--tx);white-space:nowrap}
+.callout.ok{border-left-color:var(--ok);background:var(--ok-soft)}
+details.qz summary{cursor:pointer}
+.pipe{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.pipe>i{color:var(--laser);font-style:normal}
+.pn2{display:flex;flex-direction:column;gap:2px;padding:8px 10px;border:1px solid var(--seam-2);min-width:92px}
+.pn2 b{font:600 13.5px var(--f-body)}
+.pn2 span{font:500 10.5px var(--f-mono);color:var(--tx-3)}
+.pn2.thing{background:#ECE5D8;border-color:#D6CDBE}
+.pn2.thing b{color:#17100A}
+.pn2.thing span{color:#5E5A52}
+.pn2.tool{background:var(--pn-2);border-color:var(--amber-2)}
+.pn2.tool b{color:var(--amber)}
+.gloss{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px;margin:0}
+.gloss>div{padding:9px 0;border-bottom:1px solid var(--seam)}
+.gloss dt{font-weight:600;font-size:14.5px}
+.gloss dd{margin:2px 0 0;color:var(--tx-2);font-size:14px}
+@media (max-width:980px){.route{grid-template-columns:minmax(0,1fr)}.rnav{position:static;max-height:none}.gloss{grid-template-columns:minmax(0,1fr)}.rcard{padding:18px}}
+/* ---------- промпт: перевод и объяснение ---------- */
+details.tr{margin-top:6px;border:1px dashed var(--seam-2);padding:8px 12px}
+details.tr summary{cursor:pointer;font:500 11px var(--f-mono);letter-spacing:.06em;color:var(--blue)}
+details.tr p{margin:8px 0 0;font-size:14px;line-height:1.55;color:var(--tx-2);white-space:pre-wrap}
+.prompt.cmd{border-left-color:var(--blue);color:var(--tx)}
+.plang{gap:10px}
+.dna-h{display:flex;gap:8px;align-items:center}
+/* ---------- наставник ---------- */
+.fab{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:45;display:inline-flex;align-items:center;gap:9px;padding:13px 18px;border-radius:999px;border:1px solid var(--amber);background:var(--amber);color:var(--amber-ink);font:700 14px var(--f-body);cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.fab:hover{background:#F59A45}
+.fab[hidden]{display:none}
+.fab-dot{width:9px;height:9px;border-radius:50%;background:var(--amber-ink)}
+.mentor{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:50;display:flex;flex-direction:column;background:var(--bg-2);border-left:1px solid var(--seam-2);box-shadow:-20px 0 50px rgba(0,0,0,.45);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.mentor[hidden]{display:none}
+.m-h{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:14px 16px;border-bottom:1px solid var(--seam)}
+.m-h b{display:block;font:400 22px/1 var(--f-display);letter-spacing:.08em;text-transform:uppercase}
+.m-h span{display:block;font:500 10.5px var(--f-mono);color:var(--tx-3);margin-top:5px;letter-spacing:.04em}
+.m-log{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.msg{display:flex;flex-direction:column;gap:6px;max-width:92%}
+.msg>div{padding:10px 12px;font-size:14.5px;line-height:1.55;border-radius:2px;overflow-wrap:anywhere}
+.msg.a{align-self:flex-start}
+.msg.a>div{background:var(--pn-2);border:1px solid var(--seam)}
+.msg.u{align-self:flex-end}
+.msg.u>div{background:var(--amber-soft);border:1px solid var(--amber-2)}
+.acts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px;font:500 11.5px var(--f-mono);color:var(--ok)}
+.m-sug{display:flex;gap:6px;flex-wrap:wrap;padding:0 16px 10px}
+.m-sug button{font:500 12.5px var(--f-body);border:1px solid var(--seam-2);background:transparent;color:var(--tx-2);border-radius:999px;padding:6px 11px;cursor:pointer;text-align:left}
+.m-sug button:hover{border-color:var(--amber);color:var(--tx)}
+.m-no{margin:0 16px 10px;padding:10px 12px;border:1px dashed var(--seam-2);color:var(--tx-2);display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.m-no[hidden]{display:none}
+.m-imgs{display:flex;gap:8px;flex-wrap:wrap;padding:0 16px 8px}
+.m-imgs:empty{display:none}
+.thumb{position:relative;display:inline-block}
+.thumb img{width:64px;height:64px;object-fit:cover;border:1px solid var(--seam-2);display:block}
+.thumb button{position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;border:0;background:var(--tx);color:var(--bg);font-size:11px;cursor:pointer}
+.m-in{display:flex;flex-direction:column;gap:8px;padding:12px 16px 14px;border-top:1px solid var(--seam)}
+.m-in textarea{min-height:64px;max-height:180px}
+[hidden]{display:none!important}
+@media (min-width:1280px){body.m-open .app{margin-right:420px}body.m-open .strip .opt{display:none}}
+@media (max-width:640px){.mentor{width:100vw;border-left:0}.fab{padding:12px 15px}.toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.laser-sweep{display:none}}
 </style>
 
 <div class="laser-sweep" aria-hidden="true"></div>
 <div class="app">
   <aside class="rail" aria-label="Навигация штаба">
-    <a class="brand" href="#ops" aria-label="MC Infrastructure — штаб">
+    <a class="brand" href="#route" aria-label="MC Infrastructure — штаб">
       <span class="plaque" id="railLogo" aria-hidden="true"></span>
       <div><b>MC INFRA</b><span>штаб · monolith</span></div>
     </a>
@@ -345,6 +452,17 @@ details>summary::-webkit-details-marker{display:none}
   <main class="main" id="main" tabindex="-1"></main>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<button class="fab" id="fab" data-act="chat-open" aria-label="Открыть Наставника"><span class="fab-dot" aria-hidden="true"></span>Наставник</button>
+<aside class="mentor" id="mentor" hidden aria-label="Наставник">
+  <header class="m-h"><div><b>Наставник</b><span id="mCtx"></span></div>
+    <div class="row" style="gap:4px;flex-wrap:nowrap"><button class="btn s ghost" data-act="chat-clear">Очистить</button><button class="btn s ghost" data-act="chat-close" aria-label="Закрыть Наставника">✕</button></div></header>
+  <div class="m-log" id="mLog" aria-live="polite"></div>
+  <div class="m-sug" id="mSug"></div>
+  <div class="m-no sm" id="mNo" hidden><span>Наставник отвечает, когда штаб открыт на claude.ai. Здесь можно скопировать вопрос и вставить его в обычный чат с Claude.</span><button class="btn s" data-act="chat-copy">Скопировать вопрос для Claude</button></div>
+  <div class="m-imgs" id="mImgs"></div>
+  <div class="m-in"><textarea id="mIn" rows="2" aria-label="Сообщение Наставнику" placeholder="Спроси по-русски…"></textarea>
+    <div class="row between"><div class="row" style="gap:4px"><button class="btn s ghost" id="mAttach" data-act="chat-attach" hidden>Скриншот</button><input type="file" id="mFile" accept="image/*" multiple hidden><button class="btn s ghost" data-act="chat-copy">Для чата с Claude</button></div><button class="btn pri s" id="mSend" data-act="chat-send">Отправить</button></div></div>
+</aside>
 
 <script>
 "use strict";
@@ -353,8 +471,8 @@ const TZ = "Europe/Berlin";
 const DEADLINE = new Date("2026-11-18T23:59:59+01:00");
 const USD_EUR = 0.92;
 const SECTIONS = [
-  ["ops","Штаб"],["universe","Вселенная"],["pyramid","Пирамида"],["prod","Производство"],
-  ["arsenal","Арсенал"],["academy","Академия"],["intel","Разведка"],["air","Эфир"]
+  ["route","Маршрут"],["ops","Штаб"],["universe","Вселенная"],["pyramid","Пирамида"],
+  ["prod","Производство"],["arsenal","Арсенал"],["intel","Разведка"],["air","Эфир"]
 ];
 const LINKS = {
   gemini:"https://gemini.google.com/app", flow:"https://labs.google/fx/tools/flow", gplans:"https://one.google.com/about/plans",
@@ -464,31 +582,201 @@ const DECISIONS = [
   ["firm","Получить у бати данные фирмы для Impressum и контакт для откликов"],
   ["claim","Выбрать слоган во «Вселенной» → «Настройки бренда»"],
   ["facts","Факты для V09: регион, кого ищем, что даём. Без выдумок"],
-  ["lang","Текст в кадре: главная строка DE + строки RO и RU (рекомендую)"],
+  ["lang","Язык роликов — русский. Решить, нужна ли вторая строка DE или RO в титрах («Вселенная» → «Настройки бренда»)"],
   ["truth","Согласовать с батей подпись «KI-Visualisierung» под каждым роликом"]
 ];
 
-/* ---- подготовка ---- */
-const SETUP = [
-  {ph:"0",name:"База",items:[
-    {id:"b-gpro",t:"Купи Google AI Pro",b:"Миша, открой тарифы Google и оформи AI Pro. Это Veo 3.1 (видео со звуком) и Nano Banana (фотореалистичные кадры). Если есть пробный месяц — бери и сразу отметь в «Арсенале» дату отмены.",links:[["Тарифы Google",LINKS.gplans],["Flow",LINKS.flow]]},
-    {id:"b-gpt",t:"Купи ChatGPT Plus",b:"Второй художник для ключевых кадров и редактор текстов RO/RU. Создай проект «MC Infrastructure» и держи там референсы.",links:[["Тарифы",LINKS.gptprice],["ChatGPT",LINKS.chatgpt]]},
-    {id:"b-capcut",t:"Установи CapCut Desktop",b:"Монтаж. Шрифты бренда ставить не нужно: титры штаб отдаёт готовыми PNG (этап «Монтаж»).",links:[["Скачать",LINKS.capcut]]},
-    {id:"b-tiktok",t:"Заведи TikTok MC Infrastructure",b:"Бизнес-аккаунт фирмы на mc.infrastructure.de@gmail.com, ник @mc.infrastructure.de (или ближайший свободный), категория «Строительство». Для коммерческого аккаунта в Германии нужен Impressum: данные фирмы от бати → одностраничная визитка → ссылка в профиле. Приложение на телефон не ставь — только TikTok Studio в браузере.",links:[["TikTok Studio",LINKS.studio],["Как переключить на бизнес",LINKS.ttbiz],["Визитка: Carrd",LINKS.carrd]]},
-    {id:"b-folders",t:"Создай папки проекта",b:"Через неделю будет 300+ файлов. Структура ниже — копируй.",prompt:"MC_MONOLITH/\n  00_brand/      logo.svg, endcard.png, sonic_logo.mp3, drone.mp3\n  00_sfx/        trowel.mp3, clips.mp3, saw.mp3, laser.mp3\n  V01_nullpunkt/\n    kf/          s1.png, s2.png …        ключевые кадры\n    clips/       s1_v1.mp4, s1_v2.mp4 …  все попытки\n    titles/      V01_titr.png\n    V01_final.mp4\n  V02_millimeter/ …"},
-    {id:"b-flow",t:"Настрой Flow",b:"Flow → New project «MC Monolith», формат 9:16. Черновики — Veo 3.1 Fast (экономит кредиты), Quality — только для финального клипа каждого кадра.",links:[["Открыть Flow",LINKS.flow]]}
-  ]},
-  {ph:"1",name:"Бренд",items:[
-    {id:"r-brand",t:"Заполни настройки бренда",b:"«Вселенная» → «Настройки бренда»: ник, контакт для откликов, регион, слоган. Они подставятся в титры, финальную карточку и подписи.",go:"universe"},
-    {id:"r-logo",t:"Забери логотип и аватар",b:"«Вселенная» → «Знак». Скачай SVG и PNG. Финальная карточка 1080×1920 собирается на этапе «Монтаж» каждого ролика.",go:"universe"},
-    {id:"r-render",t:"3D-рендер монолита для V10",b:"Gemini (Nano Banana) или ChatGPT. Сделай 4–6 вариантов, выбери один с батей — это центральный образ финального фильма.",links:[["Gemini",LINKS.gemini],["ChatGPT",LINKS.chatgpt]],prompt:"Photorealistic cinematic still: a tall monolithic slab of polished black basalt stands alone in the centre of a vast empty concrete hall at blue-hour dawn, light mist on the floor, the first warm sunlight raking across the concrete. A thin bright red line from a cross-line laser level crosses the slab horizontally at two thirds of its height. Symmetrical composition, 35mm anamorphic lens.\n"+DNA.grade+"\n"+DNA.neg+" Vertical 9:16."},
-    {id:"r-sonic",t:"Звуковой логотип",b:"ElevenLabs → Sound Effects. Сделай 3–4 варианта каждого звука из «Вселенной» → «Звук», лучшие сохрани в 00_brand и 00_sfx. Звуковой логотип звучит в конце каждого ролика.",links:[["ElevenLabs SFX",LINKS.eleven]],go:"universe"},
-    {id:"r-voice",t:"Голос бренда",b:"Для ярусов III–IV. Запиши батю (или себя) на телефон: одна фраза на русском и на румынском, тихая комната, 3 дубля. Прогони через ElevenLabs Voice Isolator и послушай рядом с ИИ-диктором. Решите вместе, чей голос звучит в V08–V09.",links:[["Voice Isolator",LINKS.isolator],["Text to Speech",LINKS.tts]],go:"universe"},
-    {id:"r-grade",t:"Пресет цвета «MC Basalt» в CapCut",b:"Открой любой клип → Коррекция → выставь стартовые значения из «Вселенной» → «Цвет» → сохрани как пресет. Он склеивает Veo, Kling и Nano Banana в один фильм.",go:"universe"},
-    {id:"r-test",t:"Тест-драйв фотореализма",b:"5 кадров + 5 клипов по ДНК: макро, руки, силуэты, сверху, таймлапс. Собери промпты в «Конструкторе» («Вселенная»), прогони во Flow. Запиши в «Разведке» → «Полевые наблюдения», что выглядит дорого, а что дёшево. Это главный урок недели.",links:[["Flow",LINKS.flow]],go:"universe"},
-    {id:"r-avatar",t:"Аватар и профиль",b:"Аватар — знак mc² на травертиновой плашке (PNG «Аватар» во «Вселенной»). Bio: «Fliesen. Präzision. Gebaut, um zu bleiben. · Plăci și gresie · Плитка» + ссылка на визитку с Impressum.",links:[["TikTok Studio",LINKS.studio]]}
-  ]}
+/* ---- русские версии блоков промпта ---- */
+const TYPE_RU = {macro:"макро-кадр: материалы и инструменты очень крупно",hands:"крупный план рук в перчатках за работой, лица вне кадра",silhouette:"общий план, рабочие — тёмные силуэты на фоне света",topdown:"вид строго сверху, геометрия по центру",timelapse:"таймлапс с неподвижной камеры, пространство меняется шаг за шагом",aerial:"медленный пролёт дрона, общий вид",detail:"средний план готовой поверхности",wide:"общий план интерьера",object:"главный кадр одного предмета"};
+const LIGHT_RU = {dawn:"рассвет в синий час: холодный рассеянный свет, первые тёплые лучи низко скользят по поверхностям, лёгкий туман",golden:"низкое солнце золотого часа, длинные тени, тёплый контровой свет",sodium:"ночь: тёплые натриевые рабочие лампы, глубокие тени, светящаяся пыль в воздухе",overcast:"мягкий дневной свет из больших окон, спокойный контраст",lamp:"одна жёсткая рабочая лампа как главный свет, резкий уход в темноту"};
+const LENS_RU = {macro100:"макрообъектив 100 мм, очень малая глубина резкости",ana35:"анаморфный объектив 35 мм, мягкое овальное боке, лёгкие блики",wide24:"широкий объектив 24 мм, глубокая перспектива",tele85:"объектив 85 мм, сжатый фон, мягкое боке",drone:"камера дрона, плавный стабилизированный полёт"};
+const MOVE_RU = {static:"камера неподвижна",dollyin:"медленный наезд камеры",push:"мягкий наезд к детали",slider:"медленное движение камеры вбок",orbit:"медленный облёт объекта на 30 градусов",crane:"медленный подъём камеры, открывается пространство"};
+const DNA_RU = {
+  grade:"ЦВЕТ: базальтово-чёрные тени с холодным графитовым оттенком, тёплые травертиновые света, приглушённая палитра с одним тёплым акцентом (натриевый янтарь или сигнальный оранжевый), мелкое натуральное плёночное зерно, как снято на ARRI Alexa 35.",
+  real:"Фотореализм, реальная физика. Плитка, каменные плиты и швы остаются идеально прямыми, жёсткими и геометричными. Естественные несовершенства: пыль, мелкие царапины, настоящая фактура материала.",
+  people:"Люди только силуэтами, со спины или руками в перчатках. Лиц не видно.",
+  laser:"Тонкая яркая красная линия лазерного уровня пересекает кадр.",
+  audio:"реалистичные звуки материалов и инструментов, низкий кинематографичный гул, без музыки, без речи",
+  neg:"Без текста, без букв, без логотипов, без водяных знаков."
+};
+const DNA_NAMES = {grade:"Цвет",real:"Реализм",people:"Люди",laser:"Подпись серии",audio:"Звук",neg:"Запреты"};
+/* ---- азбука ---- */
+const ABC = [
+  {id:"a-what",t:"Что мы делаем — на одной схеме",min:5,widget:"pipeline",text:["Мы делаем 10 коротких вертикальных роликов для TikTok. Каждый — 15–30 секунд.","Ролик — это 3–6 коротких **клипов** по 3–8 секунд, склеенных подряд. Как стена из плитки: ролик — стена, клип — одна плитка.","Каждый клип нейросети делают в два хода: сначала **картинка** (первый кадр), потом из неё **видео со звуком**. Потом добавляем звук, надписи, склеиваем в CapCut и публикуем.","Камеры, актёров и съёмочной площадки нет. Нужны компьютер, браузер и умение дать нейросети точное задание — этому и учит маршрут."],q:["Из чего состоит один ролик?","Из 3–6 клипов по 3–8 секунд, склеенных в CapCut. Каждый клип = картинка → видео."]},
+  {id:"a-image",t:"Нейросеть-художник: как из текста получается картинка",min:5,text:["Ты знаешь ChatGPT: пишешь текст — он отвечает текстом. Нейросеть-художник (у нас это **Nano Banana** внутри Gemini) работает так же, только отвечает **картинкой**.","Она училась на сотнях миллионов фотографий с подписями. Поэтому понимает не только «плитка», но и «синий час», «объектив 85 мм», «малая глубина резкости» — слова фотографов.","Каждый раз результат новый, как бросок кубика. Поэтому правило: делаем 3–4 варианта и выбираем лучший. Плохой вариант — не твоя ошибка, а нормальный брак.","Чем точнее задание, тем меньше брака. Как с бригадой: «положи плитку» — получишь что угодно; «крупный формат 60×120, шов 2 мм, от лазерной линии» — получишь то, что нужно."],q:["Почему делаем несколько вариантов одной картинки?","Каждая генерация — новый бросок кубика. Из 3–4 выбираем лучший, остальное — нормальный брак."]},
+  {id:"a-prompt",t:"Промпт — это техзадание",min:5,text:["**Промпт** — текст-задание для нейросети. Это слово ты будешь видеть везде.","Наш промпт всегда собран из одних и тех же частей: **что** в кадре, **план** (крупно, общий, сверху), **свет**, **объектив**, **движение камеры** и **правила бренда** (цвет, без лиц, без надписей).","Писать промпты тебе не нужно. Ты выбираешь значения в выпадающих списках — штаб сам собирает текст. Хочешь по-другому — скажи Наставнику по-русски.","Промпты по умолчанию на английском: нейросети больше всего учились на английских подписях и понимают их точнее. Под каждым промптом есть перевод на русский — ты всегда знаешь, что отдаёшь. Во «Вселенной» можно переключить промпты на русский целиком."],q:["Нужно ли тебе самому писать промпты?","Нет. Штаб собирает их из полей, а правки ты просишь у Наставника обычными словами."]},
+  {id:"a-key",t:"Ключевой кадр: почему сначала картинка",min:4,text:["Видео-нейросеть может сделать клип и просто по тексту. Но тогда она каждый раз придумывает кадр заново — и вид гуляет от клипа к клипу.","Поэтому сначала делаем **ключевой кадр** — картинку, которая станет первым кадром клипа. Видео-нейросеть берёт её и только добавляет движение.","Как раскладка насухо: сначала смотришь, как ляжет плитка, и только потом клеишь. Кривой ключевой кадр — кривой клип, поэтому кадр проверяем строго."],q:["Что такое ключевой кадр?","Картинка, которая станет первым кадром клипа. Видео-нейросеть её оживляет."]},
+  {id:"a-video",t:"Veo: как картинка начинает двигаться",min:5,text:["**Veo 3.1** — видео-нейросеть Google. Делает клип до 8 секунд **сразу со звуком**. Работаем с ней на сайте **Flow**.","Два режима: **Text to Video** («текст в видео») — клип только по тексту; **Frames to Video** («кадры в видео») — клип из твоей картинки плюс текст о движении. Мы почти всегда используем второй.","Два качества: **Fast** — быстро и дёшево, для черновиков; **Quality** — дольше и дороже, для финала.","Брак — норма: из 2–3 клипов годится один. Плитка «поплыла», появилось лицо, лишние пальцы — в мусор, без жалости."],q:["Какой режим Flow мы используем почти всегда?","Frames to Video: картинка (ключевой кадр) + текст о движении."]},
+  {id:"a-credits",t:"Кредиты и лимиты: за что платим",min:4,text:["Подписка — это пачка «жетонов» (**кредитов**). Каждая картинка или клип тратит жетоны. Fast тратит меньше, Quality — больше.","В Gemini есть дневной лимит видео — около 3 в день. Он **не копится**: не сделал сегодня — завтра всё равно будет 3, а не 6.","Поэтому правило проекта: генерировать понемногу каждый день и отмечать в штабе (+1 на вкладке «Штаб»).","Подписки помесячные. В «Арсенале» штаб ставит дату «отменить до», чтобы не платить лишний месяц."],q:["Почему важно генерировать каждый день?","Дневной лимит не копится: пропущенный день — потерянные клипы."]},
+  {id:"a-sound",t:"Звук и голос",min:4,text:["Veo делает звук сам. Иногда он идеален, иногда нет.","**ElevenLabs** умеет три вещи. **Sound Effects** — звук по описанию («удар бетона», «щелчок клипсы»). **Text to Speech** — читает твой текст голосом. **Voice Isolator** — чистит запись с телефона до студийного звука.","В наших роликах нет музыки. Звук = гул на фоне + звуки материалов + звуковой логотип в конце. Это дешевле музыки и сразу узнаётся.","Голос — русский. В роликах про людей (V08–V09) — живой голос бати или твой, в финальном фильме V10 — ИИ-диктор."],q:["Что делает Voice Isolator?","Очищает живую запись голоса от шума — до студийного звука."]},
+  {id:"a-edit",t:"Монтаж: как устроен CapCut",min:6,text:["CapCut — программа, где клипы склеиваются в ролик. В ней четыре зоны.","**Медиатека** (слева вверху) — склад: сюда загружаешь все файлы ролика.","**Окно просмотра** (в центре вверху) — витрина: смотришь, что получается.","**Шкала времени** (внизу) — стена: клипы кладёшь слева направо, по порядку. Время идёт слева направо.","**Дорожки** — слои на шкале. Основная дорожка — клипы; над ней — титры (надписи); под ней — звук. Что выше, то поверх.","**9:16** — вертикальный формат телефона. **1080×1920** — размер кадра в точках. **30 fps** — 30 кадров в секунду. **Экспорт** — сохранить готовый ролик одним файлом MP4."],q:["Где в CapCut клипы лежат по порядку?","На шкале времени внизу, слева направо. Титры — на дорожке выше, звук — ниже."]},
+  {id:"a-tiktok",t:"TikTok: как ролик находит людей",min:4,text:["TikTok сначала показывает ролик небольшой группе. Если досматривают, пересматривают и пересылают — показывает следующим, всё шире.","Поэтому **первые 2 секунды** решают всё: это **хук** — то, что останавливает палец.","**Досмотр** — какую часть ролика в среднем смотрят. **Удержание** — график: на какой секунде уходят.","У каждого ролика ставим метку **«Создано ИИ»**: это честно и требование площадки."],q:["Что такое хук?","Первые 1–2 секунды ролика, которые должны остановить палец зрителя."]},
+  {id:"a-words",t:"Словарь штаба",min:5,widget:"glossary",text:["Все непонятные слова — здесь. Начни печатать слово в поиске. Не нашёл — спроси Наставника."]}
 ];
+const GLOSSARY = [
+  ["Промпт","Текст-задание для нейросети: что в кадре, каким светом, какой камерой."],["Генерация","Один запуск нейросети. Результат — картинка, клип или звук."],["Вариант","Одна из нескольких картинок или клипов, полученных по одному промпту."],
+  ["Ключевой кадр","Картинка, которая станет первым кадром клипа."],["Клип","Короткое видео 3–8 секунд, сделанное нейросетью."],["Ролик","Готовое видео 15–30 секунд: несколько клипов + звук + титры."],
+  ["Text to Video","Режим Flow: видео только по тексту, без картинки."],["Frames to Video","Режим Flow: видео из твоей картинки плюс текст о движении."],["Fast / Quality","Быстрый дешёвый черновик / долгое дорогое качество."],
+  ["Кредиты","«Жетоны» подписки, которые тратятся на каждую генерацию."],["Лимит","Сколько генераций можно сделать за день или месяц."],["Апскейл","Повышение качества готового клипа, например до 1080p."],
+  ["Nano Banana","Нейросеть-художник Google внутри Gemini. Делает картинки."],["Gemini","Чат-нейросеть Google, как ChatGPT. Внутри — Nano Banana и короткие видео Veo."],["Flow","Сайт Google для работы с Veo: проекты, режимы, настройки."],
+  ["Veo 3.1","Видео-нейросеть Google: клипы до 8 секунд сразу со звуком."],["Midjourney, Kling, Runway","Другие нейросети. У нас в резерве."],["План","Насколько близко камера: макро, крупный, общий, сверху."],
+  ["Макро","Съёмка очень крупно: видно фактуру клея, капли, швы."],["Объектив 24 / 35 / 85 / 100 мм","Чем больше число, тем «ближе» объект и сильнее размыт фон."],["Анаморф","Киношный объектив: овальные блики, ощущение большого кино."],
+  ["Глубина резкости","Сколько в кадре резко. Малая — резкий объект и размытый фон."],["Боке","Красивое размытие фона."],["Наезд, облёт, слайдер, кран","Движения камеры: вперёд, вокруг объекта, вбок, вверх."],
+  ["Синий час","Время перед восходом: холодный мягкий свет."],["Золотой час","Низкое солнце после восхода или перед закатом: тёплый свет, длинные тени."],["Натриевый свет","Тёплый оранжевый свет рабочих и уличных ламп ночью."],
+  ["Цветокоррекция","Настройка цвета в CapCut, чтобы все клипы выглядели одним фильмом."],["Пресет","Сохранённый набор настроек, применяется одним кликом."],["Шкала времени","Нижняя часть CapCut, где клипы лежат по порядку."],
+  ["Дорожка","Слой на шкале времени: видео, титры, звук."],["9:16","Вертикальный формат экрана телефона."],["1080×1920","Размер вертикального кадра в точках (пикселях)."],
+  ["fps","Кадров в секунду. У нас 30."],["Экспорт","Сохранение готового ролика одним файлом MP4."],["Титр","Надпись поверх видео. Штаб отдаёт титры готовыми картинками PNG."],
+  ["PNG","Формат картинки, который бывает с прозрачным фоном."],["SFX","Звуковые эффекты: удары, щелчки, шумы."],["TTS","Text to Speech: нейросеть читает текст голосом."],
+  ["Хук","Первые 1–2 секунды, которые останавливают палец."],["Досмотр","Какую часть ролика в среднем смотрят."],["Удержание","График: на какой секунде зрители уходят."],
+  ["Метка ИИ","Отметка «Создано ИИ» при публикации. Ставим всегда."],["Отложенная публикация","Ролик выйдет сам в выбранные дату и время."],["Бизнес-аккаунт","Тип аккаунта TikTok для фирмы: аналитика, категория, контакты."],
+  ["Impressum","Обязательные данные фирмы на коммерческих страницах в Германии."],["Наставник","Claude внутри штаба: объясняет и сам правит сценарии по твоим словам."]
+];
+const TOURS = {
+  gemini:{id:"r2-tour-gemini",t:"Экскурсия: экран Gemini",min:5,why:"Прежде чем делать кадры, разберись, где что лежит. Интерфейс — как прорабская: всё на своих местах.",
+    do:["Нажми **Gemini** ниже.","Слева — список прошлых чатов и кнопка **Новый чат**. Каждый новый кадр начинай с нового чата, чтобы старые картинки не путали нейросеть.","Внизу по центру — **строка ввода**: сюда вставляешь промпт. Рядом — **+** (прикрепить картинку) и кнопка инструментов (картинки, видео).","Ответы появляются над строкой ввода: текст или картинки. Наведи мышь на картинку — появятся кнопки «скачать» и «поделиться».","Сверху может быть выбор модели. Для картинок подойдёт та, где есть генерация изображений.","Попробуй: напиши «Нарисуй белую плитку на бетоне» и нажми [[Enter]]. Это твоя первая генерация."],
+    result:"Ты знаешь, где новый чат, строка ввода и кнопка скачивания.",links:[["Gemini","https://gemini.google.com/app"]]},
+  flow:{id:"r2-tour-flow",t:"Экскурсия: экран Flow",min:5,why:"Flow — главный станок проекта. Разберись в нём до первой настоящей генерации.",
+    do:["Нажми **Flow** ниже и войди аккаунтом фирмы.","Главная страница — твои **проекты**. Проект — как папка: внутри все клипы одного дела. У нас будет один проект «MC Monolith».","Внутри проекта: в центре — сетка уже сделанных клипов, внизу — **строка ввода** промпта.","У строки ввода: **переключатель режима** (Text to Video / Frames to Video / Ingredients), поле **первого кадра** и кнопка **настроек**.","В настройках: **модель** (Veo 3.1 Fast или Quality), **формат** (9:16 — вертикальный), **количество вариантов**.","Обычно сверху справа видно остаток **кредитов**.","Выглядит иначе — сделай скриншот и спроси Наставника: Flow часто обновляется."],
+    result:"Ты знаешь, где режим, первый кадр, настройки и кредиты.",links:[["Flow","https://labs.google/fx/tools/flow"]]},
+  capcut:{id:"r2-tour-capcut",t:"Экскурсия: экран CapCut",min:7,why:"CapCut — стол сборщика. Зная, где что, ты соберёшь ролик за полчаса, а не за вечер.",
+    do:["Открой CapCut → **Создать проект**.","Слева вверху — **медиатека** (склад) и кнопка **Импорт**.","В центре вверху — **окно просмотра**. Под ним — воспроизведение и **Соотношение** (формат кадра).","Справа — **панель свойств**: выделишь клип — появятся вкладки Видео, Звук, Скорость, **Настройка** (цвет).","Внизу — **шкала времени** с дорожками. Колесо мыши с зажатой [[MOD]] — приблизить или отдалить шкалу.","Справа вверху — кнопка **Экспорт**.","Проект сохраняется сам. Закрыл — найдёшь его на главном экране CapCut."],
+    result:"Ты знаешь все четыре зоны CapCut и кнопку экспорта."},
+  studio:{id:"r1-tour-studio",t:"Экскурсия: TikTok Studio",min:4,why:"Студия — это пульт канала: загрузка, расписание, цифры.",
+    do:["Нажми **TikTok Studio** ниже.","Слева меню: **Главная**, **Публикации** (все ролики), **Аналитика** (цифры), **Комментарии**.","Кнопка **Загрузить** (обычно вверху слева) — сюда добавляешь готовый ролик.","На странице загрузки: описание, обложка, кто видит, **дополнительные настройки** (там метка ИИ) и внизу — **Опубликовать** или **Запланировать**.","Ролик можно запланировать до 10 дней вперёд."],
+    result:"Ты знаешь, где загрузка, аналитика и планирование.",links:[["TikTok Studio","https://www.tiktok.com/tiktokstudio"]]}
+};
+
+/* ---- формула укладки ---- */
+const FORMULA = [
+  {m:"Заказ",s:"Бриф",d:"Что строим, для кого и зачем — одна мысль.",stage:"brief"},
+  {m:"Чертёж",s:"Раскадровка",d:"Каждый кадр размечен: план, свет, оптика, движение.",stage:"board"},
+  {m:"Плитка",s:"Ключевые кадры",d:"Каждый кадр — одна плитка. Кривая плитка — кривая стена.",stage:"frames"},
+  {m:"Укладка",s:"Движение",d:"Плитка ложится на место: кадр оживает в Veo.",stage:"motion"},
+  {m:"Затирка",s:"Звук и голос",d:"Звук заполняет швы между кадрами.",stage:"sound"},
+  {m:"Отделка",s:"Монтаж",d:"Подрезка, цвет, титры, финальная карточка.",stage:"edit"},
+  {m:"Сдача",s:"Эфир",d:"Объект сдан: публикация с меткой ИИ.",stage:"air"},
+  {m:"Осмотр",s:"Цифры",d:"Через 48 часов: что держится, что треснуло.",stage:"check"}
+];
+/* ---- клики по этапам (общие для маршрута и производства) ---- */
+const CLICK = {
+  brief:["Открой раздел **Производство** и сверху выбери ролик.","Вкладка **01 Бриф** уже открыта. Прочитай поле «Что происходит» и главную строку на экране (по-русски).","Хочешь поменять — сотри и напиши своё прямо в поле. Сохраняется само, кнопки «Сохранить» нет.","Не знаешь, как сформулировать? Нажми **Наставник** справа внизу и скажи по-русски: «сделай строку короче» или «придумай мягче».","Проверь дату в поле «Эфир».","Нажми внизу **Этап выполнен · далее**."],
+  board:["Вкладка **02 Раскадровка**. Каждая строка таблицы — один кадр будущего ролика (S1, S2, S3…).","В строке видно: что в кадре (по-русски), план, свет, оптика, движение камеры, секунды и чем делаем.","Хочешь поменять кадр — выбери другое значение в выпадающем списке. Промпт пересоберётся сам.","Или скажи Наставнику: «во втором кадре поставь ночь и добавь лазер» — он поменяет за тебя.","Кнопка **Детали** показывает промпты кадра. Писать их самому не нужно: штаб собирает их из полей.","Нажми **Этап выполнен · далее**."],
+  frames:["Вкладка **03 Кадры**. У каждого кадра — карточка с готовым промптом. Промпт — это текст-задание для нейросети: что нарисовать, каким светом и каким объективом.","У кадра S1 нажми **Копировать**.","Нажми **Открыть Nano Banana · Gemini** — Gemini откроется в новой вкладке. Если просит войти — аккаунт фирмы.","Слева вверху нажми **Новый чат** (значок карандаша).","Если у строки ввода есть кнопка инструментов — выбери «Изображение» (значок банана). Нет такой кнопки — просто вставляй промпт.","Кликни в строку ввода, нажми [[MOD+V]], затем [[Enter]].","Подожди 10–40 секунд. Не нравится — напиши в тот же чат «ещё 3 варианта» и [[Enter]].","Наведи мышь на лучшую картинку → значок **↓ Скачать**. Файл уйдёт в «Загрузки».","Переименуй файл в **s1.png** и перенеси в папку ролика → **kf** (как в шаге 0.7).","Вернись в штаб: **Кадр готов ✓**, потом **+1 к лимиту дня**.","Повтори для S2, S3… Кадры с пометкой «Text→Video» пропускай — им картинка не нужна.","Все кадры готовы — **Этап выполнен · далее**."],
+  motion:["Вкладка **04 Движение**. Здесь картинка становится видео со звуком.","У кадра S1 нажми **Копировать** (промпт видео).","Нажми **Открыть Veo 3.1 · Flow** и войди аккаунтом фирмы.","Открой проект **MC Monolith** на главной Flow или нажми **Новый проект**.","Внизу экрана строка ввода. Рядом с ней переключатель режима — выбери **Frames to Video** («Кадры в видео»).","Нажми **+** у поля первого кадра → «Загрузить» → выбери **kf/s1.png** из папки ролика.","Кликни в строку и вставь промпт [[MOD+V]].","Открой настройки (значок шестерёнки или ползунков): модель **Veo 3.1 – Fast**, формат **9:16**, вариантов **2**.","Нажми стрелку **➤**. Ждать 1–3 минуты — можно пока запускать следующий кадр.","Посмотри оба варианта. Лучший — **↓ Скачать** (если предлагает качество — 1080p).","Переименуй в **s1_v1.mp4** и перенеси в папку ролика → **clips**.","В штабе: **Клип готов ✓** и **+1 к лимиту дня**. Лимит кончился — продолжишь завтра.","Кадры «Text→Video»: режим **Text to Video**, картинку не загружаешь.","Все клипы готовы — **Этап выполнен · далее**."],
+  sound:["Вкладка **05 Звук и голос**. Сначала послушай клипы: Veo уже сделал звук. Подходит — оставляешь.","Звуки бренда (гул, звуковой логотип) ты сделал в модуле 2 — они в папках 00_brand и 00_sfx.","Нужен новый звук: ElevenLabs → **Sound Effects** → вставь описание по-английски (готовые — во «Вселенной» → «Звук») → **Generate** → ▶ послушай → **↓** скачай → в папку ролика → **audio**.","Голос нужен только в V08–V10. Живой голос: запись на телефон → Voice Isolator → скачать в **audio**. ИИ-голос: ElevenLabs → **Text to Speech** → вставь русский текст → **Generate** → скачать в **audio**.","Отметь галочки чек-листа и нажми **Этап выполнен · далее**."],
+  edit:["Вкладка **06 Монтаж**. Сначала скачай титр и финальную карточку кнопками внизу этапа и перенеси в папку ролика → **titles**.","Открой CapCut → **Создать проект**.","Нажми **Импорт** и выбери файлы ролика: всё из **clips**, **titles**, **audio** и звуки из **00_brand** и **00_sfx**. Они появятся слева в медиатеке.","Над окном просмотра нажми **Соотношение** (Ratio) → **9:16**.","Перетащи клипы s1, s2, s3… мышкой на шкалу времени внизу — по порядку, вплотную.","Подрезать край клипа: выдели клип и потяни его край. Разрезать: поставь бегунок в нужное место, нажми [[MOD+B]], лишний кусок выдели и нажми [[Delete]].","Цвет: выдели клип → справа вкладка **Настройка** (Adjust) → выставь значения «MC Basalt» из «Вселенной» → «Цвет» или примени сохранённый пресет. Так для каждого клипа.","Титр: перетащи **titr.png** на дорожку **над** клипами, в самое начало, и потяни его правый край до 2,5 секунды.","Финальная карточка: **endcard.png** — в конец основной дорожки, длина 1,5 секунды.","Звук: **drone.mp3** — на дорожку под всеми клипами; **sonic_logo.mp3** — под финальной карточкой. Выдели гул → справа **Громкость** → около −15 дБ, чтобы он стал фоном.","Нажми [[Space]] и посмотри ролик целиком. Первые полсекунды — уже движение? Конец стыкуется с началом?","Справа вверху **Экспорт**: 1080p, 30 кадров/с, MP4, папка ролика, имя **final** → **Экспорт**.","Просит Pro при экспорте — где-то стоит платный эффект (значок короны). Найди его и удали.","Готово — **Этап выполнен · далее**."],
+  air:["Вкладка **07 Эфир**. Нажми **Копировать** у блока «Подпись к ролику».","Нажми **Загрузить в TikTok Studio** (аккаунт фирмы).","Перетащи файл **final.mp4** в окно загрузки или нажми «Выбрать файл».","Поле «Описание»: кликни и вставь подпись [[MOD+V]].","**Обложка** → «Изменить» → выбери самый сильный кадр.","Открой **Показать больше** (дополнительные настройки) → включи **Контент, созданный ИИ**.","**Когда опубликовать** → **Запланировать** → дата из штаба, время **19:30** → **Запланировать**.","В день выхода нажми в штабе **Отметить: вышел в эфир**."],
+  check:["Через 48 часов после выхода открой **TikTok Studio** → **Аналитика** (или «Публикации») → нажми на ролик.","Перепиши в штаб, вкладка **07 Эфир**, блок «Цифры»: просмотры, средний досмотр, лайки, комментарии, репосты, сохранения, подписки.","Найди график удержания: на какой секунде линия резко падает — там зритель ушёл.","Запиши вывод в «Эфир» → «Ретро». Не понимаешь цифры — спроси Наставника: «что значат мои цифры у V01?»"]
+};
+const BIO = "Плитка. Точность. Построено, чтобы стоять.\nFliesen in Deutschland · MC Infrastructure\n✉ mc.infrastructure.de@gmail.com";
+/* ---- маршрут с нуля ---- */
+const ROUTE = [
+ {id:"mA",n:"А",t:"Азбука",d:"Что это всё такое и как работает. Без этого остальное — набор кнопок.",steps:ABC.map(x=>Object.assign({lesson:true},x))},
+ {id:"m0",n:"0",t:"Рабочее место",d:"Компьютер, браузер, папки. Один раз — и навсегда.",steps:[
+  {id:"r0-os",t:"Скажи штабу, какой у тебя компьютер",min:1,widget:"os",why:"Кнопки и сочетания клавиш на Mac и Windows разные. Штаб перестроит все инструкции под твою систему.",
+   do:["Посмотри на клавиатуру. Есть клавиша **⌘ Cmd** — у тебя Mac. Есть клавиша с окошком **⊞ Win** — у тебя Windows.","Нажми свою систему в переключателе ниже."],result:"В переключателе подсвечена твоя система, клавиши во всех шагах написаны под неё."},
+  {id:"r0-shot",t:"Научись делать скриншот",min:3,why:"Застрял — делаешь скриншот, вставляешь Наставнику и получаешь ответ по тому, что реально у тебя на экране.",
+   do:{mac:["Нажми [[Cmd+Ctrl+Shift+4]] — курсор станет крестиком.","Зажми кнопку мыши и обведи нужную часть экрана, отпусти. Скриншот скопирован.","Открой **Наставника** справа внизу, кликни в поле ввода и нажми [[Cmd+V]] — картинка прикрепится.","Если нужен файл, а не копия: [[Cmd+Shift+4]] — скриншот появится на рабочем столе."],win:["Нажми [[Win+Shift+S]] — экран потемнеет.","Обведи мышкой нужную часть экрана. Скриншот скопирован.","Открой **Наставника** справа внизу, кликни в поле ввода и нажми [[Ctrl+V]] — картинка прикрепится."]},
+   result:"Ты прикрепил один скриншот к Наставнику и знаешь, как это повторить."},
+  {id:"r0-chrome",t:"Chrome и профиль фирмы",min:10,why:"Все нейросети работают в браузере. Отдельный профиль фирмы держит входы, пароли и подписки в одном месте и не смешивает их с твоими личными.",
+   do:[{mac:"Если Chrome ещё нет: нажми «Скачать Chrome» ниже → открой в «Загрузках» файл googlechrome.dmg → перетащи значок Chrome в папку «Программы» → запусти Chrome из Launchpad.",win:"Если Chrome ещё нет: нажми «Скачать Chrome» ниже → запусти в «Загрузках» файл ChromeSetup.exe → Chrome установится и откроется сам."},"В Chrome справа вверху нажми круглый значок профиля → **Добавить** (новый профиль).","Нажми **Войти** и введи почту фирмы **mc.infrastructure.de@gmail.com** и её пароль.","Chrome спросит про синхронизацию — **Да, включить**.","Назови профиль **MC Infrastructure**, цвет — оранжевый.","Перенеси штаб в новый профиль: в старом окне нажми [[MOD+L]] и [[MOD+C]] (копируешь адрес), в новом — [[MOD+L]], [[MOD+V]], [[Enter]].","Дальше всё по проекту — только в этом окне."],
+   result:"Справа вверху Chrome — значок профиля MC Infrastructure, штаб открыт в нём.",trouble:["Не помнишь пароль почты → на странице входа «Забыли пароль?» → восстанови через телефон.","Штаб в новом профиле просит войти в Claude — войди своим аккаунтом Claude, как обычно."],links:[["Скачать Chrome","https://www.google.com/chrome/"]]},
+  {id:"r0-2fa",t:"Защити аккаунт фирмы",min:5,why:"На этом аккаунте будут оплаченные подписки. Двухэтапная проверка — чтобы его не угнали.",
+   do:["Нажми **Аккаунт Google** ниже (в профиле фирмы).","Слева **Безопасность** → **Двухэтапная аутентификация** → **Включить**.","Введи номер своего телефона и код из SMS.","На той же странице найди **Резервные коды** → «Получить коды» → сфотографируй и отдай бате. Это запасной ключ, если потеряешь телефон."],
+   result:"В разделе «Безопасность» написано: двухэтапная аутентификация включена.",links:[["Аккаунт Google","https://myaccount.google.com/security"]]},
+  {id:"r0-tree",t:"Создай папки проекта одной командой",min:5,widget:"tree",why:"Каждый файл должен лежать там, где ты найдёшь его через год. Вручную это 50 кликов, команда делает всю структуру за секунду — и для любого будущего проекта.",
+   do:{mac:["Нажми [[Cmd+Space]] — появится строка поиска.","Напечатай **Терминал** и нажми [[Enter]]. Откроется окно с текстом — это просто окно для команд, бояться нечего.","Нажми **Копировать** у команды ниже.","Кликни в окно Терминала, нажми [[Cmd+V]], затем [[Enter]].","Откроется Finder с папкой **MC_MONOLITH** — внутри все подпапки. Терминал можно закрыть."],win:["Нажми клавишу [[Win]], напечатай **PowerShell** и нажми [[Enter]].","Нажми **Копировать** у команды ниже.","Кликни в окно PowerShell и нажми [[Ctrl+V]] (или правую кнопку мыши), затем [[Enter]].","Откроется Проводник с папкой **MC_MONOLITH** — внутри все подпапки. PowerShell можно закрыть."]},
+   result:"В «Документах» есть MC_MONOLITH: внутри 00_brand, 00_sfx, 00_tests, _TEMPLATE и папки V01…V10, а в каждой — kf, clips, audio, titles.",trouble:["Ничего не открылось → запусти команду ещё раз: она безопасна и ничего не удаляет.","Ошибка в PowerShell красным текстом → сделай скриншот и вставь Наставнику."]},
+  {id:"r0-folder",t:"Закрепи папку под рукой",min:3,why:"Папка проекта всегда в один клик — меньше времени на поиск, больше на работу.",
+   do:{mac:["Внизу экрана, в Dock, нажми синий улыбающийся значок **Finder**.","Слева нажми **Документы** — там папка **MC_MONOLITH**.","Перетащи MC_MONOLITH мышкой в левую колонку Finder, в раздел **Избранное**.","Открой её и посмотри: папки V01…V10 — по одной на ролик. Внутри: kf — ключевые кадры, clips — видео, audio — звук и голос, titles — титры."],win:["Нажми [[Win+E]] — откроется **Проводник**.","Слева нажми **Документы** — там папка **MC_MONOLITH**.","Нажми по ней правой кнопкой → **Закрепить на панели быстрого доступа**.","Открой её и посмотри: папки V01…V10 — по одной на ролик. Внутри: kf — ключевые кадры, clips — видео, audio — звук и голос, titles — титры."]},
+   result:"MC_MONOLITH закреплена слева и открывается в один клик."},
+  {id:"r0-files",t:"Научись забирать скачанные файлы",min:5,why:"Всё, что скачиваешь из нейросетей, падает в «Загрузки». Привычка: скачал → сразу переименовал → сразу перенёс в нужную папку.",
+   do:{mac:["В Finder слева нажми **Загрузки** — там всё скачанное.","Переименовать: кликни по файлу один раз, нажми [[Enter]], напечатай новое имя, снова [[Enter]].","Перенести: перетащи файл мышкой на папку в левой колонке (например, MC_MONOLITH в «Избранном»), затем внутрь нужной подпапки.","Потренируйся сейчас на любом файле из «Загрузок»."],win:["В Проводнике слева нажми **Загрузки** — там всё скачанное.","Переименовать: кликни по файлу, нажми [[F2]], напечатай новое имя, [[Enter]].","Перенести: выдели файл, нажми [[Ctrl+X]], открой нужную папку внутри MC_MONOLITH и нажми [[Ctrl+V]].","Потренируйся сейчас на любом файле из «Загрузок»."]},
+   result:"Ты переносишь и переименовываешь файл за 10 секунд."},
+  {id:"r0-bookmarks",t:"Закладки: всё в один клик",min:5,why:"Штаб и все нейросети — на полоске закладок, чтобы ничего не искать.",
+   do:["Нажми [[MOD+Shift+B]] — под адресной строкой появится полоска закладок.","Нажми звёздочку ☆ справа в адресной строке → **Готово**. Штаб — на полоске.","Нажимай кнопки ниже по очереди. В каждой открывшейся вкладке: ☆ → **Готово**, затем закрой вкладку.","Перетащи закладки мышкой в порядке работы: Штаб, Gemini, Flow, ElevenLabs, TikTok Studio."],
+   result:"На полоске закладок 5–6 значков в порядке работы.",links:[["Gemini","https://gemini.google.com/app"],["Flow","https://labs.google/fx/tools/flow"],["ChatGPT","https://chatgpt.com/"],["ElevenLabs","https://elevenlabs.io/app/sound-effects"],["TikTok Studio","https://www.tiktok.com/tiktokstudio"]]}
+ ]},
+ {id:"m1",n:"1",t:"Подписки",d:"Аккаунты и оплата. Нужна банковская карта.",steps:[
+  {id:"r1-gpro",t:"Google AI Pro",min:7,why:"Veo 3.1 (видео со звуком) и Nano Banana (кадры) — главный двигатель всех роликов.",
+   do:["Проверь, что ты в профиле Chrome **MC Infrastructure** (значок справа вверху).","Нажми **Тарифы Google** ниже.","Найди тариф **Google AI Pro** → **Попробовать бесплатно** или **Подписаться**.","Введи данные карты и подтверди (банк может прислать код в SMS или в приложение).","Нажми **Gemini** ниже — у имени или в меню должно быть видно **PRO**.","Вернись в штаб → **Арсенал** → галочка у Google AI Pro. Дата «Отменить до» встанет сама."],
+   result:"В Gemini видна подписка Pro, в «Арсенале» стоит галочка.",trouble:["Нет бесплатного периода — он уже использован на этом аккаунте, списывается сразу около 21,99 €.","Карта не проходит — другая карта или PayPal, если предлагают."],links:[["Тарифы Google","https://one.google.com/about/plans"],["Gemini","https://gemini.google.com/app"]],go:"arsenal"},
+  {id:"r1-gpt",t:"ChatGPT Plus",min:5,why:"Второй художник для кадров и помощник по текстам.",
+   do:["Нажми **ChatGPT** ниже → **Зарегистрироваться** → **Продолжить с Google** → аккаунт фирмы.","Слева внизу нажми на своё имя → **Улучшить план** → **Plus** → оплати картой.","Слева **Проекты** → **Новый проект** → назови «MC Infrastructure».","В «Арсенале» — галочка у ChatGPT Plus."],
+   result:"Слева в ChatGPT есть проект MC Infrastructure, план Plus.",links:[["ChatGPT","https://chatgpt.com/"]],go:"arsenal"},
+  {id:"r1-eleven",t:"ElevenLabs Starter",min:5,why:"Звуки и голос. Платный Starter даёт право использовать их в рекламе фирмы.",
+   do:["Нажми **ElevenLabs** ниже → **Sign up** → **Continue with Google** → аккаунт фирмы.","Анкету можно пропустить (Skip) или ответить «Content creation».","Слева внизу нажми на профиль → **Subscription** (или Upgrade) → **Starter** → оплати.","Проверь: в профиле написано **Starter**.","В «Арсенале» — галочка у ElevenLabs."],
+   result:"В профиле ElevenLabs написано Starter.",links:[["ElevenLabs","https://elevenlabs.io/pricing"]],go:"arsenal"},
+  {id:"r1-capcut",t:"CapCut на компьютер",min:10,why:"Здесь клипы склеиваются в готовый ролик. Бесплатной версии хватает.",
+   do:[{mac:"Нажми **CapCut** ниже → **Скачать бесплатно** → открой в «Загрузках» файл .dmg → перетащи CapCut в «Программы».",win:"Нажми **CapCut** ниже → **Скачать бесплатно** → запусти в «Загрузках» установщик → **Установить**."},{mac:"Запусти CapCut: [[Cmd+Space]] → напечатай CapCut → [[Enter]].",win:"Запусти CapCut с рабочего стола или через [[Win]] → CapCut."},"Справа вверху **Войти** → через Google (аккаунт фирмы) или через TikTok.","Платить не нужно."],
+   result:"CapCut открывается, ты в нём вошёл.",links:[["CapCut","https://www.capcut.com/tools/desktop-video-editor"]]},
+  {id:"r1-tiktok",t:"TikTok MC Infrastructure",min:15,widget:"bio",why:"Канал фирмы. Регистрируем на почту фирмы, работаем из браузера — приложение на телефоне не нужно.",
+   do:["Нажми **TikTok** ниже → **Зарегистрироваться** → «Телефон или эл. почта» → вкладка **Эл. почта**.","Почта **mc.infrastructure.de@gmail.com**, придумай пароль. Код придёт в Gmail фирмы — открой Gmail в соседней вкладке и вставь код.","Имя пользователя: **mc.infrastructure.de**. Занято — **mc.infrastructure** или **mcinfrastructure.de**.","Открой **TikTok Studio** (кнопка ниже) → профиль → **Изменить профиль**: имя «MC Infrastructure», описание — скопируй ниже. Фото поставишь в модуле 2.","Переключи на бизнес-аккаунт: **Настройки** → **Аккаунт** → **Переключиться на бизнес-аккаунт** → категория «Строительство». Нет такого пункта в браузере — поставь приложение TikTok на телефон, войди, переключи там (Профиль → ☰ → Настройки и конфиденциальность → Аккаунт) и удали приложение.","Ссылку на визитку с Impressum добавишь, когда батя даст данные фирмы."],
+   result:"Профиль MC Infrastructure с описанием, тип — бизнес-аккаунт.",links:[["TikTok","https://www.tiktok.com/signup"],["TikTok Studio","https://www.tiktok.com/tiktokstudio"]]},
+  TOURS.studio
+ ]},
+ {id:"m2",n:"2",t:"Бренд",d:"Знак, звуки, цвет, голос и первый тест нейросетей.",steps:[
+  {id:"r2-settings",t:"Заполни настройки бренда",min:5,go:"universe",why:"Контакт, регион и слоган подставятся в титры, финальные карточки и подписи всех 10 роликов.",
+   do:["Нажми **Открыть «Вселенную»** ниже.","Найди блок **Настройки бренда**.","Контакт для откликов — номер WhatsApp или Telegram, который даст батя.","Регион — например, Bayern.","Слоган — выбери один из трёх.","Сохранять не нужно: справа вверху будет «синхронизировано»."],result:"В настройках бренда заполнены контакт, регион и слоган."},
+  {id:"r2-logo",t:"Знак — в папку и на аватар",min:10,go:"universe",why:"Знак нужен в каждом ролике (финальная карточка) и на аватаре TikTok.",
+   do:["«Вселенная» → блок **Знак · закреплён**.","Нажми по очереди: «Оригинал SVG», «PNG прозрачный», «PNG на плашке», «Аватар». Каждый раз подтверждай сохранение.","Открой «Загрузки» и перенеси все 4 файла в **MC_MONOLITH/00_brand** (как в шаге 0.7).","TikTok Studio → профиль → **Изменить профиль** → фото → выбери **mc-avatar.png**."],result:"В 00_brand четыре файла знака, на аватаре TikTok — mc²."},
+  {id:"r2-sfx",t:"Звуки бренда",min:20,go:"universe",why:"Свой звук в каждом ролике — как подпись. Делаешь один раз, используешь всегда.",
+   do:["Нажми **ElevenLabs Sound Effects** ниже.","В штабе «Вселенная» → блок **Звук · ДНК** → у «Звуковой логотип» нажми **Копировать**.","Вставь текст в поле ElevenLabs [[MOD+V]] и нажми **Generate**.","Послушай варианты ▶. Лучший — значок **↓**.","Переименуй в **sonic_logo.mp3** и перенеси в **00_brand**.","Так же сделай остальные: гул → **drone.mp3** (в 00_brand), лазер → laser.mp3, шпатель → trowel.mp3, клипсы → clips.mp3, резка → saw.mp3, рассвет → dawn.mp3 (в 00_sfx)."],result:"В 00_brand — sonic_logo.mp3 и drone.mp3, в 00_sfx — остальные звуки.",links:[["ElevenLabs Sound Effects","https://elevenlabs.io/app/sound-effects"]]},
+  TOURS.gemini,
+  {id:"r2-img",t:"Тест: первый кадр в Gemini",min:20,go:"universe",why:"Почувствовать, как текст превращается в картинку и как свет меняет настроение. Это главный навык проекта.",
+   do:["«Вселенная» → **Конструктор промптов**. Выбери: План — Макро, Свет — Синий час, Оптика — Макро 100 мм. Нажми **Копировать** у «Ключевой кадр».","Нажми **Gemini** ниже → **Новый чат**.","Если у строки ввода есть кнопка инструментов — выбери «Изображение». Нет — просто вставляй промпт.","Вставь промпт [[MOD+V]] и нажми [[Enter]]. Жди 10–40 секунд.","Сделай ещё 2 картинки: поменяй «Свет» в конструкторе (золотой час, ночь), скопируй, вставь в тот же чат.","Скачай лучшие (наведи → **↓**) и перенеси в **00_tests**.","Не понимаешь, что написано в промпте — нажми под ним **Что это значит?**"],result:"В 00_tests три картинки с разным светом. Ты видишь, какой свет выглядит дороже.",links:[["Gemini","https://gemini.google.com/app"]]},
+  TOURS.flow,
+  {id:"r2-clip",t:"Тест: первый клип во Flow",min:20,why:"Увидеть, как ИИ оживляет твою картинку и сам делает звук.",
+   do:["Нажми **Flow** ниже, войди аккаунтом фирмы.","**Новый проект** → назови «MC Monolith».","Внизу у строки ввода выбери режим **Frames to Video** («Кадры в видео»).","Нажми **+** у поля первого кадра → загрузи лучшую картинку из 00_tests.","Штаб → «Вселенная» → «Конструктор» → **Копировать** у «Видео». Вставь в строку Flow [[MOD+V]].","Открой настройки (шестерёнка или ползунки): модель **Veo 3.1 – Fast**, формат **9:16**, вариантов **2**.","Нажми **➤**. Через 1–3 минуты появятся 2 клипа. Посмотри оба со звуком.","Лучший — **↓** скачать → перенеси в **00_tests**.","В штабе на вкладке «Штаб» нажми **+1** у Veo."],result:"У тебя первый клип со звуком, сделанный из твоей картинки.",trouble:["Нет режима Frames to Video → ищи «Image to Video» или значок картинки у строки ввода.","Нет формата 9:16 → проверь, что выбрана модель Veo 3.1.","«Недостаточно кредитов» → Gemini → Новый чат → инструмент «Видео» → вставь промпт (около 3 видео в день)."],links:[["Flow","https://labs.google/fx/tools/flow"]]},
+  TOURS.capcut,
+  {id:"r2-grade",t:"Цвет «MC Basalt» в CapCut",min:15,why:"Один цвет на всех клипах склеивает разные нейросети в один фильм.",
+   do:["Открой CapCut → **Создать проект**.","**Импорт** → тестовый клип из 00_tests → перетащи его на шкалу времени внизу.","Выдели клип. Справа открой вкладку **Настройка** (Adjust).","Выставь значения из «Вселенной» → «Цвет»: контраст +10, насыщенность −15 и дальше по таблице.","Сравни «до» и «после» переключателем у настройки.","Внизу панели нажми **Сохранить как пресет** и назови «MC Basalt». Нет такой кнопки — не страшно, значения всегда есть в штабе."],result:"Тестовый клип выглядит темнее и благороднее, пресет сохранён или значения записаны.",go:"universe"},
+  {id:"r2-voice",t:"Голос бренда",min:20,why:"В роликах про людей (V08–V09) живой голос даёт доверие, которого ИИ-видео не хватает.",
+   do:["Телефон: iPhone — приложение **Диктофон**, Android — **Диктофон** или **Recorder**.","Тихая комната, телефон в 20 см ото рта. Батя (или ты) читает строку V08 по-русски, 3 дубля. Тексты — в «Производстве» → V08 → этап «Звук и голос».","Перешли запись на компьютер: iPhone и Mac — AirDrop; любой телефон — Telegram → «Избранное» → открой Telegram на компьютере и скачай файл.","Нажми **Voice Isolator** ниже → загрузи файл → скачай очищенный → в **V08…/audio**.","Сравни с ИИ-голосом: **Text to Speech** → вставь ту же строку → Generate. Решите с батей, чей голос звучит в V08–V09."],result:"Есть чистая запись живого голоса, решено, чей голос в ярусе «Братство».",links:[["Voice Isolator","https://elevenlabs.io/app/voice-isolator"],["Text to Speech","https://elevenlabs.io/app/speech-synthesis/text-to-speech"]]}
+ ]},
+ {id:"m3",n:"3",t:"Первый ролик · V01",d:"Весь конвейер на одном ролике, клик за кликом. Галочки здесь = закрытые этапы V01.",steps:[
+  {id:"r3-brief",t:"Заказ: бриф V01",min:10,stage:"brief",why:"Одна мысль, одна эмоция, одна фраза на экране. Без этого красивые кадры ничего не скажут."},
+  {id:"r3-board",t:"Чертёж: раскадровка V01",min:15,stage:"board",why:"Каждый кадр размечен заранее — нейросети получают точное задание, а не «сделай красиво»."},
+  {id:"r3-frames",t:"Плитка: ключевые кадры V01",min:60,stage:"frames",why:"Ключевой кадр — первый кадр клипа. Дорогой кадр = дорогое видео."},
+  {id:"r3-motion",t:"Укладка: движение V01",min:60,stage:"motion",why:"Veo оживляет каждый кадр и сам делает звук под движение."},
+  {id:"r3-sound",t:"Затирка: звук V01",min:20,stage:"sound",why:"Звук заполняет швы между кадрами и делает ИИ-картинку дорогой."},
+  {id:"r3-edit",t:"Отделка: монтаж V01",min:60,stage:"edit",why:"Здесь клипы становятся роликом: ритм, цвет, титр, финальная карточка."},
+  {id:"r3-air",t:"Сдача: эфир V01",min:15,stage:"air",why:"Публикация с меткой ИИ в лучшее время для зрителя."},
+  {id:"r3-check",t:"Осмотр: цифры V01",min:10,clicks:"check",why:"Через 48 часов цифры показывают, где зритель ушёл. Это урок для следующего ролика."}
+ ]},
+ {id:"m4",n:"4",t:"Конвейер V02–V10",d:"Ритм, при котором 9 роликов выходят без аврала.",steps:[
+  {id:"r4-day",t:"Ежедневный ритм",min:3,why:"Лимит Veo не копится. Понемногу каждый день — быстрее, чем рывками.",
+   do:["Каждый день открывай штаб → **Штаб** → «Приказ дня» → **Выполнить**.","Каждый день делай 3 клипа в Veo для ближайшего ролика и отмечай **+1**.","Раз в 2–3 дня — монтаж и отложенная публикация одного ролика.","Вечером 5 минут: ответь на комментарии и закрой TikTok."],result:"Ты знаешь свой ежедневный минимум: открыть штаб, 3 клипа, отметить."},
+  {id:"r4-batch",t:"Работай партиями",min:3,why:"Переключение между нейросетями съедает время и внимание.",
+   do:["Сначала все ключевые кадры ролика за один заход, потом все клипы, потом монтаж.","Одна вкладка — одна задача: не прыгай между Gemini, Flow и CapCut.","Ролики одного яруса делай парой: свет и цвет у них общий."],result:"Ролик собирается партиями: кадры → клипы → монтаж."},
+  {id:"r4-week",t:"Публикуй на неделю вперёд",min:3,why:"Готовые ролики выходят сами, даже если ты на объекте.",
+   do:["Готовый ролик сразу ставь в отложенную публикацию на его дату (до 10 дней вперёд).","В воскресенье — ретро недели во вкладке **Эфир**: что зашло, что меняем.","Через 48 часов после каждого выхода — цифры в штаб."],result:"В TikTok Studio запланированы ролики на ближайшие дни."}
+ ]},
+ {id:"m5",n:"5",t:"Методичка на всю жизнь",d:"Формула в голове и запуск нового проекта за один вечер.",steps:[
+  {id:"r5-formula",t:"Формула укладки",min:5,widget:"quiz",why:"Видео строится как объект. 8 слов из твоей же профессии — и через год ты вспомнишь весь путь без штаба.",
+   do:["Запомни: **Заказ → Чертёж → Плитка → Укладка → Затирка → Отделка → Сдача → Осмотр**.","Пройди тренажёр ниже: нажимай плитки строго по порядку этапов.","Ошибся — тренажёр начнётся заново. Пройди без ошибок два раза подряд."],result:"Ты называешь все 8 этапов по порядку без подсказки."},
+  {id:"r5-new",t:"Новый проект за один вечер",min:10,why:"Через год будет другой проект. Тот же путь, другие слова.",
+   do:["Создай папки: та же команда из шага 0.5, только замени MC_MONOLITH на имя нового проекта.","Напиши 5 законов новой вселенной — ответь на 5 вопросов: что главный герой? кто в кадре и как? какой свет? какая подпись в каждом ролике? где граница правды?","Нарисуй пирамиду 4·3·2·1: охват → доказательство → люди → манифест.","Для каждого ролика пройди 8 слов формулы.","Чтобы получить такой же штаб, напиши Claude: «Собери штаб для нового проекта по методичке Monolith» и приложи методичку."],result:"У тебя есть план нового проекта на одной странице."},
+  {id:"r5-file",t:"Скачай методичку",min:3,widget:"metodichka",why:"Весь путь одним файлом — твой, навсегда, даже без интернета.",
+   do:["Нажми **Скачать методичку** ниже и подтверди сохранение.","Перенеси файл в MC_MONOLITH и ещё в одно место: Google Диск фирмы или Telegram «Избранное».","Открывается любым текстовым редактором: на Mac — TextEdit, на Windows — Блокнот."],result:"Методичка лежит в двух местах."}
+ ]}
+];
+const DEFAULT_V = ["Нулевая отметка","Миллиметр","Материя","За одну ночь","Руки","Найди разницу","Большой формат","5:40","Мы ищем своих","Монолит"].map((t,i)=>({num:i+1,title:t}));
+const SUGGEST = {
+  route:["Объясни этот шаг проще","У меня не получается этот шаг","Зачем это нужно?"],
+  brief:["Сделай строку короче","Придумай 3 других хука","Объясни, зачем этот ролик"],
+  board:["Объясни таблицу кадров простыми словами","Во втором кадре поставь ночь","Сделай ролик на 3 секунды короче"],
+  frames:["Как сделать первый кадр?","Что значит этот промпт?","Кадр вышел пластиковым — что поменять?"],
+  motion:["Как оживить кадр во Flow?","Клип вышел с браком — что делать?","Что такое Frames to Video?"],
+  sound:["Нужен ли тут голос?","Как сделать звук в ElevenLabs?"],
+  edit:["Как склеить клипы в CapCut?","Как положить титр поверх видео?","Как сделать цвет как у бренда?"],
+  air:["Как запланировать публикацию?","Что значат мои цифры?"],
+  universe:["Что такое промпт?","Сделай стиль теплее для всех роликов","Что значит «анаморф 35 мм»?"],
+  def:["С чего мне начать?","Объясни формулу укладки","Что делать сегодня?"]
+};
+
+/* старые шаги подготовки → шаги маршрута */
+const STEP_MAP = [["b-gpro","r1-gpro"],["b-gpt","r1-gpt"],["b-capcut","r1-capcut"],["b-tiktok","r1-tiktok"],["b-folders","r0-tree"],["r-brand","r2-settings"],["r-logo","r2-logo"],["r-sonic","r2-sfx"],["r-voice","r2-voice"],["r-grade","r2-grade"]];
 
 /* ---- инструменты ---- */
 const TOOLS = [
@@ -684,18 +972,310 @@ const FIXES = [
   ["Кончились кредиты","Gemini — ~3 видео в день, Kling — бесплатные дневные кредиты. Генерируй понемногу каждый день."]
 ];
 
+/* ===================== МАРШРУТ: ПОМОЩНИКИ ===================== */
+const ACADEMY_MOD = {id:"m6",n:"6",t:"Прокачка",d:"Упражнения, после которых кадры становятся дорогими. Можно проходить параллельно с роликами.",steps:ACADEMY.flatMap(L=>L.ls.map(x=>({id:x.id,t:L.n+" · "+x.t,min:20,why:L.d,do:x.do,result:x.pass,links:x.links})))};
+ROUTE.push(ACADEMY_MOD);
+function osv(x){ return (x && typeof x==="object" && !Array.isArray(x)) ? (x[S.state.os]||x.mac) : x; }
+function keyName(k){ return k.replace(/MOD/g, S.state.os==="mac"?"Cmd":"Ctrl"); }
+function fmt(t){ return esc(t).replace(/\[\[([^\]]+)\]\]/g,(m,k)=>`<kbd>${keyName(k)}</kbd>`).replace(/\*\*([^*]+)\*\*/g,"<b>$1</b>"); }
+function plain(t){ return String(t||"").replace(/\[\[([^\]]+)\]\]/g,(m,k)=>keyName(k)).replace(/\*\*([^*]+)\*\*/g,"$1"); }
+function v01(){ return S.videos.find(v=>Number(v.num)===1); }
+let _flat = null;
+function flatRoute(){ if (_flat) return _flat; _flat = []; for (const m of ROUTE) m.steps.forEach((st,i)=>_flat.push(Object.assign({},st,{mod:m,num:m.n+"."+(i+1)}))); return _flat; }
+function stepDo(st){ if (st.stage) return CLICK[st.stage]; if (st.clicks) return CLICK[st.clicks]; return (osv(st.do)||[]).map(osv); }
+function routeDone(st){ if (st.stage){ const v = v01(); return !!(v && v.stages && v.stages[st.stage]); } return !!S.state.route[st.id]; }
+function routeCur(){ const f = flatRoute(); return f.find(s=>s.id===S.routeAt) || f.find(s=>s.id===S.state.routeAt) || f.find(s=>!routeDone(s)) || f[f.length-1]; }
+const TRANS = {а:"a",б:"b",в:"v",г:"g",д:"d",е:"e",ё:"e",ж:"zh",з:"z",и:"i",й:"y",к:"k",л:"l",м:"m",н:"n",о:"o",п:"p",р:"r",с:"s",т:"t",у:"u",ф:"f",х:"h",ц:"ts",ч:"ch",ш:"sh",щ:"sch",ъ:"",ы:"y",ь:"",э:"e",ю:"yu",я:"ya"};
+function slug(t){ return String(t||"").toLowerCase().split("").map(c=>TRANS[c]!=null?TRANS[c]:c).join("").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,24)||"video"; }
+function folderList(){ const vids = S.videos.length ? [...S.videos].sort(byNum) : DEFAULT_V; return vids.map(v=>"V"+pad2(v.num)+"_"+slug(v.title)); }
+function treeCmd(os){
+  const list = folderList();
+  if (os==="win") return `$b = Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'MC_MONOLITH'; foreach ($d in '00_brand','00_sfx','00_tests') { New-Item -ItemType Directory -Force -Path (Join-Path $b $d) | Out-Null }; foreach ($v in '_TEMPLATE',${list.map(x=>"'"+x+"'").join(",")}) { foreach ($s in 'kf','clips','audio','titles') { New-Item -ItemType Directory -Force -Path (Join-Path (Join-Path $b $v) $s) | Out-Null } }; explorer $b`;
+  return `mkdir -p ~/Documents/MC_MONOLITH/{00_brand,00_sfx,00_tests} && for d in _TEMPLATE ${list.join(" ")}; do mkdir -p ~/Documents/MC_MONOLITH/$d/{kf,clips,audio,titles}; done && open ~/Documents/MC_MONOLITH`;
+}
+function vFolder(v){ return "V"+pad2(v.num)+"_"+slug(v.title); }
+
+/* ---- схема конвейера ---- */
+function pipelineHTML(){
+  const nodes = [["Текст","промпт"],["Gemini","Nano Banana"],["Картинка","ключевой кадр"],["Flow","Veo 3.1"],["Клип","со звуком"],["ElevenLabs","звук и голос"],["CapCut","монтаж"],["Ролик","MP4"],["TikTok","зрители"]];
+  return `<div class="pipe" role="img" aria-label="Схема: текст, Gemini, картинка, Flow, клип, ElevenLabs, CapCut, ролик, TikTok">${nodes.map(([a,b],i)=>`<div class="pn2 ${i%2?"tool":"thing"}"><b>${esc(a)}</b><span>${esc(b)}</span></div>${i<nodes.length-1?'<i aria-hidden="true">→</i>':""}`).join("")}</div>
+  <p class="xs mut">Светлые блоки — то, что получается. Тёмные с оранжевым — инструменты, которые это делают.</p>`;
+}
+function formulaHTML(){
+  const v = v01();
+  return `<div class="formula">${FORMULA.map((f,i)=>{ const done = f.stage==="check" ? (v&&(v.metrics||{}).views!=null) : !!(v&&v.stages&&v.stages[f.stage]); return `<div class="ft${done?" done":""}"><i>${i+1}</i><b>${esc(f.m)}</b><span>${esc(f.s)}</span></div>`; }).join("")}</div>`;
+}
+function quizHTML(){
+  const q = S.quiz || (S.quiz = newQuiz());
+  return `<div class="stack"><div class="formula quiz">${q.order.map(i=>{ const f = FORMULA[i], ok = q.ok.includes(i); return `<button class="ft${ok?" done":""}" data-act="quiz" data-i="${i}"${ok?" disabled":""}><i>${ok?(i+1):"?"}</i><b>${esc(f.m)}</b><span>${ok?esc(f.s):"&nbsp;"}</span></button>`; }).join("")}</div>
+  <div class="row between"><span class="sm t2">${q.ok.length===8?`<b style="color:var(--ok)">Готово без подсказок.</b> Пройдено чисто: ${q.wins} раз.`:`Нажми плитку, которая идёт ${q.ok.length+1}-й. Ошибок: ${q.miss}.`}</span><button class="btn s" data-act="quiz-reset">Перемешать заново</button></div></div>`;
+}
+function newQuiz(){ const o = [0,1,2,3,4,5,6,7]; for (let i=o.length-1;i>0;i--){ const j = Math.floor(Math.random()*(i+1)); [o[i],o[j]]=[o[j],o[i]]; } return {order:o, ok:[], miss:0, wins:(S.quiz&&S.quiz.wins)||0}; }
+function glossItems(){
+  const q = (S.gq||"").trim().toLowerCase();
+  const list = GLOSSARY.filter(([w,d])=>!q || w.toLowerCase().includes(q) || d.toLowerCase().includes(q));
+  return list.map(([w,d])=>`<div><dt>${esc(w)}</dt><dd>${esc(d)}</dd></div>`).join("") || `<div class="sm t2">Такого слова нет. Спроси Наставника.</div>`;
+}
+function glossaryHTML(){
+  return `<div class="stack"><input type="text" id="gq" placeholder="Поиск: промпт, кадр, экспорт…" value="${esc(S.gq||"")}" aria-label="Поиск по словарю"><dl class="gloss" id="glossList">${glossItems()}</dl></div>`;
+}
+
+/* ---- методичка ---- */
+function buildMd(){
+  const os = S.state.os==="win" ? "Windows" : "Mac", L = [];
+  L.push("# Методичка Monolith — видео с нейросетями с нуля", "", `Система: ${os}. Проект: MC Infrastructure. Собрано штабом ${fmtD(today())}.2026.`, "");
+  L.push("## Формула: видео строится как объект", "");
+  FORMULA.forEach((f,i)=>L.push(`${i+1}. **${f.m}** — ${f.s}. ${f.d}`));
+  L.push("", "## Пять законов вселенной", ""); LAWS.forEach(([t,d],i)=>L.push(`${i+1}. **${t}.** ${d}`));
+  L.push("", "## Промо-пирамида 4 · 3 · 2 · 1", ""); TIERS.forEach(t=>L.push(`- **Ярус ${t.code} · ${t.name}** — ${t.goal} Метрика: ${t.kpi}.`));
+  for (const m of ROUTE){
+    L.push("", `## Модуль ${m.n} · ${m.t}`, "", m.d);
+    m.steps.forEach((st,i)=>{
+      L.push("", `### ${m.n}.${i+1} ${st.t}`);
+      if (st.why) L.push("", `Зачем: ${plain(st.why)}`);
+      if (st.text) { L.push(""); st.text.forEach(p=>L.push(plain(p), "")); }
+      const d = stepDo(st); if (d && d.length){ L.push(""); d.forEach((x,k)=>L.push(`${k+1}. ${plain(x)}`)); }
+      if (st.widget==="tree") L.push("", "```", treeCmd(S.state.os), "```");
+      if (st.result) L.push("", `Должно получиться: ${plain(st.result)}`);
+      if (st.trouble) { L.push("", "Если не получилось:"); st.trouble.forEach(x=>L.push(`- ${plain(x)}`)); }
+      if (st.q) L.push("", `Проверь себя: ${st.q[0]} — ${st.q[1]}`);
+      if (st.links) L.push("", "Ссылки: "+st.links.map(([l,u])=>`[${l}](${u})`).join(", "));
+    });
+  }
+  L.push("", "## Строительные блоки промпта (ДНК)", ""); Object.keys(DNA).forEach(k=>L.push(`- **${DNA_NAMES[k]}**: ${dna(k,"en")}  \n  по-русски: ${dna(k,"ru")}`));
+  L.push("", "## Словарь", ""); GLOSSARY.forEach(([w,d])=>L.push(`- **${w}** — ${d}`));
+  L.push("", "## Если застрял", "", "1. Скриншот → Наставник в штабе.", "2. Если штаб недоступен — открой Claude и напиши: «Я делаю видео по методичке Monolith, шаг такой-то, не получается вот что» и приложи скриншот.");
+  return L.join("\n");
+}
+
+/* ---- раздел «Маршрут» ---- */
+function rRoute(){
+  const f = flatRoute(), doneN = f.filter(routeDone).length, cur = routeCur(); S.routeAt = cur.id;
+  const m = cur.mod, idx = m.steps.findIndex(s=>s.id===cur.id), gi = f.findIndex(s=>s.id===cur.id);
+  const done = routeDone(cur), micro = (S.state.micro||{})[cur.id]||{}, items = stepDo(cur)||[];
+  const nav = ROUTE.map(mm=>{ const dn = mm.steps.filter(s=>routeDone(Object.assign({},s))).length; const open = mm.id===m.id;
+    return `<div class="rm${open?" open":""}"><button class="rm-h" data-act="route-mod" data-m="${mm.id}"><span class="rn">${esc(mm.n)}</span><span class="rt2"><b>${esc(mm.t)}</b><small>${dn}/${mm.steps.length}</small></span></button>
+    ${open?`<ol class="rs">${mm.steps.map((s,i)=>`<li><button class="${routeDone(s)?"done":""}${s.id===cur.id?" cur":""}" data-act="route-go" data-id="${s.id}"><i>${routeDone(s)?"✓":(mm.n+"."+(i+1))}</i><span>${esc(s.t)}</span></button></li>`).join("")}</ol>`:""}</div>`; }).join("");
+  let widget = "";
+  if (cur.widget==="os") widget = `<div class="row"><button class="btn xl${S.state.os==="mac"?" pri":""}" data-act="os" data-os="mac">⌘ Mac</button><button class="btn xl${S.state.os==="win"?" pri":""}" data-act="os" data-os="win">⊞ Windows</button></div>`;
+  if (cur.widget==="tree") widget = promptBox(S.state.os==="mac"?"Команда для Терминала":"Команда для PowerShell", treeCmd(S.state.os), "cmd-tree", true) + `<p class="xs mut">Команда создаёт папки в «Документах» и открывает их. Запускать повторно безопасно — она ничего не удаляет.</p>`;
+  if (cur.widget==="bio") widget = promptBox("Описание профиля TikTok", BIO, "bio", true);
+  if (cur.widget==="quiz") widget = quizHTML();
+  if (cur.widget==="pipeline") widget = pipelineHTML();
+  if (cur.widget==="glossary") widget = glossaryHTML();
+  if (cur.widget==="metodichka") widget = `<div class="row"><button class="btn pri" data-act="md-dl">Скачать методичку (.md)</button><button class="btn" data-act="md-copy">Скопировать текстом</button></div>${S.dl?"":`<p class="xs mut">Скачивание работает в штабе на claude.ai. Здесь — «Скопировать текстом» и вставь в заметки.</p>`}`;
+  if (cur.stage||cur.clicks){ const v = v01(); widget = `<div class="callout b">Этот шаг — этап ролика V01. Галочка здесь и в «Производстве» одна и та же.${v?` Папка ролика: <b class="mono">${esc(vFolder(v))}</b>.`:""}</div><div class="row"><button class="btn pri" data-act="route-prod" data-s="${cur.stage||"air"}">Открыть этап «${esc((STAGES.find(s=>s.id===(cur.stage||"air"))||{n:""}).n)}» V01 в производстве →</button></div>`; }
+  const body = cur.lesson
+    ? `<div class="lesson">${(cur.text||[]).map(p=>`<p>${fmt(p)}</p>`).join("")}</div>${widget}${cur.q?`<details class="pn ghost qz"><summary class="row between"><span><b>Проверь себя:</b> ${esc(cur.q[0])}</span><span class="sumb">Ответ</span></summary><p style="margin-top:10px">${esc(cur.q[1])}</p></details>`:""}`
+    : `${cur.why?`<div class="callout b"><b>Зачем.</b> ${fmt(cur.why)}</div>`:""}${widget}
+      <ol class="micro">${items.map((t,i)=>`<li><label class="${micro[i]?"on":""}"><input type="checkbox" class="tick" data-act="micro" data-id="${cur.id}" data-i="${i}"${micro[i]?" checked":""}><span>${fmt(t)}</span></label></li>`).join("")}</ol>
+      ${cur.links?`<div class="row">${cur.links.map(([l,u],k)=>`<a class="btn s${k===0?" pri":""}" href="${esc(u)}" target="_blank" rel="noopener">${esc(l)}</a>`).join("")}</div>`:""}
+      ${cur.go?`<div class="row"><a class="btn s ghost in" href="#${cur.go}">Открыть «${esc((SECTIONS.find(s=>s[0]===cur.go)||["",""])[1])}» →</a></div>`:""}
+      ${cur.result?`<div class="callout ok"><b>Должно получиться:</b> ${fmt(cur.result)}</div>`:""}
+      ${cur.trouble?`<details class="pn ghost"><summary class="row between"><span class="h3">Если не получилось</span><span class="sumb">Открыть</span></summary><ul class="sm" style="margin:10px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:6px">${cur.trouble.map(x=>`<li>${fmt(x)}</li>`).join("")}</ul></details>`:""}`;
+  const issues = (S.issues||[]);
+  return `${sh("Маршрут","С нуля до эфира","Каждый шаг: зачем он нужен, что нажать, что должно получиться и что делать, если не вышло. Застрял — кнопка «Не получается» или Наставник справа внизу.")}
+  <section class="pn route-bar"><div class="row"><span class="eb">Твоя система</span><div class="seg2"><button class="${S.state.os==="mac"?"on":""}" data-act="os" data-os="mac">Mac</button><button class="${S.state.os==="win"?"on":""}" data-act="os" data-os="win">Windows</button></div></div>
+    <div class="stack" style="gap:6px;flex:1;min-width:200px"><div class="row between"><span class="eb a">Пройдено ${doneN} из ${f.length} шагов</span><span class="xs mut mono">≈ ${Math.round(f.filter(s=>!routeDone(s)).reduce((a,s)=>a+(s.min||5),0)/60)} ч осталось</span></div><div class="bar"><i style="width:${Math.round(doneN/f.length*100)}%"></i></div></div>
+    <button class="btn s" data-act="md-dl">Методичка</button></section>
+  <section class="stack"><div class="eb a">Формула: видео строится как объект</div>${formulaHTML()}</section>
+  <div class="route">
+    <nav class="rnav" aria-label="Модули маршрута">${nav}</nav>
+    <article class="pn mk rcard">
+      <div class="eb a">Модуль ${esc(m.n)} · ${esc(m.t)} · шаг ${idx+1} из ${m.steps.length} · ≈ ${cur.min||5} мин</div>
+      <h2 class="rh">${esc(cur.t)}</h2>
+      ${body}
+      <div class="row"><button class="btn s ghost" data-act="route-help">Не получается — спросить Наставника</button></div>
+      <label class="f">Моя заметка к шагу<textarea rows="2" data-st="notes.${cur.id}" placeholder="Например: у меня кнопка называется «Создать», а не «Новый проект»">${esc((S.state.notes||{})[cur.id]||"")}</textarea></label>
+      <div class="stage-foot"><button class="btn ghost" data-act="route-prev"${gi===0?" disabled":""}>← Назад</button>
+        <button class="btn${done?"":" pri"}" data-act="route-done">${done?"Шаг пройден ✓ · снять отметку":(cur.lesson?"Понял, дальше →":"Готово, дальше →")}</button></div>
+    </article>
+  </div>
+  <section class="stack"><div class="row between"><div><div class="eb a">Журнал затыков · ${issues.filter(x=>!x.resolved).length} открыто</div><p class="sm t2" style="margin-top:4px">Сюда попадает всё, где инструкция штаба не сработала. Напиши мне в основном чате «посмотри журнал штаба» — я прочитаю и исправлю инструкции навсегда.</p></div></div>
+    ${issues.length?`<div class="tw"><table class="tb2"><thead><tr><th>Когда</th><th>Где</th><th>Что случилось</th><th></th></tr></thead><tbody>${issues.slice(0,20).map(x=>`<tr><td class="mono xs">${esc(String(x.at||"").slice(5,16).replace("T"," "))}</td><td class="sm">${esc(x.where||"")}</td><td class="sm t2">${esc(String(x.problem||"").slice(0,220))}</td><td>${x.resolved?`<span class="chip o">решено</span>`:`<button class="btn s ghost" data-act="issue-ok" data-id="${esc(x.id)}">Решено</button>`}</td></tr>`).join("")}</tbody></table></div>`:`<div class="empty sm">Пока пусто — значит, всё получается.</div>`}
+  </section>`;
+}
+
+/* ===================== НАСТАВНИК ===================== */
+const CH = {open:false, msgs:[], busy:false, ctl:null, live:"", acts:[], imgs:[], canImg:false, canTools:false, loaded:false};
+function chatSay(role, content, extra){ CH.msgs.push(Object.assign({role, content:String(content||"").slice(0,6000), at:new Date().toISOString()}, extra||{})); if (CH.msgs.length>60) CH.msgs = CH.msgs.slice(-60); }
+function ctxLabel(){
+  const sec = (SECTIONS.find(s=>s[0]===S.view)||["",""])[1];
+  if (S.view==="route"){ const c = routeCur(); return `Маршрут · ${c.num} ${c.t}`; }
+  if (S.view==="prod"){ const v = vById(S.vid); if (v) return `${vcode(v)} · ${(STAGES.find(s=>s.id===curStage(v))||{n:""}).n}`; }
+  return sec;
+}
+function compactVideo(v){
+  return {id:v.id,num:v.num,title:v.title,tier:v.tier,plannedAt:v.plannedAt,dur:v.dur,concept:v.concept,goal:v.goal,emotion:v.emotion,hookRu:v.hookRu,hookDe:v.hookDe,hookRo:v.hookRo,stagesDone:STAGES.filter(s=>(v.stages||{})[s.id]).map(s=>s.id),voice:v.voice||null,
+    shots:(v.shots||[]).map((s,i)=>({n:i+1,desc:s.desc,type:s.type,light:s.light,lens:s.lens,move:s.move,laser:!!s.laser,dur:s.dur,subject:s.subject,subjectRu:s.subjectRu,audio:s.audio,kfTool:s.kfTool,vidTool:s.vidTool,status:s.status}))};
+}
+function chatContext(){
+  const L = [`[Контекст штаба — служебная информация, не пересказывай её дословно]`, `Раздел сейчас: ${ctxLabel()}. Система Миши: ${S.state.os==="win"?"Windows":"Mac"}. Язык промптов: ${S.state.promptLang==="ru"?"русский":"английский"}.`];
+  if (S.view==="route"){ const c = routeCur(); L.push(`Шаг маршрута ${c.num} «${c.t}». Инструкция шага: ${(stepDo(c)||[]).map((x,i)=>(i+1)+") "+plain(x)).join(" ")}${c.text?" Текст урока: "+c.text.map(plain).join(" "):""}`); const n = (S.state.notes||{})[c.id]; if (n) L.push(`Заметка Миши к шагу: ${n}`); }
+  const v = vById(S.vid) || (S.view==="prod"||S.view==="pyramid" ? null : v01());
+  if (v) L.push(`Текущий ролик: ${JSON.stringify(compactVideo(v))}`);
+  L.push(`Все ролики: ${[...S.videos].sort(byNum).map(x=>`${x.id} «${x.title}» (ярус ${roman(x.tier)}, этапов ${stagesDone(x)}/7${isPub(x)?", в эфире":""})`).join("; ")}`);
+  L.push(`Стиль бренда (блоки, которые штаб вставляет в каждый промпт): ${Object.keys(DNA).map(k=>`${k}: «${dna(k,"ru")}»`).join(" ")}`);
+  const b = S.state.brand; L.push(`Бренд: слоган ${claim().ru}; контакт ${b.contact||"не задан"}; регион ${b.region||"не задан"}; второй язык в титрах: ${b.lang2||"none"}.`);
+  L.push(`Допустимые значения. type: ${TYPES.map(x=>x[0]+"="+x[1]).join(", ")}. light: ${LIGHTS.map(x=>x[0]+"="+x[1]).join(", ")}. lens: ${LENSES.map(x=>x[0]+"="+x[1]).join(", ")}. move: ${MOVES.map(x=>x[0]+"="+x[1]).join(", ")}. kfTool: ${KF_TOOLS.map(x=>x[0]).join(", ")}. vidTool: ${VID_TOOLS.map(x=>x[0]).join(", ")}.`);
+  return L.join("\n");
+}
+function chatRules(){
+  return `Ты — «Наставник» в штабе проекта Monolith фирмы MC Infrastructure (укладка плитки, Германия). Собеседник — Миша. Он полный новичок: раньше работал только с чат-нейросетями, никогда не генерировал картинки и видео, не монтировал, не писал промпты. Говори только по-русски, просто и коротко, как опытный прораб объясняет новичку. Термин нужен — сразу объясни его в скобках.
+ПРОЕКТ: 10 коротких вертикальных роликов для TikTok, промо-пирамида 4·3·2·1 (охват → ремесло → люди → манифест). Язык роликов — русский (зрители — русскоязычные рабочие в Германии, в том числе беженцы). Фотореализм; лиц нет — только силуэты и руки в перчатках; свет — синий час, золотой час или натриевая ночь; красная лазерная линия — подпись серии; ИИ-кадр не выдаём за реальный объект, метка «Создано ИИ» всегда.
+ИНСТРУМЕНТЫ: Gemini (Nano Banana) или ChatGPT — картинки, ключевые кадры; Google Flow (Veo 3.1, режим Frames to Video) — видео из картинки сразу со звуком; ElevenLabs — звуки (Sound Effects), голос (Text to Speech), чистка записи (Voice Isolator); CapCut Desktop — монтаж; TikTok Studio — публикация. Интерфейсы часто меняются: если не уверен в названии кнопки, опиши, где искать и как выглядит значок, и попроси скриншот.
+ШТАБ: раздел «Маршрут» — пошаговый курс с нуля (Азбука, рабочее место, подписки, бренд, первый ролик V01, конвейер, методичка, прокачка). Если в контексте есть шаг маршрута — помогай именно с ним.
+ФОРМУЛА: Заказ (бриф) → Чертёж (раскадровка) → Плитка (ключевые кадры) → Укладка (движение) → Затирка (звук) → Отделка (монтаж) → Сдача (эфир) → Осмотр (цифры).
+ПРОМПТЫ: штаб собирает их сам из полей кадра (type, light, lens, move, laser, subject, subjectRu, audio) и блоков стиля. Миша не должен писать промпты. Когда он просит «сделай теплее», «поменяй свет», «короче», «другой кадр» — меняй поля инструментами, штаб сам пересоберёт промпт. subject и audio пиши по-английски, subjectRu, audioRu и desc — по-русски, всегда заполняй и то и другое.
+ПРАВИЛА ПРАВОК: меняй только то, о чём просят. После правки одной строкой скажи, что поменял. Перед удалением кадров и перед сменой стиля для всех роликов — сначала спроси подтверждение. Не выдумывай факты о фирме (оплата, условия, регион) — оставляй [факт от бати].
+КОГДА ОБЪЯСНЯЕШЬ, КАК ЧТО-ТО СДЕЛАТЬ: нумерованные шаги, одно действие в шаге, клавиши для его системы, не больше 8 шагов. Если есть скриншот — опирайся на то, что на нём видно. В конце — одна строка «Должно получиться: …».
+Если инструкция штаба оказалась неверной или устаревшей — вызови log_issue, чтобы Claude в основном чате исправил штаб.
+Отвечай без markdown-таблиц и без заголовков; можно **жирный** и нумерованные списки.`;
+}
+function shotPatch(p){
+  const o = {}, chk = (v,list,name) => { const k = String(v); if (!list.some(x=>x[0]===k)) throw new Error(name+": допустимо "+list.map(x=>x[0]).join(", ")); return k; };
+  if (!p || typeof p!=="object") throw new Error("Нет изменений");
+  for (const k of ["desc","subject","subjectRu","audio","audioRu"]) if (p[k]!=null) o[k] = String(p[k]);
+  if (p.type!=null) o.type = chk(p.type,TYPES,"type");
+  if (p.light!=null) o.light = chk(p.light,LIGHTS,"light");
+  if (p.lens!=null) o.lens = chk(p.lens,LENSES,"lens");
+  if (p.move!=null) o.move = chk(p.move,MOVES,"move");
+  if (p.kfTool!=null) o.kfTool = chk(p.kfTool,KF_TOOLS,"kfTool");
+  if (p.vidTool!=null) o.vidTool = chk(p.vidTool,VID_TOOLS,"vidTool");
+  if (p.laser!=null) o.laser = !!p.laser;
+  if (p.dur!=null) o.dur = Math.max(2,Math.min(8,Number(p.dur)||5));
+  return o;
+}
+function chatTools(){
+  const V = id => { const v = vById(String(id||"")) || S.videos.find(x=>("v"+pad2(x.num))===String(id||"").toLowerCase()); if (!v) throw new Error("Ролик не найден: "+id); return v; };
+  const did = t => { CH.acts.push(t); requestAnimationFrame(()=>{ if (!editing()) render(); }); };
+  const idx = (v,n) => { const i = Number(n)-1; if (!(i>=0 && i<(v.shots||[]).length)) throw new Error("Нет кадра S"+n+" в "+vcode(v)); return i; };
+  return [
+    {name:"update_video",description:"Change brief fields of one video. fields may contain: title, concept, goal, emotion, hookRu, hookDe, hookRo, dur (seconds), plannedAt (YYYY-MM-DD), notes. Returns list of changed fields.",
+     inputSchema:{type:"object",properties:{video_id:{type:"string",description:"v01..v10"},fields:{type:"object"}},required:["video_id","fields"]},
+     execute:(i)=>{ const v = V(i.video_id), f = i.fields||{}, ok = []; for (const k of ["title","concept","goal","emotion","hookRu","hookDe","hookRo","dur","plannedAt","notes"]) if (f[k]!=null){ v[k] = k==="dur"?Number(f[k]):String(f[k]); ok.push(k); } if (!ok.length) throw new Error("Нет допустимых полей"); vSave(v,0); did(`${vcode(v)}: бриф — ${ok.join(", ")}`); return {ok:true,changed:ok}; }},
+    {name:"update_shot",description:"Change fields of one shot. shot_number is 1-based (S1 = 1). changes may contain: desc, type, light, lens, move, laser, dur, subject (English), subjectRu, audio (English), audioRu, kfTool, vidTool.",
+     inputSchema:{type:"object",properties:{video_id:{type:"string"},shot_number:{type:"integer"},changes:{type:"object"}},required:["video_id","shot_number","changes"]},
+     execute:(i)=>{ const v = V(i.video_id), k = idx(v,i.shot_number), p = shotPatch(i.changes); Object.assign(v.shots[k], p); vSave(v,0); did(`${vcode(v)} · S${k+1}: ${Object.keys(p).join(", ")}`); return {ok:true,shot:v.shots[k]}; }},
+    {name:"add_shot",description:"Add a new shot to a video. position is 1-based (omit to add at the end). shot has the same fields as update_shot changes.",
+     inputSchema:{type:"object",properties:{video_id:{type:"string"},position:{type:"integer"},shot:{type:"object"}},required:["video_id","shot"]},
+     execute:(i)=>{ const v = V(i.video_id); v.shots = v.shots||[]; const ns = newShot(shotPatch(i.shot)); const pos = i.position ? Math.max(0,Math.min(v.shots.length,Number(i.position)-1)) : v.shots.length; v.shots.splice(pos,0,ns); vSave(v,0); did(`${vcode(v)}: добавлен кадр S${pos+1}`); return {ok:true,count:v.shots.length}; }},
+    {name:"delete_shot",description:"Delete one shot (only after Misha confirmed).",
+     inputSchema:{type:"object",properties:{video_id:{type:"string"},shot_number:{type:"integer"}},required:["video_id","shot_number"]},
+     execute:(i)=>{ const v = V(i.video_id), k = idx(v,i.shot_number); v.shots.splice(k,1); vSave(v,0); did(`${vcode(v)}: удалён кадр S${k+1}`); return {ok:true,count:v.shots.length}; }},
+    {name:"move_shot",description:"Move a shot from one position to another (1-based).",
+     inputSchema:{type:"object",properties:{video_id:{type:"string"},from:{type:"integer"},to:{type:"integer"}},required:["video_id","from","to"]},
+     execute:(i)=>{ const v = V(i.video_id), a = idx(v,i.from), b = Math.max(0,Math.min(v.shots.length-1,Number(i.to)-1)); const [s] = v.shots.splice(a,1); v.shots.splice(b,0,s); vSave(v,0); did(`${vcode(v)}: S${a+1} → S${b+1}`); return {ok:true}; }},
+    {name:"set_style",description:"Replace one brand style block for ALL videos (only after Misha confirmed). key: grade, real, people, laser, audio, neg. Give the text in English (en) and in Russian (ru).",
+     inputSchema:{type:"object",properties:{key:{type:"string",enum:Object.keys(DNA)},en:{type:"string"},ru:{type:"string"}},required:["key","en","ru"]},
+     execute:(i)=>{ const k = String(i.key); if (!DNA[k]) throw new Error("Нет такого блока"); S.state.style = S.state.style||{}; S.state.style[k] = {en:String(i.en),ru:String(i.ru)}; queueSave("state",0); did(`Стиль «${DNA_NAMES[k]}» изменён для всех роликов`); return {ok:true}; }},
+    {name:"reset_style",description:"Return one style block to the original brand version.",
+     inputSchema:{type:"object",properties:{key:{type:"string",enum:Object.keys(DNA)}},required:["key"]},
+     execute:(i)=>{ const k = String(i.key); if (S.state.style) delete S.state.style[k]; queueSave("state",0); did(`Стиль «${DNA_NAMES[k]||k}» возвращён`); return {ok:true}; }},
+    {name:"set_brand",description:"Change brand settings: claim (de1, de2, de3), contact, region, lang2 (none, de, ro — second language line in titles).",
+     inputSchema:{type:"object",properties:{claim:{type:"string"},contact:{type:"string"},region:{type:"string"},lang2:{type:"string"}}},
+     execute:(i)=>{ const b = S.state.brand, ok = []; if (i.claim && CLAIMS[i.claim]){ b.claim = i.claim; ok.push("слоган"); } for (const k of ["contact","region"]) if (i[k]!=null){ b[k] = String(i[k]); ok.push(k); } if (i.lang2 && ["none","de","ro"].includes(i.lang2)){ b.lang2 = i.lang2; ok.push("второй язык"); } queueSave("state",0); did("Бренд: "+ok.join(", ")); return {ok:true,changed:ok}; }},
+    {name:"open_view",description:"Open a section of the HQ for Misha. section: route, ops, universe, pyramid, prod, arsenal, intel, air. Optional video_id, stage (brief, board, frames, motion, sound, edit, air), route_step (step id).",
+     inputSchema:{type:"object",properties:{section:{type:"string"},video_id:{type:"string"},stage:{type:"string"},route_step:{type:"string"}},required:["section"]},
+     execute:(i)=>{ const sec = String(i.section); if (!SECTIONS.some(s=>s[0]===sec)) throw new Error("Нет раздела "+sec); if (i.video_id){ const v = V(i.video_id); S.vid = v.id; if (i.stage && STAGES.some(s=>s.id===i.stage)) S.stageOf[v.id] = i.stage; } if (i.route_step && flatRoute().some(s=>s.id===i.route_step)) S.routeAt = i.route_step; go(sec); did("Открыт раздел «"+(SECTIONS.find(s=>s[0]===sec)||["",""])[1]+"»"); return {ok:true}; }},
+    {name:"log_issue",description:"Write to the HQ journal that an instruction did not work, so the main Claude can fix the HQ later.",
+     inputSchema:{type:"object",properties:{where:{type:"string"},problem:{type:"string"},fix:{type:"string"}},required:["where","problem"]},
+     execute:(i)=>{ addIssue({where:String(i.where), problem:String(i.problem), fix:String(i.fix||"")}); did("Записано в журнал затыков"); return {ok:true}; }}
+  ];
+}
+function addIssue(o){
+  const doc = Object.assign({at:new Date().toISOString(), os:S.state.os, view:ctxLabel(), resolved:false}, o);
+  if (S.mode==="db" && S.db){ S.db.collection("issues").add(doc).catch(()=>toast("Журнал не сохранился")); }
+  else { S.issues = [Object.assign({id:"l"+Date.now()},doc), ...(S.issues||[])]; try { localStorage.setItem("ms-monolith-issues", JSON.stringify(S.issues)); } catch(e){} if (S.view==="route") render(); }
+}
+function chatOpen(prefill, send){
+  CH.open = true; $("#mentor").hidden = false; $("#fab").hidden = true; document.body.classList.add("m-open");
+  rChat(); const inp = $("#mIn");
+  if (prefill!=null){ inp.value = prefill; }
+  if (send) chatSend(); else { inp.focus(); inp.setSelectionRange(inp.value.length, inp.value.length); }
+}
+function chatClose(){ CH.open = false; $("#mentor").hidden = true; $("#fab").hidden = false; document.body.classList.remove("m-open"); }
+function mdLite(t){ return esc(t).replace(/\*\*([^*]+)\*\*/g,"<b>$1</b>").replace(/\n/g,"<br>"); }
+function rChat(){
+  if (!$("#mentor")) return;
+  rChatCtx();
+  const log = $("#mLog");
+  const intro = `<div class="msg a"><div>Привет, Миша. Я Наставник — Claude внутри штаба. Спрашивай что угодно по-русски: «что это за промпт?», «как сделать первый кадр?», «во втором кадре поставь ночь». Могу сам править сценарии и кадры. Застрял — прикрепи скриншот.</div></div>`;
+  const body = CH.msgs.map(m=>`<div class="msg ${m.role==="user"?"u":"a"}"><div>${mdLite(m.content)}${m.img?`<span class="xs mut"> · скриншотов: ${m.img}</span>`:""}</div>${m.acts&&m.acts.length?`<ul class="acts">${m.acts.map(a=>`<li>✓ ${esc(a)}</li>`).join("")}</ul>`:""}</div>`).join("");
+  const live = CH.busy ? `<div class="msg a live"><div id="mLive">${CH.live?mdLite(CH.live):"<span class='mut'>Думаю…</span>"}</div>${CH.acts.length?`<ul class="acts">${CH.acts.map(a=>`<li>✓ ${esc(a)}</li>`).join("")}</ul>`:""}</div>` : "";
+  log.innerHTML = intro + body + live; log.scrollTop = log.scrollHeight;
+  $("#mImgs").innerHTML = CH.imgs.map((f,i)=>`<span class="thumb"><img src="${f.url}" alt="Скриншот ${i+1}"><button data-act="chat-img-del" data-i="${i}" aria-label="Убрать скриншот">✕</button></span>`).join("");
+  $("#mSend").textContent = CH.busy ? "Стоп" : "Отправить";
+  $("#mAttach").hidden = !CH.canImg;
+  $("#mNo").hidden = !!S.sample;
+}
+function rChatCtx(){
+  if (!$("#mentor")) return;
+  $("#mCtx").textContent = ctxLabel();
+  const key = S.view==="prod" ? (curStage(vById(S.vid)||{stages:{}})||"def") : (S.view==="universe" ? "universe" : (S.view==="route" ? "route" : "def"));
+  $("#mSug").innerHTML = CH.busy ? "" : (SUGGEST[key]||SUGGEST.def).map(t=>`<button data-act="chat-sug" data-text="${esc(t)}">${esc(t)}</button>`).join("");
+  $("#mIn").placeholder = `Спроси по-русски. Скриншот — ${keyName("MOD+V")}${CH.canImg?" или кнопка «Скриншот»":""}`;
+}
+function addImgs(files){
+  const max = 4; for (const f of files){ if (CH.imgs.length>=max) break; if (!f || !/^image\//.test(f.type)) continue; CH.imgs.push({file:f, url:URL.createObjectURL(f)}); }
+  rChat();
+}
+async function chatSend(){
+  if (CH.busy){ if (CH.ctl) CH.ctl.abort(); return; }
+  const inp = $("#mIn"), text = inp.value.trim();
+  if (!text && !CH.imgs.length) return;
+  if (!S.sample){ toast("Наставник работает в штабе на claude.ai. Скопируй вопрос кнопкой «Для чата с Claude»."); return; }
+  const imgs = CH.imgs.map(x=>x.file); CH.imgs.forEach(x=>URL.revokeObjectURL(x.url)); CH.imgs = [];
+  chatSay("user", text || "(скриншот без текста — посмотри, что на нём)", {img:imgs.length||0});
+  inp.value = ""; CH.busy = true; CH.live = ""; CH.acts = []; rChat();
+  const ctl = new AbortController(); CH.ctl = ctl;
+  const hist = CH.msgs.slice(-17,-1).map(m=>({role:m.role, content:m.content+(m.acts&&m.acts.length?"\n[Сделано: "+m.acts.join("; ")+"]":"")}));
+  const input = [{role:"user",content:chatRules()}, ...hist, {role:"user",content:(text||"Посмотри на скриншот и скажи, что делать.")+"\n\n"+chatContext()+(imgs.length?`\n[Миша приложил скриншотов: ${imgs.length}]`:"")}];
+  const opts = {signal:ctl.signal, cache:false, onText:({text})=>{ CH.live = text; const el = $("#mLive"); if (el){ el.innerHTML = mdLite(text); const lg = $("#mLog"); lg.scrollTop = lg.scrollHeight; } }};
+  if (CH.canTools){ opts.tools = chatTools(); delete opts.cache; }
+  if (imgs.length && CH.canImg) opts.images = imgs;
+  try {
+    let r;
+    try { r = await S.sample(input, opts); }
+    catch(e0){
+      const c0 = e0&&e0.code;
+      if (c0==="tools_unavailable" && opts.tools){ CH.canTools = false; delete opts.tools; opts.cache = false; }
+      else if ((c0==="images_unavailable"||c0==="image_rejected") && opts.images){ if (c0==="images_unavailable") CH.canImg = false; delete opts.images; }
+      else throw e0;
+      r = await S.sample(input, opts);
+    }
+    chatSay("assistant", r.text, {acts:CH.acts.slice()});
+  } catch(e){
+    const c = e&&e.code;
+    if (c==="cancelled") chatSay("assistant", (e.text||"")+"\n\n(остановлено)", {acts:CH.acts.slice()});
+    else { chatSay("assistant", e&&e.text ? e.text+"\n\n(ответ прервался)" : ({not_granted:"Штабу не разрешено обращаться к Claude. Разреши в окне запроса или пиши мне в основной чат.",rate_limited:"Слишком много запросов или кончился лимит. Попробуй через пару минут.",refused:"Не могу ответить на это. Переформулируй вопрос.",prompt_too_large:"Слишком длинный разговор. Нажми «Очистить» и спроси заново."}[c]||"Не получилось ответить. Попробуй ещё раз."), {acts:CH.acts.slice()}); if (c==="not_granted"||c==="sampling_disabled") S.sample = null; }
+  } finally { CH.busy = false; CH.ctl = null; CH.acts = []; CH.live = ""; queueSave("chat",300); rChat(); }
+}
+function chatForClaude(){
+  const last = [...CH.msgs].reverse();
+  const q = (last.find(m=>m.role==="user")||{}).content || $("#mIn").value || "";
+  const a = (last.find(m=>m.role==="assistant")||{}).content || "";
+  return `Штаб Monolith · ${ctxLabel()}\nСистема: ${S.state.os==="win"?"Windows":"Mac"}\nВопрос: ${q}\n${a?"Ответ Наставника: "+a.slice(0,1200)+"\n":""}Что не так / что нужно: `;
+}
+
 /* ===================== СОСТОЯНИЕ ===================== */
 const S = {
   view:"ops", mode:"loading", db:null, sample:null, dl:null, loaded:false,
   state:normState({}), videos:[], vid:null, stageOf:{}, openShots:new Set(),
   ai:{}, aiBusy:null, aiCtl:null, saveS:"busy", readOnly:false, pending:false, confirm:null, hookLang:"all",
+  routeAt:null, quiz:null, gq:"", issues:[], trBusy:null,
   timer:{left:1800,run:false,h:null},
-  ctor:{type:"macro",light:"dawn",lens:"macro100",move:"push",laser:true,subject:"a single large white porcelain tile lying on raw grey concrete",audio:"",dur:5,vid:""}
+  ctor:{type:"macro",light:"dawn",lens:"macro100",move:"push",laser:true,subject:"a single large white porcelain tile lying on raw grey concrete",subjectRu:"одна большая белая керамогранитная плитка лежит на сыром сером бетоне",audio:"",audioRu:"",dur:5,vid:""}
 };
 function normState(d){
-  const o = Object.assign({tools:{},steps:{},academy:{},decisions:{},retro:{},fieldNotes:"",quota:{},brand:{}}, d||{});
-  for (const k of ["tools","steps","academy","decisions","retro","quota","brand"]) if (!o[k]||typeof o[k]!=="object") o[k]={};
-  o.brand = Object.assign({handle:"@mc.infrastructure.de",email:"mc.infrastructure.de@gmail.com",contact:"",region:"",claim:"de1"}, o.brand);
+  const o = Object.assign({tools:{},steps:{},academy:{},decisions:{},retro:{},fieldNotes:"",quota:{},brand:{},route:{},micro:{},notes:{},style:{}}, d||{});
+  for (const k of ["tools","steps","academy","decisions","retro","quota","brand","route","micro","notes","style"]) if (!o[k]||typeof o[k]!=="object") o[k]={};
+  o.brand = Object.assign({handle:"@mc.infrastructure.de",email:"mc.infrastructure.de@gmail.com",contact:"",region:"",claim:"de1",lang2:"none"}, o.brand);
+  if (!["none","de","ro"].includes(o.brand.lang2)) o.brand.lang2 = "none";
+  if (o.os!=="mac" && o.os!=="win") o.os = /Mac|iPhone|iPad/i.test((navigator.userAgentData&&navigator.userAgentData.platform)||navigator.platform||navigator.userAgent||"") ? "mac" : "win";
+  if (o.promptLang!=="ru") o.promptLang = "en";
+  for (const [a,b] of STEP_MAP) if (o.steps[a] && o.route[b]==null) o.route[b] = true;
+  for (const k of Object.keys(o.academy)) if (o.academy[k] && o.route[k]==null) o.route[k] = true;
   if (o.brand.handle==="@ms.infrastructure") o.brand.handle = "@mc.infrastructure.de";
   if (typeof o.fieldNotes!=="string") o.fieldNotes="";
   return o;
@@ -727,6 +1307,7 @@ function queueSave(key, delay){
 }
 function payload(key){
   if (key==="state") return {path:"ops/state", data:clone(S.state)};
+  if (key==="chat") return {path:"ops/chat", data:{msgs:CH.msgs.slice(-40).map(m=>({role:m.role, content:m.content, at:m.at||"", acts:m.acts||[], img:m.img||0})), updatedAt:new Date().toISOString()}};
   const v = vById(key.slice(2)); if (!v) return null;
   const d = clone(v); delete d.id; d.updatedAt = new Date().toISOString();
   return {path:"videos/"+v.id, data:d};
@@ -750,21 +1331,24 @@ function flush(key){
     setSave("err");
   });
 }
-function saveLocal(){ try { localStorage.setItem(LS, JSON.stringify({state:S.state, videos:S.videos})); } catch(e){} }
-function loadLocal(){ try { const r = localStorage.getItem(LS); if (r){ const d = JSON.parse(r); S.state = normState(d.state); S.videos = (d.videos||[]).sort(byNum); } } catch(e){} }
+function saveLocal(){ try { localStorage.setItem(LS, JSON.stringify({state:S.state, videos:S.videos, chat:CH.msgs.slice(-40)})); } catch(e){} }
+function loadLocal(){
+  try { const r = localStorage.getItem(LS); if (r){ const d = JSON.parse(r); S.state = normState(d.state); S.videos = (d.videos||[]).sort(byNum); if (Array.isArray(d.chat)) CH.msgs = d.chat; } } catch(e){}
+  try { const r = localStorage.getItem("ms-monolith-issues"); if (r) S.issues = JSON.parse(r)||[]; } catch(e){}
+}
 function setPath(o,p,v){ const k=p.split("."); let c=o; for(let i=0;i<k.length-1;i++){ if(!c[k[i]]||typeof c[k[i]]!=="object") c[k[i]]={}; c=c[k[i]]; } c[k[k.length-1]]=v; }
 function stSet(p,v){ setPath(S.state,p,v); queueSave("state"); }
 function vSave(v,delay){ queueSave("v:"+v.id, delay); }
 
 async function boot(){
   const rl = $("#railLogo"); if (rl) rl.innerHTML = mcLogo(62);
-  route(); renderAll(); tick(); setInterval(tick,1000);
+  route(); renderAll(); rChat(); tick(); setInterval(tick,1000);
   const c = window.claude;
-  if (!c || typeof c.use!=="function"){ S.mode="local"; loadLocal(); setSave("local"); renderAll(); return; }
-  c.use("sample").then(x=>{ S.sample=x||null; if (S.view==="prod" && !editing()) render(); }).catch(()=>{});
+  if (!c || typeof c.use!=="function"){ S.mode="local"; loadLocal(); setSave("local"); renderAll(); rChat(); return; }
+  c.use("sample").then(async x=>{ S.sample=x||null; if (x){ CH.canTools = true; try { const l = await x.limits(); CH.canImg = !!(l && l.images); } catch(e){ CH.canImg = false; } } rChat(); if ((S.view==="prod"||S.view==="universe") && !editing()) render(); }).catch(()=>{});
   c.use("downloads").then(x=>{ S.dl=x||null; if ((S.view==="prod"||S.view==="universe") && !editing()) render(); }).catch(()=>{});
   let db=null; try { db = await c.use("db"); } catch(e){ db=null; }
-  if (!db){ S.mode="local"; loadLocal(); setSave("local"); renderAll(); return; }
+  if (!db){ S.mode="local"; loadLocal(); setSave("local"); renderAll(); rChat(); return; }
   S.db = db; S.mode = "db";
   db.doc("ops/state").onSnapshot(snap=>{
     if (!dirty.has("state")) S.state = normState(snap.exists?clone(snap.data()):{});
@@ -776,6 +1360,15 @@ async function boot(){
     for (const k of dirty) if (k.startsWith("v:")){ const loc = vById(k.slice(2)); if (loc) m.set(loc.id, loc); }
     S.videos = [...m.values()].sort(byNum); S.loaded = true; scheduleRender();
   }, onDbErr);
+  db.collection("issues").onSnapshot(qs=>{
+    S.issues = qs.docs.map(d=>Object.assign(clone(d.data()||{}), {id:d.id})).sort((a,b)=>String(b.at||"").localeCompare(String(a.at||"")));
+    if (S.view==="route") scheduleRender();
+  }, ()=>{});
+  db.doc("ops/chat").get().then(sn=>{
+    const d = sn.exists ? (sn.data()||{}) : {};
+    if (!CH.msgs.length && Array.isArray(d.msgs)) CH.msgs = d.msgs.filter(m=>m && (m.role==="user"||m.role==="assistant") && m.content).slice(-60);
+    CH.loaded = true; rChat();
+  }).catch(()=>{});
 }
 function onDbErr(e){ setSave("err"); if (e&&e.code==="revoked") S.readOnly = true; scheduleRender(); }
 
@@ -785,12 +1378,13 @@ function scheduleRender(){ if (editing()){ S.pending=true; return; } requestAnim
 function renderAll(){ rNav(); render(); rSave(); }
 function render(){
   S.pending = false;
-  const f = {ops:rOps,universe:rUniverse,pyramid:rPyramid,prod:rProd,arsenal:rArsenal,academy:rAcademy,intel:rIntel,air:rAir}[S.view]||rOps;
+  const f = {route:rRoute,ops:rOps,universe:rUniverse,pyramid:rPyramid,prod:rProd,arsenal:rArsenal,intel:rIntel,air:rAir}[S.view]||rRoute;
   $("#main").innerHTML = rStrip() + `<div class="view">${f()}</div>`;
-  rSave(); tick(); afterRender();
+  rSave(); tick(); afterRender(); if (CH.open) rChatCtx();
 }
 function rNav(){
-  const cnt = {pyramid:S.videos.filter(isPub).length+"/10", arsenal:TOOLS.filter(t=>(S.state.tools[t.id]||{}).bought).length+"/"+TOOLS.length};
+  const rf = flatRoute();
+  const cnt = {route:rf.filter(routeDone).length+"/"+rf.length, pyramid:S.videos.filter(isPub).length+"/10", arsenal:TOOLS.filter(t=>(S.state.tools[t.id]||{}).bought).length+"/"+TOOLS.length};
   $("#nav").innerHTML = SECTIONS.map(([k,l],i)=>`<a href="#${k}"${S.view===k?' aria-current="page"':""}><kbd>${i+1}</kbd><span>${l}</span><small>${cnt[k]||""}</small></a>`).join("");
 }
 function rSave(){
@@ -824,11 +1418,24 @@ function tick(){
     else el.innerHTML = `${t.d}<span>д</span>${pad2(t.h)}<span>ч</span>${pad2(t.m)}<span>м</span>${pad2(t.s)}<span>с</span>`;
   });
 }
-function sh(code, title, lead, sheet){
-  return `<header class="sh"><div><div class="code">${esc(code)}</div><h1>${title}</h1>${lead?`<p>${lead}</p>`:""}</div>
-  <div class="tb" aria-hidden="true"><span>Objekt<b>MONOLITH</b></span><span>Blatt<b>${esc(sheet)}/8</b></span><span>Bauherr<b>MC INFRA</b></span><span>Stand<b>${esc(fmtD(today()))}</b></span></div></header>`;
+function sh(code, title, lead){
+  const n = Math.max(1, SECTIONS.findIndex(s=>s[0]===S.view)+1);
+  return `<header class="sh"><div><div class="code">${pad2(n)} · ${esc(String(code).replace(/^\d+\s·\s/,""))}</div><h1>${title}</h1>${lead?`<p>${lead}</p>`:""}</div>
+  <div class="tb" aria-hidden="true"><span>Objekt<b>MONOLITH</b></span><span>Blatt<b>${n}/${SECTIONS.length}</b></span><span>Bauherr<b>MC INFRA</b></span><span>Stand<b>${esc(fmtD(today()))}</b></span></div></header>`;
 }
-function promptBox(label,text,id){ return `<div style="min-width:0"><div class="pr-h"><span class="eb">${esc(label)}</span><button class="btn s" data-act="copy" data-src="${id}">Копировать</button></div><pre class="prompt" id="${id}">${esc(text)}</pre></div>`; }
+function promptBox(label,text,id,cmd,ru){
+  const showRu = !!ru && S.state.promptLang==="ru";
+  return `<div style="min-width:0"><div class="pr-h"><span class="eb">${esc(label)}</span><div class="row" style="gap:6px;flex-wrap:nowrap">${cmd?"":`<button class="btn s ghost" data-act="explain" data-src="${id}" data-label="${esc(label)}">Что это?</button>`}<button class="btn s" data-act="copy" data-src="${id}">Копировать</button></div></div><pre class="prompt${cmd?" cmd":""}" id="${id}">${esc(showRu?ru:text)}</pre>${ru&&!showRu?`<details class="tr"><summary>По-русски: что здесь написано</summary><p id="${id}-tr">${esc(ru)}</p></details>`:""}</div>`;
+}
+function plangBar(){
+  const l = S.state.promptLang;
+  return `<div class="row plang"><span class="eb">Копировать промпт</span><div class="seg2" role="group" aria-label="Язык промпта"><button class="${l!=="ru"?"on":""}" data-act="plang" data-l="en">на английском · надёжнее</button><button class="${l==="ru"?"on":""}" data-act="plang" data-l="ru">на русском</button></div><span class="xs mut">Нейросети лучше понимают английский. Под каждым английским промптом — перевод, чтобы ты знал, что отправляешь.</span></div>`;
+}
+function guideHTML(id, v){
+  const list = CLICK[id]||[]; if (!list.length) return "";
+  const open = !(v && v.stages && v.stages[id]);
+  return `<details class="pn ghost guide"${open?" open":""}><summary class="row between"><span class="h3">Пошагово: что нажимать на этом этапе</span><span class="sumb">Свернуть / открыть</span></summary><ol class="micro">${list.map(t=>`<li><div class="gi"><span>${fmt(osv(t))}</span></div></li>`).join("")}</ol><div class="row" style="margin-top:10px"><button class="btn s ghost" data-act="chat-open" data-text="Я на этапе «${esc((STAGES.find(s=>s.id===id)||{n:"Осмотр"}).n)}»${v?" ролика "+esc(vcode(v)):""}. Не получается: ">Не получается — спросить Наставника</button></div></details>`;
+}
 function dots(n){ return `<span class="dots" aria-label="${n} из 5">${[1,2,3,4,5].map(i=>`<i class="${i<=n?"on":""}"></i>`).join("")}</span>`; }
 function srcLinks(ids){ return `<div class="src">${ids.map(id=>SRC[id]?`<a href="${esc(SRC[id][1])}" target="_blank" rel="noopener">${esc(SRC[id][0])}</a>`:"").join("")}</div>`; }
 function emptyVideos(){
@@ -838,17 +1445,21 @@ function emptyVideos(){
 function pickDefaultVid(){ if (!S.vid || !vById(S.vid)) S.vid = ([...S.videos].filter(v=>!isPub(v)).sort(byDate)[0]||S.videos[0]||{}).id||null; }
 
 /* ---------- ПРОМПТЫ ---------- */
-function kfPrompt(s){
-  return `Photorealistic cinematic still — the FIRST frame of a commercial shot for a premium tiling company.\nSUBJECT: ${s.subject||"(опиши объект)"}\nSHOT: ${TYPE_EN[s.type]||TYPE_EN.detail}.\nCAMERA: ${LENS_EN[s.lens]||LENS_EN.ana35}.\nLIGHT: ${LIGHT_EN[s.light]||LIGHT_EN.dawn}.\n${s.laser?DNA.laser+"\n":""}${DNA.people}\n${DNA.real}\n${DNA.grade}\n${DNA.neg} Vertical 9:16.`;
+function dna(k, lang){ const o = (S.state.style||{})[k], l = lang==="ru" ? "ru" : "en"; return (o && o[l]) ? o[l] : (l==="ru" ? DNA_RU[k] : DNA[k]); }
+function kfPrompt(s, lang){
+  if (lang==="ru") return `Фотореалистичный кинематографичный кадр — ПЕРВЫЙ кадр рекламного клипа премиальной фирмы по укладке плитки.\nОБЪЕКТ: ${s.subjectRu||s.subject||"(опиши объект)"}\nПЛАН: ${TYPE_RU[s.type]||TYPE_RU.detail}.\nКАМЕРА: ${LENS_RU[s.lens]||LENS_RU.ana35}.\nСВЕТ: ${LIGHT_RU[s.light]||LIGHT_RU.dawn}.\n${s.laser?dna("laser","ru")+"\n":""}${dna("people","ru")}\n${dna("real","ru")}\n${dna("grade","ru")}\n${dna("neg","ru")} Вертикальный кадр 9:16.`;
+  return `Photorealistic cinematic still — the FIRST frame of a commercial shot for a premium tiling company.\nSUBJECT: ${s.subject||"(опиши объект)"}\nSHOT: ${TYPE_EN[s.type]||TYPE_EN.detail}.\nCAMERA: ${LENS_EN[s.lens]||LENS_EN.ana35}.\nLIGHT: ${LIGHT_EN[s.light]||LIGHT_EN.dawn}.\n${s.laser?dna("laser")+"\n":""}${dna("people")}\n${dna("real")}\n${dna("grade")}\n${dna("neg")} Vertical 9:16.`;
 }
-function vidPrompt(s){
-  return `${LENS_EN[s.lens]||LENS_EN.ana35}, ${MOVE_EN[s.move]||MOVE_EN.static}.\nSUBJECT AND ACTION: ${s.subject||"(опиши действие)"}\nSHOT: ${TYPE_EN[s.type]||TYPE_EN.detail}.\nLIGHT: ${LIGHT_EN[s.light]||LIGHT_EN.dawn}.\n${s.laser?DNA.laser+"\n":""}${DNA.people}\nKeep everything exactly as in the first frame. ${DNA.real}\n${DNA.grade}\nAUDIO: ${s.audio?s.audio+"; ":""}${DNA.audio}.\nDuration about ${Number(s.dur)||5} seconds. Vertical 9:16. ${DNA.neg}`;
+function vidPrompt(s, lang){
+  if (lang==="ru") return `${LENS_RU[s.lens]||LENS_RU.ana35}, ${MOVE_RU[s.move]||MOVE_RU.static}.\nОБЪЕКТ И ДЕЙСТВИЕ: ${s.subjectRu||s.subject||"(опиши действие)"}\nПЛАН: ${TYPE_RU[s.type]||TYPE_RU.detail}.\nСВЕТ: ${LIGHT_RU[s.light]||LIGHT_RU.dawn}.\n${s.laser?dna("laser","ru")+"\n":""}${dna("people","ru")}\nВсё остаётся точно как на первом кадре. ${dna("real","ru")}\n${dna("grade","ru")}\nЗВУК: ${s.audioRu?s.audioRu+"; ":""}${dna("audio","ru")}.\nДлительность около ${Number(s.dur)||5} секунд. Вертикальный кадр 9:16. ${dna("neg","ru")}`;
+  return `${LENS_EN[s.lens]||LENS_EN.ana35}, ${MOVE_EN[s.move]||MOVE_EN.static}.\nSUBJECT AND ACTION: ${s.subject||"(опиши действие)"}\nSHOT: ${TYPE_EN[s.type]||TYPE_EN.detail}.\nLIGHT: ${LIGHT_EN[s.light]||LIGHT_EN.dawn}.\n${s.laser?dna("laser")+"\n":""}${dna("people")}\nKeep everything exactly as in the first frame. ${dna("real")}\n${dna("grade")}\nAUDIO: ${s.audio?s.audio+"; ":""}${dna("audio")}.\nDuration about ${Number(s.dur)||5} seconds. Vertical 9:16. ${dna("neg")}`;
 }
 
 /* ---------- ШТАБ ---------- */
 function orders(){
   const out = [];
-  for (const ph of SETUP) for (const it of ph.items) if (!S.state.steps[it.id]) out.push({tag:"Подготовка · фаза "+ph.ph, t:it.t, d:"Фаза «"+ph.name+"» — один раз перед первым роликом", go:"ops", anchor:it.id});
+  const prep = flatRoute().filter(s=>["mA","m0","m1","m2"].includes(s.mod.id)), left = prep.filter(s=>!routeDone(s));
+  if (left.length){ const nx = left[0]; out.push({tag:"Маршрут · шаг "+nx.num, t:nx.t, d:"Модуль «"+nx.mod.t+"» · ≈ "+(nx.min||5)+" мин · до первого ролика осталось шагов: "+left.length, go:"route", step:nx.id}); }
   for (const v of [...S.videos].filter(v=>!isPub(v)).sort(byDate)){
     const st = STAGES.find(s=>!(v.stages||{})[s.id]); if (!st) continue;
     let d = "Эфир "+fmtD(v.plannedAt)+" · ярус "+roman(v.tier);
@@ -886,7 +1497,7 @@ function rOps(){
   let streak = 0; { const d = new Date(); for (let i=0;i<60;i++){ const k = d.toLocaleDateString("sv-SE",{timeZone:TZ}); if ((Number((S.state.quota[k]||{}).veo)||0)>0) streak++; else if (i>0) break; d.setDate(d.getDate()-1); } }
   const pubN = st.pub, queue = [...S.videos].filter(x=>!isPub(x)).sort(byDate);
   const slots = Array.from({length:10},(_,i)=>{ if (i<pubN) return `<i class="on" title="Слот ${i+1}: в эфире"></i>`; const w = queue[i-pubN]; const p = w?Math.round(stagesDone(w)/7*100):0; return `<i class="${p?"wip":""}" style="--p:${p}%" title="Слот ${i+1}${w?": "+esc(vcode(w)):""}"></i>`; }).join("");
-  const setupDone = SETUP.reduce((a,p)=>a+p.items.filter(i=>S.state.steps[i.id]).length,0), setupAll = SETUP.reduce((a,p)=>a+p.items.length,0);
+  const rf = flatRoute(), rd = rf.filter(routeDone).length, rc = routeCur();
   const now = today();
   return `${sh("01 · Оперативный штаб","Приказ дня","Здесь всегда видно одно: что делать прямо сейчас. Всё остальное — телеметрия.","1")}
   <section class="pn mk order">
@@ -909,29 +1520,27 @@ function rOps(){
       <div class="eb a" style="margin-top:8px">Решения за тобой</div>
       <div class="check">${DECISIONS.map(([k,l])=>`<label class="${S.state.decisions[k]?"on":""}"><input type="checkbox" class="tick" data-st="decisions.${k}"${S.state.decisions[k]?" checked":""}><span>${esc(l)}</span></label>`).join("")}</div></section>
   </div>
-  <section class="stack"><div><div class="eb a">Подготовка · ${setupDone}/${setupAll}</div><h2 class="h2" style="margin-top:6px">Фундамент перед первым роликом</h2></div>
-    ${SETUP.map(ph=>`<div class="stack"><div class="eb">Фаза ${ph.ph} · ${esc(ph.name)}</div><div class="steps">${ph.items.map((it,i)=>{ const done=!!S.state.steps[it.id];
-      return `<div class="step${done?" done":""}" id="step-${it.id}"><input type="checkbox" class="tick" aria-label="Шаг выполнен" data-st="steps.${it.id}"${done?" checked":""}>
-      <div class="sb"><div class="sn2">ШАГ ${ph.ph}.${i+1}</div><div class="st">${esc(it.t)}</div><p class="t2">${esc(it.b)}</p>
-      ${it.prompt?promptBox(it.id==="b-folders"?"Структура":"Промпт",it.prompt,"sp-"+it.id):""}
-      <div class="row">${(it.links||[]).map(([l,u],k)=>`<a class="btn s${k===0?" pri":""}" href="${esc(u)}" target="_blank" rel="noopener">${esc(l)}</a>`).join("")}${it.go?`<a class="btn s ghost in" href="#${it.go}">Перейти во «${esc((SECTIONS.find(s=>s[0]===it.go)||["",""])[1])}» →</a>`:""}</div></div></div>`; }).join("")}</div></div>`).join("")}
-  </section>`;
+  <section class="pn mk stack"><div class="row between"><div><div class="eb a">Маршрут с нуля · ${rd} из ${rf.length} шагов</div><h2 class="h2" style="margin-top:6px">${rd===rf.length?"Маршрут пройден":esc(rc.num+" · "+rc.t)}</h2></div><a class="btn pri" href="#route">Продолжить маршрут →</a></div>
+    <div class="bar"><i style="width:${Math.round(rd/rf.length*100)}%"></i></div>
+    <p class="sm t2">В каждом шаге: зачем он нужен, что нажать, что должно получиться и что делать, если не вышло. Застрял — кнопка «Наставник» справа внизу.</p></section>`;
 }
 
 /* ---------- ВСЕЛЕННАЯ ---------- */
-function ctorPrompt(){ const c = S.ctor; return {kf:kfPrompt(c), vid:vidPrompt(c)}; }
+function ctorPrompt(){ const c = S.ctor; return {kf:kfPrompt(c), vid:vidPrompt(c), kfRu:kfPrompt(c,"ru"), vidRu:vidPrompt(c,"ru")}; }
 function rUniverse(){
   const b = S.state.brand, cl = claim(), c = S.ctor, cp = ctorPrompt();
   return `${sh("02 · Вселенная","Monolith","Вселенная MC Infrastructure. Мы не снимаем мультфильмы: мы снимаем материал, свет и точность. Здесь закон, знак, цвет, звук и конструктор, по которым делается каждый кадр.","2")}
   <section class="pn mk mani"><div><div class="eb a">Манифест</div><div class="word">Monolith</div><div class="lsr"></div>
     <p class="t2" style="font-size:17px;max-width:52ch">Монолит отливают один раз и навсегда. Без швов, без компромиссов, без «и так сойдёт». Так мы кладём плитку и так снимаем каждый кадр: тишина, материал, свет и одна точная линия.</p></div>
-    <div class="stack"><span class="plaque" style="padding:16px 20px;justify-self:start;align-self:flex-start">${mcLogo(190)}</span><div class="eb">Слоган</div><div style="font:400 34px/1.1 var(--f-display);letter-spacing:.04em;text-transform:uppercase">${esc(cl.de)}</div><div class="t2">${esc(cl.ro)} · ${esc(cl.ru)}</div></div></section>
+    <div class="stack"><span class="plaque" style="padding:16px 20px;justify-self:start;align-self:flex-start">${mcLogo(190)}</span><div class="eb">Слоган</div><div style="font:400 34px/1.1 var(--f-display);letter-spacing:.04em;text-transform:uppercase">${esc(cl.ru)}</div><div class="t2">${esc(cl.de)} · ${esc(cl.ro)}</div></div></section>
   <section class="pn stack"><div class="eb a">Настройки бренда · подставляются в титры и подписи</div>
     <div class="fg"><label class="f c2">Ник в TikTok<input type="text" id="bHandle" data-st="brand.handle" value="${esc(b.handle)}"></label>
       <label class="f c2">Контакт для откликов<input type="text" id="bContact" data-st="brand.contact" value="${esc(b.contact)}" placeholder="WhatsApp +49 … или @telegram"></label>
       <label class="f c2">E-mail фирмы<input type="text" id="bEmail" data-st="brand.email" value="${esc(b.email)}"></label>
-      <label class="f c3">Регион работ<input type="text" id="bRegion" data-st="brand.region" value="${esc(b.region)}" placeholder="например, Bayern"></label>
-      <label class="f c3">Слоган<select id="bClaim" data-st="brand.claim">${opt(Object.entries(CLAIMS).map(([k,v])=>[k,`${v.de} · ${v.ru}`]),b.claim)}</select></label></div></section>
+      <label class="f c2">Регион работ<input type="text" id="bRegion" data-st="brand.region" value="${esc(b.region)}" placeholder="например, Bayern"></label>
+      <label class="f c2">Слоган<select id="bClaim" data-st="brand.claim">${opt(Object.entries(CLAIMS).map(([k,v])=>[k,`${v.ru} · ${v.de}`]),b.claim)}</select></label>
+      <label class="f c2">Второй язык в титрах<select id="bLang2" data-st="brand.lang2">${opt([["none","Нет — только русский"],["de","+ немецкий"],["ro","+ румынский"]],b.lang2)}</select></label></div>
+    <p class="xs mut">Язык роликов — русский: главная строка, голос, подпись. Второй язык — маленькой строкой под главной, если нужен.</p></section>
   <section class="stack"><div class="eb a">Пять законов вселенной</div><div class="pn laws">${LAWS.map(([t,d])=>`<div class="law"><div><div class="h3">${esc(t)}</div><p class="t2 sm" style="margin-top:4px">${esc(d)}</p></div></div>`).join("")}</div></section>
   <div class="grid g2" style="align-items:start">
     <section class="pn stack"><div class="eb a">Знак · закреплён</div>
@@ -947,16 +1556,16 @@ function rUniverse(){
   </div>
   <div class="grid g2" style="align-items:start">
     <section class="pn stack"><div class="eb a">Шрифты</div>
-      <div class="spec"><div><div class="a">Gebaut</div><span class="xs mut mono">FORUM — заголовки и титры, только прописные</span></div><div><div class="b">Миллиметр решает всё</div><span class="xs mut mono">ONEST — строки RO и RU, подписи</span></div><div><div class="c">MC INFRASTRUCTURE · 01/10</div><span class="xs mut mono">JETBRAINS MONO — служебные метки</span></div></div>
+      <div class="spec"><div><div class="a">Построено</div><span class="xs mut mono">FORUM — заголовки и титры, только прописные</span></div><div><div class="b">Миллиметр решает всё</div><span class="xs mut mono">ONEST — вторые строки, подписи</span></div><div><div class="c">MC INFRASTRUCTURE · 01/10</div><span class="xs mut mono">JETBRAINS MONO — служебные метки</span></div></div>
       <p class="sm t2">Ставить шрифты в CapCut не нужно: титры штаб отдаёт готовыми PNG. Для визитки и документов — <a href="${LINKS.fForum}" target="_blank" rel="noopener">Forum</a> и <a href="${LINKS.fOnest}" target="_blank" rel="noopener">Onest</a>.</p></section>
     <section class="pn stack"><div class="eb a">Звук · ДНК</div><p class="sm t2">Каждый ролик: гул-подложка + фактуры материалов + лазер + звуковой логотип в финале. Музыки нет — звук свой, поэтому ограничения бизнес-аккаунта нам не мешают.</p>
       ${SFX.map(([n,p],i)=>promptBox(n,p,"sfx-"+i)).join("")}<div><a class="btn s pri" href="${LINKS.eleven}" target="_blank" rel="noopener">Открыть ElevenLabs SFX</a></div></section>
   </div>
   <section class="pn mk stack"><div><div class="eb a">Голос · ElevenLabs</div><h2 class="h2" style="margin-top:6px">Кто говорит в нашей вселенной</h2></div>
     <div class="tw"><table class="tb2"><thead><tr><th>Ярус</th><th>Голос</th><th>Почему</th></tr></thead><tbody>
-      <tr><td class="mono">I–II</td><td><b>Без голоса</b></td><td class="sm t2">Материал и звук понятны без перевода всем трём аудиториям. Голос на одном языке отрезал бы две другие.</td></tr>
-      <tr><td class="mono">III</td><td><b>Живой голос</b> бати или твой · RU и RO</td><td class="sm t2">Рекрутинг держится на доверии. Настоящий голос поверх ИИ-кадров закрывает главный минус ИИ-видео: 36% людей меньше верят брендам с ИИ.</td></tr>
-      <tr><td class="mono">IV</td><td><b>ИИ-диктор DE</b> + строки RO и RU на экране</td><td class="sm t2">Манифест для немецкого рынка: низкий спокойный голос, один и тот же во всех будущих фильмах бренда.</td></tr>
+      <tr><td class="mono">I–II</td><td><b>Без голоса</b></td><td class="sm t2">Материал и звук говорят сами. Титры — по-русски.</td></tr>
+      <tr><td class="mono">III</td><td><b>Живой голос</b> бати или твой · по-русски</td><td class="sm t2">Рекрутинг держится на доверии. Настоящий голос поверх ИИ-кадров закрывает главный минус ИИ-видео: 36% людей меньше верят брендам с ИИ.</td></tr>
+      <tr><td class="mono">IV</td><td><b>ИИ-диктор</b> · по-русски</td><td class="sm t2">Манифест: низкий спокойный голос, один и тот же во всех будущих фильмах бренда. Понадобится немецкий рынок — тот же текст отдельной версией на DE.</td></tr>
     </tbody></table></div>
     <div class="callout r"><b>Два запрета.</b> Не клонировать ничей голос без письменного согласия. И не заставлять клон говорить на языке, которым человек не владеет: в рекламе это обман.</div>
     <div class="row"><a class="btn s pri" href="${LINKS.tts}" target="_blank" rel="noopener">Text to Speech</a><a class="btn s" href="${LINKS.voicelib}" target="_blank" rel="noopener">Voice Library</a><a class="btn s" href="${LINKS.isolator}" target="_blank" rel="noopener">Voice Isolator</a></div>
@@ -971,14 +1580,19 @@ function rUniverse(){
       <label class="f c2">Движение<select data-ctor="move">${opt(MOVES,c.move)}</select></label>
       <label class="f c1">Секунд<input type="number" min="2" max="8" data-ctor="dur" value="${esc(c.dur)}"></label>
       <div class="c3" style="display:flex;align-items:flex-end"><label class="lz"><input type="checkbox" data-ctor="laser"${c.laser?" checked":""}> Лазерная линия в кадре</label></div>
-      <label class="f c4">Объект и действие (EN)<textarea rows="2" data-ctor="subject">${esc(c.subject)}</textarea></label>
-      <label class="f c2">Звук (EN, необязательно)<textarea rows="2" data-ctor="audio" placeholder="soft suction release, a clean click">${esc(c.audio)}</textarea></label>
+      <label class="f c3">Что в кадре · по-русски<textarea rows="2" data-ctor="subjectRu">${esc(c.subjectRu||"")}</textarea></label>
+      <label class="f c3">То же для нейросети · English<textarea rows="2" data-ctor="subject">${esc(c.subject)}</textarea></label>
+      <label class="f c3">Звук · по-русски, необязательно<textarea rows="2" data-ctor="audioRu" placeholder="мягкий чмок клея, чистый щелчок">${esc(c.audioRu||"")}</textarea></label>
+      <label class="f c3">Звук · English<textarea rows="2" data-ctor="audio" placeholder="soft suction release, a clean click">${esc(c.audio)}</textarea></label>
     </div>
-    <div class="grid g2">${promptBox("Ключевой кадр · Nano Banana или ChatGPT",cp.kf,"ctor-kf")}${promptBox("Видео · Veo 3.1",cp.vid,"ctor-vid")}</div>
+    <div class="row">${S.sample?`<button class="btn s" data-act="tr-ctor"${S.trBusy?" disabled":""}>${S.trBusy==="ctor"?"Перевожу…":"Перевести русский → English"}</button>`:""}<span class="xs mut">Пиши по-русски${S.sample?" и нажми «Перевести»":", английский поправит Наставник на claude.ai"}. Выпадающие списки сами добавляют в промпт свет, оптику и движение.</span></div>
+    ${plangBar()}
+    <div class="grid g2">${promptBox("Ключевой кадр · Nano Banana или ChatGPT",cp.kf,"ctor-kf",false,cp.kfRu)}${promptBox("Видео · Veo 3.1",cp.vid,"ctor-vid",false,cp.vidRu)}</div>
     <div class="row">${S.videos.length?`<select id="ctorVid" aria-label="Ролик" style="max-width:280px">${S.videos.map(v=>`<option value="${esc(v.id)}"${v.id===(c.vid||S.vid)?" selected":""}>${vcode(v)} · ${esc(v.title)}</option>`).join("")}</select><button class="btn pri s" data-act="ctor-add">Добавить кадр в ролик</button>`:""}
       <a class="btn s" href="${LINKS.gemini}" target="_blank" rel="noopener">Gemini</a><a class="btn s" href="${LINKS.flow}" target="_blank" rel="noopener">Flow</a></div>
   </section>
-  <section class="stack"><div class="eb a">Строительные блоки промптов · вставляются автоматически</div><div class="grid g2">${promptBox("Цвет",DNA.grade,"dna-g")}${promptBox("Реализм",DNA.real,"dna-r")}${promptBox("Люди",DNA.people,"dna-p")}${promptBox("Подпись MC",DNA.laser,"dna-l")}</div></section>`;
+  <section class="stack"><div><div class="eb a">Строительные блоки промптов · стиль бренда</div><p class="sm t2" style="margin-top:6px">Штаб сам вставляет эти блоки в каждый промпт всех роликов. Хочешь другой стиль — скажи Наставнику, например: «сделай цвет теплее для всех роликов». Он поменяет блок, а здесь появится отметка «изменено» и кнопка возврата.</p></div>
+    <div class="grid g2">${Object.keys(DNA).map(k=>{ const ch = !!(S.state.style||{})[k]; return `<div class="stack" style="gap:6px">${ch?`<div class="row"><span class="chip a">изменено</span><button class="btn s ghost" data-act="style-reset" data-k="${k}">Вернуть исходный</button></div>`:""}${promptBox(DNA_NAMES[k],dna(k),"dna-"+k,false,dna(k,"ru"))}</div>`; }).join("")}</div></section>`;
 }
 
 /* ---------- ПИРАМИДА ---------- */
@@ -990,7 +1604,7 @@ function rPyramid(){
     <section class="pn mk pyr stack">${S.videos.length?pyramidSVG({sel:S.vid}):emptyVideos()}<p class="xs mut">Нажми на блок — справа брифинг. Заливка — сколько из 7 этапов пройдено, жёлтый блок — ролик в эфире.</p></section>
     <section class="pn brief">${v?`<div class="row between"><span class="chip a">${vcode(v)} · ЯРУС ${tier?tier.code:""}</span><span class="chip line">эфир ${esc(fmtD(v.plannedAt))}</span></div>
       <h2>${esc(v.title)}</h2><p class="t2">${esc(v.concept||"")}</p>
-      <div class="hookset"><span class="de">${esc(v.hookDe||"")}</span><span class="t2">${esc(v.hookRo||"")}</span><span class="t2">${esc(v.hookRu||"")}</span></div>
+      <div class="hookset"><span class="de">${esc(v.hookRu||"")}</span>${v.hookDe?`<span class="t2">${esc(v.hookDe)}</span>`:""}${v.hookRo?`<span class="t2">${esc(v.hookRo)}</span>`:""}</div>
       <dl class="kv"><dt>Задача</dt><dd>${esc(v.goal||"")}</dd><dt>Эмоция</dt><dd>${esc(v.emotion||"")}</dd><dt>Длина</dt><dd>${esc(v.dur||"")} с · ${(v.shots||[]).length} кадр.</dd><dt>Метрика</dt><dd>${tier?esc(tier.kpi):""}</dd>${v.facts?`<dt>Нужно от бати</dt><dd style="color:var(--amber)">${esc(v.facts)}</dd>`:""}</dl>
       <div class="row"><button class="btn pri" data-act="to-prod" data-id="${esc(v.id)}">В производство →</button><span class="xs mut mono">${stagesDone(v)}/7 этапов</span></div>`:emptyVideos()}</section>
   </div>
@@ -1022,19 +1636,21 @@ function vf(v,f,label,cls,type,ph){
   return `<label class="f ${cls}">${label}<input type="${type||"text"}" data-v="${id}" data-f="${f}" value="${esc(v[f]==null?"":v[f])}" placeholder="${esc(ph||"")}"></label>`;
 }
 function stBrief(v){
-  const t = TIERS.find(x=>x.n===Number(v.tier))||TIERS[0];
-  return `<div class="grid g2" style="align-items:start">
+  const t = TIERS.find(x=>x.n===Number(v.tier))||TIERS[0], l2 = S.state.brand.lang2;
+  return `${guideHTML("brief",v)}<div class="grid g2" style="align-items:start">
     <div class="stack"><div class="eb a">Этап 01 · Бриф</div><p class="t2">Одна мысль, одна эмоция, одна фраза на экране. Если бриф не помещается в три строки — ролик развалится.</p>
       <div class="callout"><b>Ярус ${t.code} · ${esc(t.name)}.</b> ${esc(t.goal)} Метрика: ${esc(t.kpi)}.</div>
-      ${v.facts?`<div class="callout r"><b>Нужно от бати:</b> ${esc(v.facts)}</div>`:""}</div>
+      <div class="callout b"><b>Язык ролика — русский.</b> Главная строка на экране — по-русски. ${l2==="none"?"Вторую маленькую строку (немецкую или румынскую) можно включить во «Вселенной» → «Настройки бренда».":"Вторая строка в титре: "+(l2==="de"?"немецкая":"румынская")+"."}</div>
+      ${v.facts?`<div class="callout r"><b>Нужно от бати:</b> ${esc(v.facts)}</div>`:""}
+      ${S.sample?`<div class="row"><button class="btn s ghost" data-act="chat-open" data-send="1" data-text="Посмотри бриф ${esc(vcode(v))}: что в нём сильное, что слабое? Предложи 3 главные строки по-русски сильнее нынешней и объясни почему.">Спросить Наставника про бриф</button></div>`:""}</div>
     <div class="fg">${vf(v,"title","Название","c4")}${vf(v,"plannedAt","Эфир","c2","date")}
       ${vf(v,"goal","Задача ролика","c6","ta")}${vf(v,"emotion","Эмоция","c3")}${vf(v,"dur","Длина, сек","c3","number")}
-      ${vf(v,"hookDe","Главная строка (DE)","c6")}${vf(v,"hookRo","Строка RO","c3")}${vf(v,"hookRu","Строка RU","c3")}
+      ${vf(v,"hookRu","Главная строка на экране · по-русски","c6")}${vf(v,"hookDe","Строка DE · по желанию","c3")}${vf(v,"hookRo","Строка RO · по желанию","c3")}
       ${vf(v,"concept","Что происходит","c6","ta")}${vf(v,"notes","Заметки","c6","ta")}</div></div>`;
 }
 function stBoard(v){
   const id = esc(v.id), total = (v.shots||[]).reduce((a,s)=>a+(Number(s.dur)||0),0), ai = S.ai[v.id];
-  return `<div class="row between"><div><div class="eb a">Этап 02 · Раскадровка · ${(v.shots||[]).length} кадр. · ${total} с</div><p class="t2" style="margin-top:6px">Каждый кадр — один план, один свет, одно движение. Промпты собираются сами из ДНК вселенной.</p></div>
+  return `${guideHTML("board",v)}<div class="row between"><div><div class="eb a">Этап 02 · Раскадровка · ${(v.shots||[]).length} кадр. · ${total} с</div><p class="t2" style="margin-top:6px">Каждый кадр — один план, один свет, одно движение. Промпты собираются сами из полей кадра и стиля бренда. Хочешь поменять — меняй поля или скажи Наставнику: «в S2 поставь ночь».</p></div>
     <div class="row">${S.sample?`<button class="btn pri s" data-act="ai" data-k="shots" data-id="${id}"${S.aiBusy?" disabled":""}>Claude: раскадровка</button><button class="btn s" data-act="ai" data-k="hooks" data-id="${id}"${S.aiBusy?" disabled":""}>Claude: строки</button>`:""}<button class="btn s" data-act="copy-all" data-id="${id}">Все промпты</button><button class="btn s" data-act="add-shot" data-id="${id}">+ Кадр</button></div></div>
   ${S.sample?"":`<p class="xs mut">Claude-помощник работает, когда штаб открыт на claude.ai.</p>`}
   ${ai?rAI(v,ai):""}
@@ -1051,9 +1667,11 @@ function rShotRow(v,s,i){
     <td class="w" data-l="Инструменты"><div class="tstk"><label><span>Кадр</span>${sel(v,s,"kfTool",KF_TOOLS)}</label><label><span>Видео</span>${sel(v,s,"vidTool",VID_TOOLS)}</label><label><span>Статус</span>${sel(v,s,"status",SHOT_ST)}</label></div></td>
     <td class="w" data-l=""><div class="stack" style="gap:5px"><button class="btn s" data-act="toggle-shot" data-id="${id}" data-shot="${sid}">${open?"Скрыть":"Детали"}</button><div class="row" style="gap:4px;flex-wrap:nowrap"><button class="btn s ghost" aria-label="Выше" data-act="shot-mv" data-d="-1" data-id="${id}" data-shot="${sid}">↑</button><button class="btn s ghost" aria-label="Ниже" data-act="shot-mv" data-d="1" data-id="${id}" data-shot="${sid}">↓</button><button class="btn s ghost danger" aria-label="Удалить кадр" data-act="shot-del" data-id="${id}" data-shot="${sid}">${S.confirm==="shot:"+s.id?"Точно?":"✕"}</button></div></div></td></tr>
   ${open?`<tr class="shot-detail"><td colspan="6"><div class="stack">
-    <div class="fg"><label class="f c4">Объект и действие (EN)<textarea rows="3" data-v="${id}" data-shot="${sid}" data-f="subject">${esc(s.subject||"")}</textarea></label><label class="f c2">Звук (EN)<textarea rows="3" data-v="${id}" data-shot="${sid}" data-f="audio">${esc(s.audio||"")}</textarea></label></div>
-    <div class="grid g2">${promptBox("Ключевой кадр · "+lbl(KF_TOOLS,s.kfTool),kfPrompt(s),`kf-${v.id}-${s.id}`)}${promptBox("Видео · "+lbl(VID_TOOLS,s.vidTool),vidPrompt(s),`vd-${v.id}-${s.id}`)}</div>
-    <p class="xs mut">Промпты пересобираются, когда выходишь из поля.</p></div></td></tr>`:""}`;
+    <div class="fg"><label class="f c3">Что в кадре · по-русски<textarea rows="3" data-v="${id}" data-shot="${sid}" data-f="subjectRu">${esc(s.subjectRu||"")}</textarea></label><label class="f c3">То же для нейросети · English<textarea rows="3" data-v="${id}" data-shot="${sid}" data-f="subject">${esc(s.subject||"")}</textarea></label>
+      <label class="f c3">Звук · по-русски<textarea rows="2" data-v="${id}" data-shot="${sid}" data-f="audioRu">${esc(s.audioRu||"")}</textarea></label><label class="f c3">Звук · English<textarea rows="2" data-v="${id}" data-shot="${sid}" data-f="audio">${esc(s.audio||"")}</textarea></label></div>
+    <div class="row">${S.sample?`<button class="btn s" data-act="tr-shot" data-id="${id}" data-shot="${sid}"${S.trBusy?" disabled":""}>${S.trBusy===s.id?"Перевожу…":"Перевести русский → English"}</button>`:""}<span class="xs mut">Пиши по-русски${S.sample?" и нажми «Перевести»":""}. Промпты пересобираются, когда выходишь из поля.</span></div>
+    ${plangBar()}
+    <div class="grid g2">${promptBox("Ключевой кадр · "+lbl(KF_TOOLS,s.kfTool),kfPrompt(s),`kf-${v.id}-${s.id}`,false,kfPrompt(s,"ru"))}${promptBox("Видео · "+lbl(VID_TOOLS,s.vidTool),vidPrompt(s),`vd-${v.id}-${s.id}`,false,vidPrompt(s,"ru"))}</div></div></td></tr>`:""}`;
 }
 function shotCards(v, kind){
   const list = (v.shots||[]).map((s,i)=>({s,i})).filter(x=>kind!=="kf"||x.s.kfTool!=="none");
@@ -1061,17 +1679,19 @@ function shotCards(v, kind){
   return list.map(({s,i})=>{ const ok = kind==="kf" ? ["kf","clip","done"].includes(s.status) : ["clip","done"].includes(s.status);
     const tool = kind==="kf"?s.kfTool:s.vidTool, link = TOOL_LINK[tool], name = lbl(kind==="kf"?KF_TOOLS:VID_TOOLS, tool);
     return `<div class="scard${ok?" done":""}"><div class="sn">S${i+1}</div><div class="stack" style="min-width:0">
-      <div class="row between"><div style="min-width:0"><div class="h3">${esc(s.desc||"")}</div><div class="xs mut mono">${esc(lbl(TYPES,s.type))} · ${esc(lbl(LIGHTS,s.light))} · ${esc(lbl(LENSES,s.lens))} · ${esc(s.dur||5)} с${kind==="clip"&&s.kfTool==="none"?" · Text→Video":""}</div></div><span class="chip ${ok?"o":"line"}">${ok?(kind==="kf"?"кадр готов":"клип готов"):"в работе"}</span></div>
-      ${promptBox(kind==="kf"?"Промпт кадра":"Промпт видео", kind==="kf"?kfPrompt(s):vidPrompt(s), `${kind}-c-${v.id}-${s.id}`)}
+      <div class="row between"><div style="min-width:0"><div class="h3">${esc(s.desc||"")}</div>${s.subjectRu?`<div class="sm t2">${esc(s.subjectRu)}</div>`:""}<div class="xs mut mono">${esc(lbl(TYPES,s.type))} · ${esc(lbl(LIGHTS,s.light))} · ${esc(lbl(LENSES,s.lens))} · ${esc(s.dur||5)} с${kind==="clip"&&s.kfTool==="none"?" · Text→Video":""}</div></div><span class="chip ${ok?"o":"line"}">${ok?(kind==="kf"?"кадр готов":"клип готов"):"в работе"}</span></div>
+      ${promptBox(kind==="kf"?"Промпт кадра":"Промпт видео", kind==="kf"?kfPrompt(s):vidPrompt(s), `${kind}-c-${v.id}-${s.id}`, false, kind==="kf"?kfPrompt(s,"ru"):vidPrompt(s,"ru"))}
       <div class="row">${link?`<a class="btn s pri" href="${link}" target="_blank" rel="noopener">Открыть ${esc(name)}</a>`:""}<button class="btn s" data-act="shot-ok" data-id="${esc(v.id)}" data-shot="${esc(s.id)}" data-k="${kind}">${ok?"Снять отметку":(kind==="kf"?"Кадр готов ✓":"Клип готов ✓")}</button><button class="btn s ghost" data-act="q" data-k="${kind==="kf"?"img":(tool==="kling"?"kling":"veo")}" data-d="1">+1 к лимиту дня</button></div></div></div>`; }).join("");
 }
 function stFrames(v){
-  return `<div><div class="eb a">Этап 03 · Ключевые кадры</div><p class="t2" style="margin-top:6px">Миша, для каждого кадра: открой Gemini, вставь промпт, сделай 3–4 варианта, лучший сохрани как <span class="mono">kf/sN.png</span>. Ключевой кадр — первый кадр клипа: от него зависит, будет ли видео дорогим.</p></div>
+  return `${guideHTML("frames",v)}<div><div class="eb a">Этап 03 · Ключевые кадры</div><p class="t2" style="margin-top:6px">Для каждого кадра: открой Gemini, вставь промпт, сделай 3–4 варианта, лучший сохрани в папку ролика <span class="mono">kf</span> под именем <span class="mono">sN.png</span> (S1 → s1.png). Ключевой кадр — первый кадр клипа: от него зависит, будет ли видео дорогим.</p></div>
+  ${plangBar()}
   <div class="callout b">Проверка кадра: лиц нет · швы прямые · свет один из трёх режимов · нет букв и логотипов · есть фактура (пыль, царапины, зерно).</div>
   <div class="stack">${shotCards(v,"kf")}</div>`;
 }
 function stMotion(v){
-  return `<div><div class="eb a">Этап 04 · Движение</div><p class="t2" style="margin-top:6px">Flow → Frames to Video. Загрузи <span class="mono">kf/sN.png</span> первым кадром, вставь промпт, сделай 2 варианта на Fast. Лучший — на Quality, если хватает кредитов. Кадры без ключевого кадра — режим Text to Video.</p></div>
+  return `${guideHTML("motion",v)}<div><div class="eb a">Этап 04 · Движение</div><p class="t2" style="margin-top:6px">Flow → Frames to Video. Загрузи <span class="mono">kf/sN.png</span> первым кадром, вставь промпт, сделай 2 варианта на Fast. Лучший — на Quality, если хватает кредитов. Кадры без ключевого кадра — режим Text to Video. Скачанные клипы — в папку <span class="mono">clips</span>: s1_v1.mp4, s1_v2.mp4…</p></div>
+  ${plangBar()}
   <div class="callout">Отбор: годен 1 из 2–3 — это норма. В мусор: поплыла геометрия, появилось лицо, лишние пальцы, буквы, звук не совпал с действием.</div>
   <div class="stack">${shotCards(v,"clip")}</div>
   <details class="pn ghost"><summary class="row between"><span class="h3">Если что-то сломалось</span><span class="sumb">Показать</span></summary><div class="tw" style="margin-top:12px"><table class="tb2"><tbody>${FIXES.map(f=>`<tr><td><b>${esc(f[0])}</b></td><td class="sm t2">${esc(f[1])}</td></tr>`).join("")}</tbody></table></div></details>`;
@@ -1086,32 +1706,33 @@ function stSound(v){
   const howto = mode==="real"
     ? `<div class="callout"><b>Живой голос.</b> Запиши батю или себя на телефон: тихая комната, телефон в 20 см ото рта, 3 дубля каждой строки. Файл — в Voice Isolator, чистый звук — в CapCut поверх гула. Живой голос поверх ИИ-кадров даёт доверие, которого ИИ-видео не хватает.</div><div class="row"><a class="btn s pri" href="${LINKS.isolator}" target="_blank" rel="noopener">Voice Isolator</a></div>`
     : mode==="ai"
-    ? `<div class="callout"><b>ИИ-диктор.</b> ElevenLabs → Text to Speech, самая новая мультиязычная модель. Голос низкий и спокойный, без рекламного напора — выбери в Voice Library и держи один и тот же во всех роликах. Старт: стабильность 50–60, сходство 75, стиль 10–20, скорость 0,9. Паузы — точками.</div><div class="row"><a class="btn s pri" href="${LINKS.tts}" target="_blank" rel="noopener">Text to Speech</a><a class="btn s" href="${LINKS.voicelib}" target="_blank" rel="noopener">Voice Library</a></div>`
-    : `<p class="sm t2">${Number(v.tier)<=2?"Ярусы I–II без голоса: материал и звук понятны всем трём аудиториям без перевода.":"Голос выключен. Для яруса "+roman(v.tier)+" он сильно помогает — выбери режим."}</p>`;
-  const fields = mode==="none" ? "" : `<div class="fg">${["de","ro","ru"].map(k=>`<label class="f c2">Текст ${k.toUpperCase()} · ${words(vo[k])} сл. ≈ ${Math.round(words(vo[k])/2.3)} с<textarea rows="4" data-v="${id}" data-vo="${k}">${esc(vo[k]||"")}</textarea></label>`).join("")}</div>`;
-  return `<div><div class="eb a">Этап 05 · Звук и голос</div><p class="t2" style="margin-top:6px">Звук Veo оставляем, если он совпадает с действием. Остальное — из библиотеки 00_sfx. Звук делает ИИ-кадр дорогим, голос — честным.</p></div>
+    ? `<div class="callout"><b>ИИ-диктор по-русски.</b> ElevenLabs → Text to Speech, самая новая мультиязычная модель, язык — русский. Голос низкий и спокойный, без рекламного напора — выбери в Voice Library и держи один и тот же во всех роликах. Старт: стабильность 50–60, сходство 75, стиль 10–20, скорость 0,9. Паузы — точками.</div><div class="row"><a class="btn s pri" href="${LINKS.tts}" target="_blank" rel="noopener">Text to Speech</a><a class="btn s" href="${LINKS.voicelib}" target="_blank" rel="noopener">Voice Library</a></div>`
+    : `<p class="sm t2">${Number(v.tier)<=2?"Ярусы I–II без голоса: материал и звук говорят сами, строка на экране — по-русски.":"Голос выключен. Для яруса "+roman(v.tier)+" он сильно помогает — выбери режим."}</p>`;
+  const fields = mode==="none" ? "" : `<div class="fg">${[["ru","Текст RU · основной"],["de","DE · по желанию"],["ro","RO · по желанию"]].map(([k,lb])=>`<label class="f c2">${lb} · ${words(vo[k])} сл. ≈ ${Math.round(words(vo[k])/2.3)} с<textarea rows="4" data-v="${id}" data-vo="${k}">${esc(vo[k]||"")}</textarea></label>`).join("")}</div>`;
+  return `${guideHTML("sound",v)}<div><div class="eb a">Этап 05 · Звук и голос</div><p class="t2" style="margin-top:6px">Звук Veo оставляем, если он совпадает с действием. Остальное — из библиотеки 00_sfx. Звук делает ИИ-кадр дорогим, голос — честным.</p></div>
   ${checklist(v,"sound",["Гул-подложка на всю длину ролика, тихо под фактурами","Фактуры материалов совпадают с движением","Звук включения лазера там, где появляется линия","Звуковой логотип на финальной карточке","Никакой музыки"])}
   <div class="stack"><div class="row between"><div class="eb a">Голос</div><label class="f" style="min-width:240px">Режим<select data-v="${id}" data-vo="mode">${opt(VO_MODES,mode)}</select></label></div>${howto}${fields}
-    ${mode!=="none"?checklist(v,"voice",["Текст проверен носителем языка (RO — ребята из бригады)","3 дубля или 3 генерации, выбран лучший","Живая запись очищена в Voice Isolator","Голос громче гула, фактуры не глушат слова","Строки на экране совпадают с голосом"]):""}</div>
+    ${mode!=="none"?checklist(v,"voice",["Текст прочитан вслух — звучит по-человечески, без канцелярита","3 дубля или 3 генерации, выбран лучший","Живая запись очищена в Voice Isolator","Голос громче гула, фактуры не глушат слова","Строки на экране совпадают с голосом"]):""}</div>
   <div class="row"><a class="btn s" href="${LINKS.eleven}" target="_blank" rel="noopener">ElevenLabs SFX</a><a class="btn s ghost in" href="#universe">Промпты звуков и правила голоса →</a></div>`;
 }
 function stEdit(v){
-  return `<div><div class="eb a">Этап 06 · Монтаж</div><p class="t2" style="margin-top:6px">CapCut: клипы встык, пресет цвета, титр сверху, финальная карточка в конце. Титр и карточка — готовые PNG ниже, с прозрачным фоном и шрифтами бренда.</p></div>
+  return `${guideHTML("edit",v)}<div><div class="eb a">Этап 06 · Монтаж</div><p class="t2" style="margin-top:6px">CapCut: клипы встык, пресет цвета, титр сверху, финальная карточка в конце. Титр и карточка — готовые PNG ниже, с прозрачным фоном и шрифтами бренда.</p></div>
   ${checklist(v,"edit",["Первые 0,5 с — уже движение, никакой заставки","Пресет «MC Basalt» на всех клипах","PNG-титр поверх первых 2,5 с","Склейки каждые 1,5–3 с, начало каждого клипа подрезано","Финальная карточка 1,5 с + звуковой логотип","Последний кадр стыкуется с первым — петля","Экспорт 1080×1920, 30 fps"])}
   <div class="stack"><div class="eb a">Титры · PNG 1080×1920</div>
     <div class="canv"><figure><canvas id="cvHook" width="1080" height="1920" aria-label="Превью титра"></canvas><button class="btn s pri" data-act="dl-canvas" data-k="hook" data-id="${esc(v.id)}">Скачать титр</button></figure>
     <figure><canvas id="cvEnd" width="1080" height="1920" aria-label="Превью финальной карточки"></canvas><button class="btn s" data-act="dl-canvas" data-k="end" data-id="${esc(v.id)}">Скачать карточку</button></figure>
-    <div class="stack" style="flex:1;min-width:200px"><p class="sm t2">Строки берутся из брифа, слоган и контакт — из «Вселенной» → «Настройки бренда». Поменял текст в брифе — превью обновится.</p><p class="sm t2">В CapCut: титр кладёшь на дорожку над видео, карточку — последним клипом на 1,5 с.</p>${S.dl?"":`<p class="xs mut">Скачивание работает в штабе на claude.ai.</p>`}<div><a class="btn s" href="${LINKS.capcut}" target="_blank" rel="noopener">CapCut</a></div></div></div></div>`;
+    <div class="stack" style="flex:1;min-width:200px"><p class="sm t2">Главная строка — русская, из брифа. Слоган, контакт и второй язык — из «Вселенной» → «Настройки бренда». Поменял текст в брифе — превью обновится.</p><p class="sm t2">В CapCut: титр кладёшь на дорожку над видео, карточку — последним клипом на 1,5 с.</p>${S.dl?"":`<p class="xs mut">Скачивание работает в штабе на claude.ai.</p>`}<div><a class="btn s" href="${LINKS.capcut}" target="_blank" rel="noopener">CapCut</a></div></div></div></div>`;
 }
 function caption(v){
   const cl = claim(), b = S.state.brand;
-  const lines = [v.hookDe||"", [v.hookRo,v.hookRu].filter(Boolean).join(" · "), "", Number(v.tier)>=3?"✉ "+(b.contact||b.email):"", `${cl.de} · KI-Visualisierung · MC Infrastructure`, "", `${HASHTAGS.de} ${HASHTAGS.ro} ${HASHTAGS.ru}`];
+  const tags2 = b.lang2==="de" ? HASHTAGS.de : (b.lang2==="ro" ? HASHTAGS.ro : "#fliesenleger #mcinfrastructure");
+  const lines = [v.hookRu||v.hookDe||"", line2(v)||"", "", Number(v.tier)>=3?"✉ "+(b.contact||b.email):"", `${cl.ru} · Создано ИИ · KI-Visualisierung · MC Infrastructure`, "", `${HASHTAGS.ru} ${tags2}`];
   return lines.join("\n").replace(/\n{3,}/g,"\n\n").trim();
 }
 function stAir(v){
   const m = v.metrics||{}, t = TIERS.find(x=>x.n===Number(v.tier))||TIERS[0];
   const inp = (f,l) => `<label class="f c1">${l}<input type="number" min="0" inputmode="numeric" data-v="${esc(v.id)}" data-metric="${f}" value="${m[f]!=null?esc(m[f]):""}"></label>`;
-  return `<div><div class="eb a">Этап 07 · Эфир</div><p class="t2" style="margin-top:6px">TikTok Studio → Загрузить. Отложенная публикация: будни 19:30, выходные 11:30.</p></div>
+  return `${guideHTML("air",v)}<div><div class="eb a">Этап 07 · Эфир</div><p class="t2" style="margin-top:6px">TikTok Studio → Загрузить. Отложенная публикация: будни 19:30, выходные 11:30.</p></div>
   <div class="grid g2" style="align-items:start"><div class="stack">${checklist(v,"air",["Метка «Создано ИИ» включена","Подпись скопирована из блока справа","Обложка — самый сильный кадр, без текста","Публикация запланирована на "+fmtD(v.plannedAt)+", 19:30","Первый час после выхода: ответить на комментарии одной сессией"])}
     <div class="row"><a class="btn pri" href="${LINKS.upload}" target="_blank" rel="noopener">Загрузить в TikTok Studio</a><button class="btn" data-act="publish" data-id="${esc(v.id)}">${isPub(v)?"В эфире с "+esc(fmtD(v.publishedAt))+" · снять":"Отметить: вышел в эфир"}</button></div></div>
     ${promptBox("Подпись к ролику",caption(v),"cap-"+v.id)}</div>
@@ -1123,7 +1744,7 @@ function rAI(v,ai){
   if (ai.err) return `<div class="ai row between"><p class="sm">${esc(ai.err)}</p><button class="btn s ghost" data-act="ai-close" data-id="${esc(v.id)}">Закрыть</button></div>`;
   const r = ai.result||{}, hk = r.hooks||{};
   let h = `<div class="ai stack"><div class="row between"><b>Предложение Claude</b><button class="btn s ghost" data-act="ai-close" data-id="${esc(v.id)}">Закрыть</button></div>`;
-  for (const [k,f] of [["de","hookDe"],["ro","hookRo"],["ru","hookRu"]]) if (Array.isArray(hk[k])&&hk[k].length) h += `<div class="pick">${hk[k].map(t=>`<button data-act="take" data-id="${esc(v.id)}" data-f="${f}" data-text="${esc(t)}"><span class="mono xs mut">${k.toUpperCase()}</span> ${esc(t)}</button>`).join("")}</div>`;
+  for (const [k,f] of [["ru","hookRu"],["de","hookDe"],["ro","hookRo"]]) if (Array.isArray(hk[k])&&hk[k].length) h += `<div class="pick">${hk[k].map(t=>`<button data-act="take" data-id="${esc(v.id)}" data-f="${f}" data-text="${esc(t)}"><span class="mono xs mut">${k.toUpperCase()}</span> ${esc(t)}</button>`).join("")}</div>`;
   if (Array.isArray(r.shots)&&r.shots.length) h += `<ol class="sm" style="margin:0;padding-left:20px">${r.shots.map(s=>`<li><b>${esc(s.desc||"")}</b> <span class="mut">· ${esc(lbl(TYPES,s.type))} · ${esc(lbl(LIGHTS,s.light))} · ${esc(s.dur||5)} с</span></li>`).join("")}</ol><div class="row"><button class="btn pri s" data-act="ai-apply" data-id="${esc(v.id)}">${(v.shots||[]).length?"Заменить кадры":"Взять кадры"}</button></div>`;
   return h+"</div>";
 }
@@ -1156,15 +1777,6 @@ function rArsenal(){
     <p class="sm t2">Runway и Luma — сильные инструменты, просто дороже на секунду для нашего объёма. Они в резерве: если в тест-драйве Veo провалит конкретный тип кадра, пробуем этот кадр в бесплатных кредитах Runway или Luma.</p>
     ${srcLinks(["runway","runway_audio","luma","gpro","veo_ingr"])}</section>
   <section class="pn ghost sm t2 stack">Цены — по сторонним агрегаторам на октябрь 2026, источники расходятся: проверяй на официальной странице перед оплатой. Sora 2 в ЕС официально недоступна. ${srcLinks(["mjp","kling3","eleven","sora","veo_vert"])}</section>`;
-}
-
-/* ---------- АКАДЕМИЯ ---------- */
-function rAcademy(){
-  const all = ACADEMY.reduce((a,l)=>a+l.ls.length,0), done = ACADEMY.reduce((a,l)=>a+l.ls.filter(x=>S.state.academy[x.id]).length,0);
-  return `${sh("06 · Академия","Навык оператора",`Семь уровней от насмотренности до конвейера. Урок закрывается, только когда выполнен критерий зачёта. Пройдено ${done} из ${all}.`,"6")}
-  <div class="bar"><i style="width:${Math.round(done/all*100)}%"></i></div>
-  ${ACADEMY.map(L=>{ const d = L.ls.filter(x=>S.state.academy[x.id]).length; return `<section class="pn stack"><div class="row between"><div class="row" style="gap:16px;flex-wrap:nowrap"><span style="font:400 40px/1 var(--f-display);color:var(--amber);min-width:56px">${L.n}</span><div><h2 class="h2">${esc(L.t)}</h2><p class="sm t2">${esc(L.d)}</p></div></div><span class="chip ${d===L.ls.length?"o":"line"}">${d}/${L.ls.length}</span></div>
-    <div class="steps">${L.ls.map(x=>`<div class="step${S.state.academy[x.id]?" done":""}"><input type="checkbox" class="tick" aria-label="Урок пройден" data-st="academy.${x.id}"${S.state.academy[x.id]?" checked":""}><div class="sb"><div class="st">${esc(x.t)}</div><ol class="sm t2">${x.do.map(s=>`<li>${esc(s)}</li>`).join("")}</ol><div class="callout sm"><b>Зачёт:</b> ${esc(x.pass)}</div>${x.links?`<div class="row">${x.links.map(([l,u])=>`<a class="btn s" href="${esc(u)}" target="_blank" rel="noopener">${esc(l)}</a>`).join("")}</div>`:""}</div></div>`).join("")}</div></section>`; }).join("")}`;
 }
 
 /* ---------- РАЗВЕДКА ---------- */
@@ -1209,6 +1821,7 @@ function wrapText(ctx,text,maxW){
 }
 function lsp(ctx,v){ if ("letterSpacing" in ctx) ctx.letterSpacing = v; }
 async function fontsReady(){ try { await Promise.all(["400 90px Forum","500 44px Onest","500 30px 'JetBrains Mono'"].map(f=>document.fonts.load(f))); } catch(e){} }
+function line2(v){ const l = S.state.brand.lang2; return l==="de" ? (v.hookDe||"") : (l==="ro" ? (v.hookRo||"") : ""); }
 function drawHook(cv,v){
   const ctx = cv.getContext("2d"), W = 1080; ctx.clearRect(0,0,W,1920);
   ctx.save(); ctx.shadowColor = "rgba(0,0,0,.6)"; ctx.shadowBlur = 28; ctx.textAlign = "center";
@@ -1216,13 +1829,13 @@ function drawHook(cv,v){
   ctx.fillText(`MC INFRASTRUCTURE · ${pad2(v.num)}/10`, W/2, 250);
   ctx.fillStyle = "#ECE5D8"; ctx.font = "400 92px Forum, 'Times New Roman', serif"; lsp(ctx,"6px");
   let y = 370;
-  for (const l of wrapText(ctx, String(v.hookDe||"").toUpperCase(), 940)){ ctx.fillText(l, W/2, y); y += 104; }
+  for (const l of wrapText(ctx, String(v.hookRu||v.hookDe||"").toUpperCase(), 940)){ ctx.fillText(l, W/2, y); y += 104; }
   ctx.restore();
   ctx.save(); ctx.strokeStyle = "#FF5A3C"; ctx.lineWidth = 4; ctx.shadowColor = "#FF5A3C"; ctx.shadowBlur = 18;
   ctx.beginPath(); ctx.moveTo(W/2-170, y-36); ctx.lineTo(W/2+170, y-36); ctx.stroke(); ctx.restore();
   ctx.save(); ctx.shadowColor = "rgba(0,0,0,.6)"; ctx.shadowBlur = 22; ctx.textAlign = "center"; ctx.fillStyle = "rgba(236,229,216,.92)"; ctx.font = "500 44px Onest, system-ui, sans-serif"; lsp(ctx,"0px");
   y += 40;
-  for (const t of [v.hookRo, v.hookRu].filter(Boolean)){ for (const l of wrapText(ctx,t,900)){ ctx.fillText(l, W/2, y); y += 58; } y += 8; }
+  for (const t of [line2(v)].filter(Boolean)){ for (const l of wrapText(ctx,t,900)){ ctx.fillText(l, W/2, y); y += 58; } y += 8; }
   ctx.restore();
 }
 async function drawEnd(cv,v){
@@ -1236,11 +1849,12 @@ async function drawEnd(cv,v){
   const pg = ctx.createLinearGradient(px,py,px+pw,py+ph); pg.addColorStop(0,"#F1EBDF"); pg.addColorStop(1,"#DDD4C4"); ctx.fillStyle = pg; ctx.fillRect(px,py,pw,ph); ctx.restore();
   if (img){ const lw = 480, lh = lw*LOGO_RATIO; ctx.drawImage(img, (W-lw)/2, py+(ph-lh)/2, lw, lh); }
   ctx.textAlign = "center"; ctx.fillStyle = "#ECE5D8"; ctx.font = "400 72px Forum, 'Times New Roman', serif"; lsp(ctx,"12px"); ctx.fillText("MC INFRASTRUCTURE", W/2, 1110);
-  ctx.fillStyle = "rgba(236,229,216,.86)"; ctx.font = "400 50px Forum, 'Times New Roman', serif"; lsp(ctx,"4px"); ctx.fillText(cl.de.toUpperCase(), W/2, 1200);
-  ctx.fillStyle = "rgba(181,174,161,.92)"; ctx.font = "500 36px Onest, system-ui, sans-serif"; lsp(ctx,"0px"); ctx.fillText(`${cl.ro} · ${cl.ru}`, W/2, 1266);
+  ctx.fillStyle = "rgba(236,229,216,.86)"; ctx.font = "400 50px Forum, 'Times New Roman', serif"; lsp(ctx,"4px"); ctx.fillText(cl.ru.toUpperCase(), W/2, 1200);
+  const c2 = b.lang2==="de" ? cl.de : (b.lang2==="ro" ? cl.ro : "");
+  if (c2){ ctx.fillStyle = "rgba(181,174,161,.92)"; ctx.font = "500 36px Onest, system-ui, sans-serif"; lsp(ctx,"0px"); ctx.fillText(c2, W/2, 1266); }
   ctx.fillStyle = "#E8821E"; ctx.font = "500 32px 'JetBrains Mono', monospace"; lsp(ctx,"2px");
   [b.handle, b.email, Number(v.tier)>=3 ? b.contact : "", b.region].filter(Boolean).forEach((l,i)=>ctx.fillText(l, W/2, 1400+i*52));
-  ctx.fillStyle = "rgba(126,121,111,.9)"; ctx.font = "500 24px 'JetBrains Mono', monospace"; lsp(ctx,"4px"); ctx.fillText("KI-VISUALISIERUNG", W/2, 1760);
+  ctx.fillStyle = "rgba(126,121,111,.9)"; ctx.font = "500 24px 'JetBrains Mono', monospace"; lsp(ctx,"4px"); ctx.fillText("СОЗДАНО ИИ · KI-VISUALISIERUNG", W/2, 1760);
 }
 let drawSeq = 0;
 async function afterRender(){
@@ -1278,10 +1892,10 @@ async function aiRun(v, kind){
   if (!S.sample || S.aiBusy) return;
   const ctl = new AbortController(); S.aiCtl = ctl; S.aiBusy = v.id; S.ai[v.id] = {busy:true,chars:0}; render();
   const t = TIERS.find(x=>x.n===Number(v.tier))||TIERS[0];
-  const base = `You are the creative director of "Monolith", the cinematic brand universe of MC Infrastructure, a premium tiling company in Germany. Videos are photorealistic, generated shot by shot with Google Veo 3.1 from keyframes, vertical 9:16, for TikTok.\nAUDIENCE: Romanian, Moldovan and Russian-speaking tile layers and helpers in Germany (recruitment), plus German private clients.\nLAWS: material is the hero; NO visible faces (only silhouettes, people from behind, gloved hands); light only blue-hour dawn, golden hour or sodium-lit night; a thin red laser-level line is the MC signature; AI images are brand imagery, never claimed as real finished projects.\nThis video is tier ${t.code} "${t.name}" of a 4-3-2-1 promo pyramid. Tier goal: ${t.goal} Main metric: ${t.kpi}.\nVIDEO\nTitle: ${v.title}\nWhat happens (Russian): ${v.concept||"-"}\nGoal: ${v.goal||"-"}\nEmotion: ${v.emotion||"-"}\nTarget length: ${v.dur||20} seconds\nCurrent lines: DE "${v.hookDe||""}" / RO "${v.hookRo||""}" / RU "${v.hookRu||""}"\n`;
+  const base = `You are the creative director of "Monolith", the cinematic brand universe of MC Infrastructure, a premium tiling company in Germany. Videos are photorealistic, generated shot by shot with Google Veo 3.1 from keyframes, vertical 9:16, for TikTok.\nAUDIENCE: Russian-speaking tile layers and helpers in Germany (many came as refugees), also Moldovans and Romanians who read Russian (recruitment). LANGUAGE OF THE VIDEO: Russian.\nLAWS: material is the hero; NO visible faces (only silhouettes, people from behind, gloved hands); light only blue-hour dawn, golden hour or sodium-lit night; a thin red laser-level line is the MC signature; AI images are brand imagery, never claimed as real finished projects.\nThis video is tier ${t.code} "${t.name}" of a 4-3-2-1 promo pyramid. Tier goal: ${t.goal} Main metric: ${t.kpi}.\nVIDEO\nTitle: ${v.title}\nWhat happens (Russian): ${v.concept||"-"}\nGoal: ${v.goal||"-"}\nEmotion: ${v.emotion||"-"}\nTarget length: ${v.dur||20} seconds\nCurrent lines: RU "${v.hookRu||""}" / DE "${v.hookDe||""}" / RO "${v.hookRo||""}"\n`;
   const prompt = kind==="shots"
-    ? base + `Write a storyboard of 3 to 6 shots, each 2-8 seconds, totalling close to the target length. Shot 1 must stop the scroll in under 2 seconds. Each shot = one simple visual idea. No readable text, letters or logos in the image. Hands only in gloves with one simple action.\nUse ONLY these ids:\ntype: macro, hands, silhouette, topdown, timelapse, aerial, detail, wide, object\nlight: dawn, golden, sodium, overcast, lamp\nlens: macro100, ana35, wide24, tele85, drone\nmove: static, dollyin, push, slider, orbit, crane\nReply with only JSON: {"hooks":{"de":["3 options, max 6 words"],"ro":["3 options"],"ru":["3 options"]},"shots":[{"desc":"short Russian description","type":"macro","light":"dawn","lens":"macro100","move":"push","laser":false,"subject":"one vivid English sentence describing subject and action","audio":"English sound effects for this shot","dur":4}]}`
-    : base + `Write on-screen lines for this video: 5 German main lines (max 6 words, calm, confident, premium), and 5 Romanian and 5 Russian lines that mean the same. Reply with only JSON: {"de":["..."],"ro":["..."],"ru":["..."]}`;
+    ? base + `Write a storyboard of 3 to 6 shots, each 2-8 seconds, totalling close to the target length. Shot 1 must stop the scroll in under 2 seconds. Each shot = one simple visual idea. No readable text, letters or logos in the image. Hands only in gloves with one simple action.\nUse ONLY these ids:\ntype: macro, hands, silhouette, topdown, timelapse, aerial, detail, wide, object\nlight: dawn, golden, sodium, overcast, lamp\nlens: macro100, ana35, wide24, tele85, drone\nmove: static, dollyin, push, slider, orbit, crane\nReply with only JSON: {"hooks":{"ru":["3 Russian options, max 6 words"],"de":["3 options"],"ro":["3 options"]},"shots":[{"desc":"short Russian description","type":"macro","light":"dawn","lens":"macro100","move":"push","laser":false,"subject":"one vivid English sentence describing subject and action","subjectRu":"the same sentence in Russian","audio":"English sound effects for this shot","audioRu":"the same in Russian","dur":4}]}`
+    : base + `Write on-screen lines for this video: 5 Russian main lines (max 6 words, calm, confident, premium, natural spoken Russian, no bureaucratic language), plus 5 German and 5 Romanian lines that mean the same. Reply with only JSON: {"ru":["..."],"de":["..."],"ro":["..."]}`;
   try {
     const res = await S.sample.json(prompt,{signal:ctl.signal,onText:({text})=>{ const a=S.ai[v.id]; if(a&&a.busy){ a.chars=text.length; const el=$("#aiProg"); if(el) el.textContent="Пишет: "+text.length+" символов"; } }});
     S.ai[v.id] = {result: kind==="shots" ? (res||{}) : {hooks:res||{}}};
@@ -1292,9 +1906,23 @@ async function aiRun(v, kind){
     if (c==="not_granted"||c==="sampling_disabled") S.sample = null;
   } finally { S.aiBusy = null; S.aiCtl = null; render(); }
 }
+async function trText(o, done){
+  if (!S.sample || S.trBusy) return;
+  if (!String(o.subjectRu||"").trim() && !String(o.audioRu||"").trim()){ toast("Сначала напиши по-русски, что в кадре"); return; }
+  S.trBusy = o.id||"ctor"; render();
+  try {
+    const r = await S.sample.json(`Translate these Russian notes for one shot of a photorealistic commercial video into concise, vivid English for an AI image and video generator. Keep the meaning exactly, add nothing, no brand names. Reply only JSON {"subject":"...","audio":"..."} (empty string when a note is empty).\nsubject_ru: ${o.subjectRu||""}\naudio_ru: ${o.audioRu||""}`, {modelTier:"quick"});
+    if (r && typeof r.subject==="string" && r.subject.trim()) o.subject = r.subject.trim();
+    if (r && typeof r.audio==="string" && String(o.audioRu||"").trim()) o.audio = r.audio.trim();
+    done(); toast("Переведено — промпт обновлён");
+  } catch(e){
+    const c = e&&e.code; toast(c==="rate_limited"?"Лимит запросов, попробуй позже":"Не получилось перевести");
+    if (c==="not_granted"||c==="sampling_disabled") S.sample = null;
+  } finally { S.trBusy = null; if (editing()) S.pending = true; else render(); }
+}
 function applyAI(v){
   const r = (S.ai[v.id]||{}).result; if (!r||!Array.isArray(r.shots)) return;
-  v.shots = r.shots.slice(0,8).map(s=>newShot({desc:String(s.desc||""), type:pickId(TYPES,s.type,"detail"), light:pickId(LIGHTS,s.light,"dawn"), lens:pickId(LENSES,s.lens,"ana35"), move:pickId(MOVES,s.move,"static"), laser:!!s.laser, subject:String(s.subject||""), audio:String(s.audio||""), dur:Math.max(2,Math.min(8,Number(s.dur)||5))}));
+  v.shots = r.shots.slice(0,8).map(s=>newShot({desc:String(s.desc||""), type:pickId(TYPES,s.type,"detail"), light:pickId(LIGHTS,s.light,"dawn"), lens:pickId(LENSES,s.lens,"ana35"), move:pickId(MOVES,s.move,"static"), laser:!!s.laser, subject:String(s.subject||""), subjectRu:String(s.subjectRu||""), audio:String(s.audio||""), audioRu:String(s.audioRu||""), dur:Math.max(2,Math.min(8,Number(s.dur)||5))}));
   vSave(v,0); toast("Кадры взяты"); render();
 }
 
@@ -1306,7 +1934,7 @@ document.addEventListener("click", ev=>{
   switch(act){
     case "order": { const o = orders()[Number(a.dataset.i)]; if (!o) break;
       if (o.go==="prod"){ S.vid = o.vid; S.stageOf[o.vid] = o.stage; go("prod"); }
-      else { go("ops"); setTimeout(()=>{ const el = document.getElementById("step-"+o.anchor); if (el) el.scrollIntoView({behavior:"smooth",block:"center"}); },80); }
+      else if (o.go==="route"){ S.routeAt = o.step; go("route"); }
       break; }
     case "pick-vid": S.vid = a.dataset.id; S.confirm = null; render(); break;
     case "to-prod": S.vid = a.dataset.id; go("prod"); break;
@@ -1324,7 +1952,7 @@ document.addEventListener("click", ev=>{
     case "publish": v.published = !v.published; v.publishedAt = v.published ? today() : ""; if (v.published){ v.stages = v.stages||{}; v.stages.air = true; toast(vcode(v)+" в эфире"); } vSave(v,0); renderAll(); break;
     case "copy": { const el = document.getElementById(a.dataset.src); if (el) copy(el.textContent); break; }
     case "copy-text": copy(a.dataset.text||""); break;
-    case "copy-all": copy((v.shots||[]).map((x,i)=>`===== S${i+1} · ${x.desc||""} =====\n--- KEYFRAME ---\n${kfPrompt(x)}\n\n--- VIDEO ---\n${vidPrompt(x)}`).join("\n\n")); break;
+    case "copy-all": { const L = S.state.promptLang; copy((v.shots||[]).map((x,i)=>`===== S${i+1} · ${x.desc||""} =====\n--- ${L==="ru"?"КЛЮЧЕВОЙ КАДР":"KEYFRAME"} ---\n${kfPrompt(x,L)}\n\n--- ${L==="ru"?"ВИДЕО":"VIDEO"} ---\n${vidPrompt(x,L)}`).join("\n\n")); break; }
     case "ai": aiRun(v, a.dataset.k); break;
     case "ai-stop": if (S.aiCtl) S.aiCtl.abort(); break;
     case "ai-close": S.ai[v.id] = null; render(); break;
@@ -1332,7 +1960,7 @@ document.addEventListener("click", ev=>{
     case "take": v[a.dataset.f] = a.dataset.text; vSave(v); toast("Строка взята"); render(); break;
     case "hook-lang": S.hookLang = a.dataset.l; render(); break;
     case "ctor-add": { const sv = $("#ctorVid"); const target = sv ? vById(sv.value) : null; if (!target) break; const c = S.ctor;
-      target.shots = target.shots||[]; target.shots.push(newShot({desc:"Из конструктора", type:c.type, light:c.light, lens:c.lens, move:c.move, laser:c.laser, subject:c.subject, audio:c.audio, dur:Number(c.dur)||5})); vSave(target,0); toast("Кадр добавлен в "+vcode(target)); break; }
+      target.shots = target.shots||[]; target.shots.push(newShot({desc:String(c.subjectRu||"Из конструктора").slice(0,70), type:c.type, light:c.light, lens:c.lens, move:c.move, laser:c.laser, subject:c.subject, subjectRu:c.subjectRu||"", audio:c.audio, audioRu:c.audioRu||"", dur:Number(c.dur)||5})); vSave(target,0); toast("Кадр добавлен в "+vcode(target)); break; }
     case "dl-logo": (async()=>{ const k = a.dataset.k; if (k==="svg") await saveFile("mc-infrastructure-logo.svg", LOGO_ORIG); else await saveFile({clear:"mc-logo-transparent.png",plate:"mc-logo-plate.png",avatar:"mc-avatar.png"}[k]||"mc-logo.png", await logoPng(k)); })(); break;
     case "dl-canvas": (async()=>{ const cv = a.dataset.k==="hook" ? $("#cvHook") : $("#cvEnd"); if (!cv||!v) return; await saveFile(`${vcode(v)}_${a.dataset.k==="hook"?"titr":"endcard"}.png`, await canvasBlob(cv)); })(); break;
     case "timer":
@@ -1340,10 +1968,49 @@ document.addEventListener("click", ev=>{
       else { if (S.timer.left===0) S.timer.left=1800; S.timer.run=true; S.timer.h=setInterval(()=>{ S.timer.left=Math.max(0,S.timer.left-1); const el=$("#timerOut"); if (el) el.textContent=pad2(Math.floor(S.timer.left/60))+":"+pad2(S.timer.left%60); if (S.timer.left===0){ clearInterval(S.timer.h); S.timer.run=false; toast("30 минут вышли. Закрой ленту."); if (S.view==="intel"&&!editing()) render(); } },1000); }
       render(); break;
     case "timer-reset": clearInterval(S.timer.h); S.timer={left:1800,run:false,h:null}; render(); break;
+    /* маршрут */
+    case "os": S.state.os = a.dataset.os==="win" ? "win" : "mac"; queueSave("state",0); render(); if (CH.open) rChatCtx(); break;
+    case "route-mod": { const mm = ROUTE.find(x=>x.id===a.dataset.m); if (!mm) break; const st = mm.steps.find(x=>!routeDone(x))||mm.steps[0]; S.routeAt = st.id; S.state.routeAt = st.id; queueSave("state",1500); render(); break; }
+    case "route-go": S.routeAt = a.dataset.id; S.state.routeAt = a.dataset.id; queueSave("state",1500); render(); toCard(); break;
+    case "route-prev": { const f = flatRoute(), i = f.findIndex(x=>x.id===routeCur().id); if (i>0){ S.routeAt = f[i-1].id; S.state.routeAt = S.routeAt; queueSave("state",1500); render(); toCard(); } break; }
+    case "route-done": { const cur = routeCur(); if (!cur) break; const was = routeDone(cur);
+      if (cur.stage){ const vv = v01(); if (!vv){ toast("Ролик V01 ещё не загрузился"); break; } vv.stages = vv.stages||{}; vv.stages[cur.stage] = !was; vSave(vv,0); }
+      else S.state.route[cur.id] = !was;
+      if (!was){ const f = flatRoute(), i = f.findIndex(x=>x.id===cur.id), nx = f.slice(i+1).find(x=>!routeDone(x)) || f[i+1]; if (nx){ S.routeAt = nx.id; S.state.routeAt = nx.id; } toast("Шаг "+cur.num+" пройден"); }
+      queueSave("state",0); renderAll(); toCard(); break; }
+    case "route-prod": { const vv = v01(); if (!vv){ toast("Ролики ещё загружаются"); break; } S.vid = vv.id; S.stageOf[vv.id] = a.dataset.s; go("prod"); break; }
+    case "route-help": { const c = routeCur(); chatOpen("Шаг "+c.num+" «"+c.t+"». Не получается: ", false); break; }
+    case "quiz": { const q = S.quiz || (S.quiz = newQuiz()); const i = Number(a.dataset.i);
+      if (i===q.ok.length){ q.ok.push(i); if (q.ok.length===8){ if (!q.miss){ q.wins++; toast(q.wins>=2?"Два раза подряд без ошибок — формула в голове":"Чисто! Ещё раз — и формула твоя"); } else toast("Собрано. Теперь без ошибок"); } }
+      else { const prev = q.ok.length ? FORMULA[q.ok.length-1].m : null; toast(prev ? "Мимо: после «"+prev+"» идёт другой этап" : "Мимо: всё начинается с заказа"); q.miss++; q.wins = 0; }
+      render(); break; }
+    case "quiz-reset": S.quiz = newQuiz(); render(); break;
+    case "md-dl": saveFile("Monolith_metodichka.md", buildMd()); break;
+    case "md-copy": copy(buildMd()); break;
+    case "issue-ok": { const id = a.dataset.id;
+      if (S.mode==="db" && S.db) S.db.collection("issues").doc(id).update({resolved:true}).catch(()=>toast("Не сохранилось"));
+      else { const x = (S.issues||[]).find(i=>i.id===id); if (x){ x.resolved = true; try { localStorage.setItem("ms-monolith-issues", JSON.stringify(S.issues)); } catch(e){} render(); } }
+      break; }
+    /* наставник */
+    case "chat-open": chatOpen(a.dataset.text!=null ? a.dataset.text : null, !!a.dataset.send); break;
+    case "chat-close": chatClose(); break;
+    case "chat-send": chatSend(); break;
+    case "chat-clear": if (CH.busy) break; CH.msgs = []; queueSave("chat",0); rChat(); break;
+    case "chat-sug": $("#mIn").value = a.dataset.text||""; chatSend(); break;
+    case "chat-attach": $("#mFile").click(); break;
+    case "chat-img-del": { const i = Number(a.dataset.i), x = CH.imgs[i]; if (x){ URL.revokeObjectURL(x.url); CH.imgs.splice(i,1); rChat(); } break; }
+    case "chat-copy": copy(chatForClaude()); break;
+    case "explain": { const el = document.getElementById(a.dataset.src); if (!el) break; chatOpen(`Объясни простыми словами, что значит «${a.dataset.label||"этот текст"}»: зачем каждая строчка и что изменится, если поменять свет или объектив.\n\n${el.textContent.slice(0,2500)}`, true); break; }
+    case "plang": S.state.promptLang = a.dataset.l==="ru" ? "ru" : "en"; queueSave("state",0); render(); break;
+    case "style-reset": if (S.state.style) delete S.state.style[a.dataset.k]; queueSave("state",0); render(); toast("Блок возвращён к исходному"); break;
+    case "tr-shot": if (s) trText(s, ()=>vSave(v,0)); break;
+    case "tr-ctor": trText(S.ctor, updCtor); break;
   }
 });
+function toCard(){ requestAnimationFrame(()=>{ const el = $(".rcard"); if (el && (el.getBoundingClientRect().top<0 || el.getBoundingClientRect().top>window.innerHeight*0.6)) el.scrollIntoView({block:"start"}); }); }
 document.addEventListener("keydown", ev=>{
   const t = ev.target;
+  if (ev.key==="Escape" && CH.open){ chatClose(); return; }
   if (ev.metaKey||ev.ctrlKey||ev.altKey) return;
   if (/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)) return;
   const blk = t.closest && t.closest("g[data-act='pick-vid']");
@@ -1355,6 +2022,7 @@ document.addEventListener("change", ev=>{
   const t = ev.target;
   if (t.dataset.act==="tool"){ const id=t.dataset.id, cur=S.state.tools[id]||{}, nx=Object.assign({},cur,{bought:t.checked}); if (t.checked&&!cur.cancelBy){ const d=new Date(); d.setDate(d.getDate()+29); nx.cancelBy=d.toISOString().slice(0,10); } S.state.tools[id]=nx; queueSave("state"); renderAll(); return; }
   if (t.dataset.act==="chk"){ const v=vById(t.dataset.id); if(!v) return; v.checks=v.checks||{}; v.checks[t.dataset.k]=v.checks[t.dataset.k]||{}; v.checks[t.dataset.k][t.dataset.i]=t.checked; vSave(v); render(); return; }
+  if (t.dataset.act==="micro"){ const m = S.state.micro[t.dataset.id] = Object.assign({}, S.state.micro[t.dataset.id]); m[t.dataset.i] = t.checked; queueSave("state"); render(); return; }
   if (t.dataset.act==="shot-laser"){ const v=vById(t.dataset.v); const s=v&&(v.shots||[]).find(x=>x.id===t.dataset.shot); if(!s) return; s.laser=t.checked; vSave(v); render(); return; }
   if (t.dataset.ctor){ S.ctor[t.dataset.ctor] = t.type==="checkbox"?t.checked:t.value; updCtor(); return; }
   if (t.id==="ctorVid"){ S.ctor.vid = t.value; return; }
@@ -1365,11 +2033,18 @@ document.addEventListener("change", ev=>{
 });
 document.addEventListener("input", ev=>{
   const t = ev.target;
+  if (t.id==="gq"){ S.gq = t.value; const g = $("#glossList"); if (g) g.innerHTML = glossItems(); return; }
   if (t.dataset.ctor){ if (t.type!=="checkbox" && t.tagName!=="SELECT"){ S.ctor[t.dataset.ctor] = t.value; updCtor(); } return; }
   if (t.type==="checkbox"||t.tagName==="SELECT"||t.type==="date") return;
   handleInput(t);
 });
-function updCtor(){ const cp = ctorPrompt(); const a = $("#ctor-kf"), b = $("#ctor-vid"); if (a) a.textContent = cp.kf; if (b) b.textContent = cp.vid; }
+function updCtor(){
+  const cp = ctorPrompt(), ru = S.state.promptLang==="ru";
+  const a = $("#ctor-kf"), b = $("#ctor-vid"), ta = $("#ctor-kf-tr"), tb = $("#ctor-vid-tr");
+  if (a) a.textContent = ru ? cp.kfRu : cp.kf; if (b) b.textContent = ru ? cp.vidRu : cp.vid;
+  if (ta) ta.textContent = cp.kfRu; if (tb) tb.textContent = cp.vidRu;
+  if (!editing()){ const sv = document.querySelector('[data-ctor="subject"]'); if (sv && sv.value!==S.ctor.subject) sv.value = S.ctor.subject; const av = document.querySelector('[data-ctor="audio"]'); if (av && av.value!==S.ctor.audio) av.value = S.ctor.audio; }
+}
 function handleInput(t){
   if (t.dataset.st){ let val = t.value; if (t.type==="number") val = val===""?null:Number(val); stSet(t.dataset.st, val); return; }
   const v = t.dataset.v ? vById(t.dataset.v) : null; if (!v) return;
@@ -1381,7 +2056,13 @@ function handleInput(t){
   if (S.view==="prod" && curStage(v)==="edit") afterRender();
 }
 document.addEventListener("focusout", ()=>{ setTimeout(()=>{ if (S.pending && !editing()) renderAll(); },300); });
-function route(){ const h = (location.hash||"").replace("#",""); S.view = SECTIONS.some(s=>s[0]===h) ? h : "ops"; }
+function route(){ const h = (location.hash||"").replace("#",""); S.view = SECTIONS.some(s=>s[0]===h) ? h : "route"; }
 window.addEventListener("hashchange", ()=>{ route(); S.confirm=null; renderAll(); window.scrollTo(0,0); });
+(function bindChat(){
+  const inp = $("#mIn"), file = $("#mFile");
+  inp.addEventListener("keydown", e=>{ if (e.key==="Enter" && !e.shiftKey && !e.isComposing){ e.preventDefault(); chatSend(); } });
+  inp.addEventListener("paste", e=>{ const fs = [...((e.clipboardData && e.clipboardData.files) || [])].filter(f=>/^image\//.test(f.type)); if (!fs.length) return; e.preventDefault(); if (CH.canImg) addImgs(fs); else toast("Скриншоты Наставник видит в штабе на claude.ai"); });
+  file.addEventListener("change", ()=>{ addImgs([...(file.files||[])]); file.value = ""; });
+})();
 boot();
 </script>
