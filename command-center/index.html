@@ -1873,8 +1873,9 @@ async function logoPng(mode){
   const img = await logoImg(); const size = 1080;
   const cv = document.createElement("canvas"); cv.width = size; cv.height = size; const ctx = cv.getContext("2d");
   if (mode!=="clear"){ const g = ctx.createLinearGradient(0,0,size,size); g.addColorStop(0,"#F1EBDF"); g.addColorStop(1,"#DDD4C4"); ctx.fillStyle = g; ctx.fillRect(0,0,size,size); }
-  const lw = mode==="avatar" ? 720 : (mode==="plate" ? 860 : 980), lh = lw*LOGO_RATIO;
-  if (img) ctx.drawImage(img, (size-lw)/2, (size-lh)/2, lw, lh);
+  const lw = mode==="avatar" ? 912 : (mode==="plate" ? 860 : 980), lh = lw*LOGO_RATIO;
+  const dx = mode==="avatar" ? -5 : 0, dy = mode==="avatar" ? 8 : 0;
+  if (img) ctx.drawImage(img, (size-lw)/2+dx, (size-lh)/2+dy, lw, lh);
   return canvasBlob(cv);
 }
 
