@@ -1,4 +1,4 @@
-# Разведка: вселенная MS Infrastructure
+# Разведка: вселенная MC Infrastructure
 
 Октябрь 2026. Источники открытые: статьи, отраслевая пресса, отчёты платформ. Живую ленту TikTok напрямую не видно, поэтому полевые наблюдения из бытовки — важный дополнительный источник (поле в штабе → «Разведка»).
 
@@ -21,7 +21,7 @@
 | 5 | Узнаваемость серии держит зрителя (ИИ-сериалы ~10 млн на эпизод) | Повторяется ДНК: свет, цвет, лазер, звуковой логотип | [The Decoder](https://the-decoder.com/ai-generated-dating-show-pulls-10-million-views-per-episode-on-tiktok/) |
 | 6 | Диаспора узнаёт себя: ранние подъёмы, расчётки, порядок | Ярус III, V08 «5:40» | [TikTok](https://www.tiktok.com/discover/romanians-in-germany), [Observator](https://observatornews.ro/extern/ce-salariu-are-un-roman-din-germania-dupa-6-ani-de-munca-e-corecta-viata-ma-intorc-in-romania-598869.html) |
 | 7 | Ремесло находит людей в соцсетях: пассивные кандидаты, истории изнутри, простой контакт; провал — без системы | V09: одно слово в сообщения; штаб = система | [DHZ](https://www.deutsche-handwerks-zeitung.de/?p=244511), [Handwerksblatt](https://www.handwerksblatt.de/die-handwerkskammern-in-deutschland/hwk-saarland/social-recruiting-im-handwerk), [Haustechnikdialog](https://www.haustechnikdialog.de/News/30603/Personalgewinnung-mit-TikTok-und-Co-deshalb-bietet-Social-Media-unverzichtbare-Plattformen-fuer-die-Mitarbeitersuche-im-Handwerk) |
-| 8 | «Найди разницу» провоцирует комментарии мастеров | V06 «Стандарт MS» | [Projul](https://projul.com/blog/construction-social-media-content-ideas-guide/) |
+| 8 | «Найди разницу» провоцирует комментарии мастеров | V06 «Стандарт MC» | [Projul](https://projul.com/blog/construction-social-media-content-ideas-guide/) |
 | 9 | Алгоритм: досмотр, повторы, репосты > лайков; хук ≤ 2 с; петля | 12–25 с, финал стыкуется с началом | [Darkroom](https://www.darkroomagency.com/observatory/how-tiktok-algorithm-works-in-2026), [SocialPilot](https://www.socialpilot.co/blog/tiktok-algorithm) |
 | 10 | ИИ под подозрением: ползунок «меньше ИИ», поиск ИИ-спама, 36% меньше доверяют брендам с ИИ-видео | Качество > количество, метка ИИ, со 2-го месяца — реальная съёмка | [SMT](https://www.socialmediatoday.com/news/tiktok-adds-option-to-limit-ai-content-in-your-for-you-feed/805952/), [TikTok](https://newsroom.tiktok.com/helping-people-spot-and-understand-ai-generated-content-on-tiktok?lang=en-GB), [Animoto](https://www.businesswire.com/news/home/20260121875037/en/83-of-Consumers-Can-Spot-AI-Videos-36-Say-It-Lowers-Brand-Trust-According-to-Animotos-New-Report) |
 | 11 | Ст. 50 AI Act с 2 августа 2026: реалистичный синтетический контент маркировать; (m/w/d) в вакансиях; Impressum | «KI-Visualisierung», ИИ-кадр не выдаём за объект | [TÜV Akademie](https://die-tuev-akademie.de/blog/kennzeichnungspflicht-fuer-ki-inhalte-was-art-50-ai-act-tatsaechlich-verlangt), [Mimikama](https://www.mimikama.org/?p=431375) |

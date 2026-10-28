@@ -9,7 +9,7 @@
   --bg:#0E1012; --bg-2:#111417; --pn:#15181B; --pn-2:#1B1F23; --pn-3:#22272C;
   --seam:#2A2F35; --seam-2:#3B4148;
   --tx:#ECE5D8; --tx-2:#B5AEA1; --tx-3:#7E796F;
-  --amber:#F2A541; --amber-2:#C7832C; --amber-ink:#17100A; --amber-soft:rgba(242,165,65,.12);
+  --amber:#E8821E; --amber-2:#B9661A; --amber-ink:#17100A; --amber-soft:rgba(232,130,30,.12);
   --laser:#FF5A3C; --blue:#8DAFCD; --blue-soft:rgba(141,175,205,.12);
   --ok:#93C391; --ok-soft:rgba(147,195,145,.13); --bad:#E58468; --bad-soft:rgba(229,132,104,.13);
   --f-display:"Forum","Times New Roman",Georgia,serif;
@@ -19,7 +19,7 @@
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{background-color:var(--bg);background-image:radial-gradient(ellipse at 70% -10%,rgba(242,165,65,.06),transparent 55%),linear-gradient(rgba(236,229,216,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(236,229,216,.028) 1px,transparent 1px);background-size:100% 100%,64px 64px,64px 64px;background-attachment:fixed;color:var(--tx);font-family:var(--f-body);font-size:15px;line-height:1.55}
+body{background-color:var(--bg);background-image:radial-gradient(ellipse at 70% -10%,rgba(232,130,30,.06),transparent 55%),linear-gradient(rgba(236,229,216,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(236,229,216,.028) 1px,transparent 1px);background-size:100% 100%,64px 64px,64px 64px;background-attachment:fixed;color:var(--tx);font-family:var(--f-body);font-size:15px;line-height:1.55}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
 a{color:var(--amber)}
 :focus-visible{outline:2px solid var(--amber);outline-offset:2px}
@@ -30,6 +30,9 @@ a{color:var(--amber)}
 .rail{position:sticky;top:env(safe-area-inset-top,0px);height:calc(100vh - env(safe-area-inset-top,0px));display:flex;flex-direction:column;gap:18px;padding-block:22px 18px;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:18px;border-right:1px solid var(--seam);background:linear-gradient(180deg,rgba(21,24,27,.92),rgba(14,16,18,.96));z-index:30;overflow-y:auto}
 .brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--tx)}
 .brand svg{flex:0 0 auto}
+.plaque{display:inline-grid;place-items:center;background:linear-gradient(135deg,#F1EBDF,#DDD4C4);border-radius:2px;padding:6px 8px;box-shadow:0 6px 18px rgba(0,0,0,.35),inset 0 0 0 1px rgba(0,0,0,.06);flex:0 0 auto}
+.plaque svg{display:block;max-width:100%;height:auto}
+.logo-box.light{background:#ECE5D8;border-color:#D6CDBE}
 .brand b{display:block;font:400 21px/1 var(--f-display);letter-spacing:.16em}
 .brand span{display:block;font:500 10px/1.4 var(--f-mono);letter-spacing:.14em;color:var(--tx-3);text-transform:uppercase;margin-top:4px}
 nav.nav{display:flex;flex-direction:column;gap:2px}
@@ -111,7 +114,7 @@ p{margin:0}
 .btn{font:600 12.5px/1.2 var(--f-body);letter-spacing:.02em;display:inline-flex;align-items:center;gap:7px;padding:9px 13px;border-radius:2px;border:1px solid var(--seam-2);background:var(--pn-2);color:var(--tx);cursor:pointer;text-decoration:none;white-space:nowrap}
 .btn:hover{border-color:var(--tx-3);background:var(--pn-3)}
 .btn.pri{background:var(--amber);border-color:var(--amber);color:var(--amber-ink)}
-.btn.pri:hover{background:#FFB55A}
+.btn.pri:hover{background:#F59A45}
 .btn.ghost{background:transparent}
 .btn.s{padding:6px 10px;font-size:12px}
 .btn.xl{padding:13px 20px;font-size:14px}
@@ -157,7 +160,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--amber);outline:none;b
 .slots{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:4px}
 .slots i{height:30px;border:1px solid var(--seam-2);background:var(--bg-2);position:relative}
 .slots i.on{background:var(--amber);border-color:var(--amber)}
-.slots i.wip{background:linear-gradient(0deg,rgba(242,165,65,.35) var(--p,0%),var(--bg-2) var(--p,0%));border-color:var(--amber-2)}
+.slots i.wip{background:linear-gradient(0deg,rgba(232,130,30,.35) var(--p,0%),var(--bg-2) var(--p,0%));border-color:var(--amber-2)}
 .big{font:400 46px/1 var(--f-display);letter-spacing:.02em}
 .big small{font:500 14px var(--f-mono);color:var(--tx-3);margin-left:6px;letter-spacing:0}
 .bar{height:4px;background:var(--pn-3);overflow:hidden}
@@ -327,9 +330,9 @@ details>summary::-webkit-details-marker{display:none}
 <div class="laser-sweep" aria-hidden="true"></div>
 <div class="app">
   <aside class="rail" aria-label="Навигация штаба">
-    <a class="brand" href="#ops" aria-label="MS Infrastructure — штаб">
-      <svg width="30" height="46" viewBox="0 0 120 184" aria-hidden="true"><rect x="38" y="6" width="44" height="172" fill="#ECE5D8"/><rect x="38" y="6" width="9" height="172" fill="#B5AEA1"/><line x1="4" y1="112" x2="116" y2="112" stroke="#FF5A3C" stroke-width="5"/></svg>
-      <div><b>MS INFRA</b><span>штаб · monolith</span></div>
+    <a class="brand" href="#ops" aria-label="MC Infrastructure — штаб">
+      <span class="plaque" id="railLogo" aria-hidden="true"></span>
+      <div><b>MC INFRA</b><span>штаб · monolith</span></div>
     </a>
     <nav class="nav" id="nav"></nav>
     <div class="rail-foot">
@@ -364,8 +367,22 @@ const LINKS = {
   ttbiz:"https://support.tiktok.com/en/using-tiktok/growing-your-audience/switching-to-a-business-account",
   cc:"https://ads.tiktok.com/business/creativecenter/inspiration/popular/hashtag/pc/en",
   claude:"https://claude.ai/", carrd:"https://carrd.co/",
+  tts:"https://elevenlabs.io/app/speech-synthesis/text-to-speech", isolator:"https://elevenlabs.io/app/voice-isolator", voicelib:"https://elevenlabs.io/app/voice-library",
+  runway:"https://app.runwayml.com/", runwayprice:"https://runwayml.com/pricing", luma:"https://dream-machine.lumalabs.ai/", lumaprice:"https://lumalabs.ai/pricing",
   fForum:"https://fonts.google.com/specimen/Forum", fOnest:"https://fonts.google.com/specimen/Onest"
 };
+const LOGO_ORIG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-53.0 -348.6 770.8 498.6">
+<path id="growth-curve" d="M -8.0 95.0 C 414.6 95.0 629.2 75.7 662.8 -290.6" fill="none" stroke="#E8821E" stroke-width="22" stroke-linecap="round"/>
+<path id="arrow" d="M 682.0 -248.8 L 662.8 -290.6 L 636.2 -253.0" fill="none" stroke="#E8821E" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="m" transform="translate(0.00,0.00) scale(0.30000,-0.30000)"><path d="M969 325V0H856V308Q856 382 819.0 421.5Q782 461 718 461Q654 461 616.5 421.5Q579 382 579 308V0H466V308Q466 382 429.0 421.5Q392 461 328 461Q264 461 226.5 421.5Q189 382 189 308V0H75V551H189V488Q217 522 260.0 541.0Q303 560 352 560Q418 560 470.0 532.0Q522 504 550 451Q575 501 628.0 530.5Q681 560 742 560Q807 560 858.5 533.0Q910 506 939.5 453.0Q969 400 969 325Z" fill="#2E7D32"/></g>
+<g id="c" transform="translate(303.70,0.00) scale(0.30000,-0.30000)"><path d="M307 560Q407 560 472.5 512.5Q538 465 561 377H438Q423 418 390.0 441.0Q357 464 307 464Q237 464 195.5 414.5Q154 365 154 276Q154 187 195.5 137.0Q237 87 307 87Q406 87 438 174H561Q537 90 471.0 40.5Q405 -9 307 -9Q228 -9 167.0 26.5Q106 62 71.5 126.5Q37 191 37 276Q37 361 71.5 425.5Q106 490 167.0 525.0Q228 560 307 560Z" fill="#2E7D32"/></g>
+<g id="two" transform="translate(489.70,-170.00) scale(0.19800,-0.19800)"><path d="M70 162Q168 243 224.5 295.0Q281 347 320.0 404.0Q359 461 359 515Q359 556 340.0 579.0Q321 602 283 602Q245 602 223.5 573.5Q202 545 202 493H37Q39 578 73.5 635.0Q108 692 164.5 719.0Q221 746 290 746Q409 746 469.5 685.0Q530 624 530 526Q530 419 457.0 327.5Q384 236 271 149H541V10H39V137Q73 164 70 162Z" fill="#E8821E"/></g>
+</svg>`;
+const LOGO_RATIO = 498.6/770.8;
+function mcLogo(w){ return LOGO_ORIG.replace(/ id="[^"]*"/g,"").replace("<svg ", `<svg width="${w}" height="${Math.round(w*LOGO_RATIO)}" aria-hidden="true" focusable="false" `); }
+let _logoImg = null;
+function logoImg(){ if (_logoImg) return _logoImg; _logoImg = new Promise(res=>{ try { const url = URL.createObjectURL(new Blob([LOGO_ORIG.replace("<svg ","<svg width=\"1542\" height=\"997\" ")],{type:"image/svg+xml"})); const im = new Image(); im.onload=()=>res(im); im.onerror=()=>res(null); im.src=url; } catch(e){ res(null); } }); return _logoImg; }
+const VO_MODES = [["none","Без голоса"],["real","Живой голос · батя или Миша"],["ai","ИИ-диктор · ElevenLabs"]];
 const TOOL_LINK = {nano:LINKS.gemini, gpt:LINKS.chatgpt, mj:LINKS.mj, "veo-flow":LINKS.flow, "veo-app":LINKS.gemini, kling:LINKS.kling};
 
 /* ---- ДНК вселенной ---- */
@@ -396,8 +413,8 @@ const CLAIMS = {
   de3:{de:"Präzision ist unser Fundament.",ro:"Precizia e fundația noastră.",ru:"Точность — наш фундамент."}
 };
 const PALETTE = [
-  ["Базальт","#0E1012","фон, финальная карточка"],["Травертин","#ECE5D8","текст, светлые плоскости"],["Натрий","#F2A541","единственный тёплый акцент"],
-  ["Лазер","#FF5A3C","подпись MS — только линия"],["Бетон","#7E796F","вторичный текст"],["Чертёж","#8DAFCD","данные и схемы"]
+  ["Базальт","#0E1012","фон, финальная карточка"],["Травертин","#ECE5D8","текст, плашка под знак"],["MC Orange","#E8821E","стрелка роста — единственный тёплый акцент"],
+  ["MC Grün","#2E7D32","буквы знака — только на светлом"],["Лазер","#FF5A3C","подпись серии — только линия"],["Бетон","#7E796F","вторичный текст"]
 ];
 const GRADE_CAPCUT = [["Контраст","+10"],["Насыщенность","−15"],["Светлые","−12"],["Тени","−8"],["Температура","−5"],["Выцветание","+4"],["Виньетка","+12"],["Зерно","+10"],["Резкость","+5"],["HSL · оранжевый, насыщенность","+10"]];
 const SHOT_GRAMMAR = [
@@ -422,7 +439,7 @@ const LAWS = [
   ["Материал — главный герой","Камень, керамика, бетон, вода, пыль в свете. Красота материала продаёт уровень лучше любого текста."],
   ["Лиц не показываем","Только силуэты, спины, руки в перчатках. Так ИИ-кадр не уходит в «зловещую долину», а люди остаются символом бригады."],
   ["Свет — только три режима","Синий час, золотой час или натриевая ночь. Плоский дневной свет запрещён: он делает картинку дешёвой."],
-  ["Лазерная линия — подпись MS","В каждом ролике есть тонкая красная линия лазерного уровня и звук её включения. Это наш знак: точность."],
+  ["Лазерная линия — подпись MC","В каждом ролике есть тонкая красная линия лазерного уровня и звук её включения. Это наш знак: точность."],
   ["Правда","ИИ-кадр — это образ, а не «наш объект». Метка ИИ включена всегда, в подписи — «KI-Visualisierung». Реальные работы — только реальной съёмкой."]
 ];
 
@@ -455,20 +472,21 @@ const DECISIONS = [
 const SETUP = [
   {ph:"0",name:"База",items:[
     {id:"b-gpro",t:"Купи Google AI Pro",b:"Миша, открой тарифы Google и оформи AI Pro. Это Veo 3.1 (видео со звуком) и Nano Banana (фотореалистичные кадры). Если есть пробный месяц — бери и сразу отметь в «Арсенале» дату отмены.",links:[["Тарифы Google",LINKS.gplans],["Flow",LINKS.flow]]},
-    {id:"b-gpt",t:"Купи ChatGPT Plus",b:"Второй художник для ключевых кадров и редактор текстов RO/RU. Создай проект «MS Infrastructure» и держи там референсы.",links:[["Тарифы",LINKS.gptprice],["ChatGPT",LINKS.chatgpt]]},
+    {id:"b-gpt",t:"Купи ChatGPT Plus",b:"Второй художник для ключевых кадров и редактор текстов RO/RU. Создай проект «MC Infrastructure» и держи там референсы.",links:[["Тарифы",LINKS.gptprice],["ChatGPT",LINKS.chatgpt]]},
     {id:"b-capcut",t:"Установи CapCut Desktop",b:"Монтаж. Шрифты бренда ставить не нужно: титры штаб отдаёт готовыми PNG (этап «Монтаж»).",links:[["Скачать",LINKS.capcut]]},
-    {id:"b-tiktok",t:"Заведи TikTok MS Infrastructure",b:"Бизнес-аккаунт фирмы: @ms.infrastructure (или ближайший свободный), категория «Строительство». Для коммерческого аккаунта в Германии нужен Impressum: данные фирмы от бати → одностраничная визитка → ссылка в профиле. Приложение на телефон не ставь — только TikTok Studio в браузере.",links:[["TikTok Studio",LINKS.studio],["Как переключить на бизнес",LINKS.ttbiz],["Визитка: Carrd",LINKS.carrd]]},
-    {id:"b-folders",t:"Создай папки проекта",b:"Через неделю будет 300+ файлов. Структура ниже — копируй.",prompt:"MS_MONOLITH/\n  00_brand/      logo.svg, endcard.png, sonic_logo.mp3, drone.mp3\n  00_sfx/        trowel.mp3, clips.mp3, saw.mp3, laser.mp3\n  V01_nullpunkt/\n    kf/          s1.png, s2.png …        ключевые кадры\n    clips/       s1_v1.mp4, s1_v2.mp4 …  все попытки\n    titles/      V01_titr.png\n    V01_final.mp4\n  V02_millimeter/ …"},
-    {id:"b-flow",t:"Настрой Flow",b:"Flow → New project «MS Monolith», формат 9:16. Черновики — Veo 3.1 Fast (экономит кредиты), Quality — только для финального клипа каждого кадра.",links:[["Открыть Flow",LINKS.flow]]}
+    {id:"b-tiktok",t:"Заведи TikTok MC Infrastructure",b:"Бизнес-аккаунт фирмы на mc.infrastructure.de@gmail.com, ник @mc.infrastructure.de (или ближайший свободный), категория «Строительство». Для коммерческого аккаунта в Германии нужен Impressum: данные фирмы от бати → одностраничная визитка → ссылка в профиле. Приложение на телефон не ставь — только TikTok Studio в браузере.",links:[["TikTok Studio",LINKS.studio],["Как переключить на бизнес",LINKS.ttbiz],["Визитка: Carrd",LINKS.carrd]]},
+    {id:"b-folders",t:"Создай папки проекта",b:"Через неделю будет 300+ файлов. Структура ниже — копируй.",prompt:"MC_MONOLITH/\n  00_brand/      logo.svg, endcard.png, sonic_logo.mp3, drone.mp3\n  00_sfx/        trowel.mp3, clips.mp3, saw.mp3, laser.mp3\n  V01_nullpunkt/\n    kf/          s1.png, s2.png …        ключевые кадры\n    clips/       s1_v1.mp4, s1_v2.mp4 …  все попытки\n    titles/      V01_titr.png\n    V01_final.mp4\n  V02_millimeter/ …"},
+    {id:"b-flow",t:"Настрой Flow",b:"Flow → New project «MC Monolith», формат 9:16. Черновики — Veo 3.1 Fast (экономит кредиты), Quality — только для финального клипа каждого кадра.",links:[["Открыть Flow",LINKS.flow]]}
   ]},
   {ph:"1",name:"Бренд",items:[
     {id:"r-brand",t:"Заполни настройки бренда",b:"«Вселенная» → «Настройки бренда»: ник, контакт для откликов, регион, слоган. Они подставятся в титры, финальную карточку и подписи.",go:"universe"},
     {id:"r-logo",t:"Забери логотип и аватар",b:"«Вселенная» → «Знак». Скачай SVG и PNG. Финальная карточка 1080×1920 собирается на этапе «Монтаж» каждого ролика.",go:"universe"},
     {id:"r-render",t:"3D-рендер монолита для V10",b:"Gemini (Nano Banana) или ChatGPT. Сделай 4–6 вариантов, выбери один с батей — это центральный образ финального фильма.",links:[["Gemini",LINKS.gemini],["ChatGPT",LINKS.chatgpt]],prompt:"Photorealistic cinematic still: a tall monolithic slab of polished black basalt stands alone in the centre of a vast empty concrete hall at blue-hour dawn, light mist on the floor, the first warm sunlight raking across the concrete. A thin bright red line from a cross-line laser level crosses the slab horizontally at two thirds of its height. Symmetrical composition, 35mm anamorphic lens.\n"+DNA.grade+"\n"+DNA.neg+" Vertical 9:16."},
     {id:"r-sonic",t:"Звуковой логотип",b:"ElevenLabs → Sound Effects. Сделай 3–4 варианта каждого звука из «Вселенной» → «Звук», лучшие сохрани в 00_brand и 00_sfx. Звуковой логотип звучит в конце каждого ролика.",links:[["ElevenLabs SFX",LINKS.eleven]],go:"universe"},
-    {id:"r-grade",t:"Пресет цвета «MS Basalt» в CapCut",b:"Открой любой клип → Коррекция → выставь стартовые значения из «Вселенной» → «Цвет» → сохрани как пресет. Он склеивает Veo, Kling и Nano Banana в один фильм.",go:"universe"},
+    {id:"r-voice",t:"Голос бренда",b:"Для ярусов III–IV. Запиши батю (или себя) на телефон: одна фраза на русском и на румынском, тихая комната, 3 дубля. Прогони через ElevenLabs Voice Isolator и послушай рядом с ИИ-диктором. Решите вместе, чей голос звучит в V08–V09.",links:[["Voice Isolator",LINKS.isolator],["Text to Speech",LINKS.tts]],go:"universe"},
+    {id:"r-grade",t:"Пресет цвета «MC Basalt» в CapCut",b:"Открой любой клип → Коррекция → выставь стартовые значения из «Вселенной» → «Цвет» → сохрани как пресет. Он склеивает Veo, Kling и Nano Banana в один фильм.",go:"universe"},
     {id:"r-test",t:"Тест-драйв фотореализма",b:"5 кадров + 5 клипов по ДНК: макро, руки, силуэты, сверху, таймлапс. Собери промпты в «Конструкторе» («Вселенная»), прогони во Flow. Запиши в «Разведке» → «Полевые наблюдения», что выглядит дорого, а что дёшево. Это главный урок недели.",links:[["Flow",LINKS.flow]],go:"universe"},
-    {id:"r-avatar",t:"Аватар и профиль",b:"Аватар — знак MS на базальте (PNG из «Вселенной»). Bio: «Fliesen. Präzision. Gebaut, um zu bleiben. · Plăci și gresie · Плитка» + ссылка на визитку с Impressum.",links:[["TikTok Studio",LINKS.studio]]}
+    {id:"r-avatar",t:"Аватар и профиль",b:"Аватар — знак mc² на травертиновой плашке (PNG «Аватар» во «Вселенной»). Bio: «Fliesen. Präzision. Gebaut, um zu bleiben. · Plăci și gresie · Плитка» + ссылка на визитку с Impressum.",links:[["TikTok Studio",LINKS.studio]]}
   ]}
 ];
 
@@ -477,25 +495,25 @@ const TOOLS = [
   {id:"gpro",name:"Google AI Pro",tier:"core",price:21.99,cur:"€",role:"Видео + кадры",
    what:"Veo 3.1: клипы до 8 с сразу со звуком, режимы Frames to Video (оживляет твой кадр) и Ingredients (держит объект по 3–4 референсам), вертикаль 9:16. Nano Banana — фотореалистичные ключевые кадры.",
    why:"Главный двигатель вселенной: картинка, движение и звук в одной подписке.",
-   first:"Пробный месяц, если предлагают. Flow → проект «MS Monolith».",
+   first:"Пробный месяц, если предлагают. Flow → проект «MC Monolith».",
    limits:"Gemini — около 3 видео в день; Flow — месячные кредиты, сгорают. Генерируй каждый день — лимит не копится.",
    links:[["Тарифы",LINKS.gplans],["Flow",LINKS.flow],["Gemini",LINKS.gemini]],plans:["AI Pro","Пробный месяц","AI Plus"]},
   {id:"gpt",name:"ChatGPT Plus",tier:"core",price:20,cur:"$",role:"Кадры и тексты",
    what:"Генерация и точечная правка изображений словами, тексты и подписи RO/RU/DE.",
    why:"Второй художник: когда Nano Banana теряет детали материала или геометрию швов.",
-   first:"Проект «MS Infrastructure», туда — референсы и лучшие кадры.",
+   first:"Проект «MC Infrastructure», туда — референсы и лучшие кадры.",
    limits:"Лимит картинок официально не публикуется. Sora 2 в ЕС недоступна.",
    links:[["Тарифы",LINKS.gptprice],["Открыть",LINKS.chatgpt]],plans:["Plus","Go"]},
-  {id:"eleven",name:"ElevenLabs",tier:"core",price:6,cur:"$",role:"Звуковой дизайн",
-   what:"Sound Effects: звуковой логотип, гул, фактуры материалов. Голос, если понадобится закадр.",
-   why:"Звук делает ИИ-кадр дорогим. Своя библиотека — одинаковый звук во всех роликах.",
-   first:"7 звуков из «Вселенной» → «Звук».",
-   limits:"Бесплатный план без коммерческой лицензии — для фирмы нужен Starter (≈6 $).",
-   links:[["Тарифы",LINKS.elevenprice],["Sound Effects",LINKS.eleven]],plans:["Starter","Creator"]},
+  {id:"eleven",name:"ElevenLabs",tier:"core",price:6,cur:"$",role:"Звук и голос",
+   what:"Sound Effects — звуковой логотип, гул, фактуры. Text to Speech — диктор DE/RO/RU. Voice Isolator — чистит живую запись с телефона до студийной.",
+   why:"Звук делает ИИ-кадр дорогим, а живой голос бати — честным. Оба инструмента в одной подписке.",
+   first:"7 звуков из «Вселенной» → «Звук», затем шаг «Голос бренда».",
+   limits:"Бесплатный план без коммерческой лицензии — для фирмы нужен Starter (≈6 $). Модели речи обновляются, бери самую новую мультиязычную.",
+   links:[["Тарифы",LINKS.elevenprice],["Голос",LINKS.tts],["Sound Effects",LINKS.eleven]],plans:["Starter","Creator"]},
   {id:"capcut",name:"CapCut Desktop",tier:"core",price:0,cur:"€",role:"Монтаж и цвет",
    what:"Склейка, пресет цвета, наложение PNG-титров, звук, экспорт 1080×1920.",
    why:"Бесплатно. Титры приходят из штаба готовыми, автосубтитры не нужны.",
-   first:"Проект 1080×1920, 30 fps, пресет «MS Basalt».",
+   first:"Проект 1080×1920, 30 fps, пресет «MC Basalt».",
    limits:"Платные эффекты на экспорте включают пейвол — не используй их.",
    links:[["Скачать",LINKS.capcut]],plans:["Free","Pro"]},
   {id:"tiktok",name:"TikTok Studio",tier:"core",price:0,cur:"€",role:"Эфир и аналитика",
@@ -525,9 +543,21 @@ const TOOLS = [
    what:"Топ звуков, хэштегов и роликов по странам без ленты.",
    why:"Разведка без залипания.",first:"Раз в неделю: Germany и Romania, 7 дней.",
    limits:"Часть разделов просит бесплатный вход TikTok for Business.",
-   links:[["Открыть",LINKS.cc]],plans:["Бесплатно"]}
+   links:[["Открыть",LINKS.cc]],plans:["Бесплатно"]},
+  {id:"runway",name:"Runway Gen-4.5",tier:"alt",price:15,cur:"$",role:"Резерв · отдельные кадры",
+   what:"Gen-4 и Gen-4.5, References для консистентности объекта, сильная работа с камерой.",
+   why:"Если тест-драйв покажет, что Veo проваливает конкретный тип кадра. Gen-3 Alpha, которую советовала другая нейросеть, — модель 2024 года.",
+   first:"Только бесплатные кредиты, на один проблемный кадр.",
+   limits:"Standard: 625 кредитов ≈ 52 с Gen-4.5 или ≈ 125 с Gen-4 Turbo. Есть ли звук — источники противоречат.",
+   links:[["Тарифы",LINKS.runwayprice],["Открыть",LINKS.runway]],plans:["Free","Standard"]},
+  {id:"luma",name:"Luma · Ray3",tier:"alt",price:30,cur:"$",role:"Резерв",
+   what:"Модели Ray3.x на платформе Luma Agents — так теперь называется бывший Dream Machine.",
+   why:"Ещё один вариант для отдельных кадров, если Veo и Kling не справились.",
+   first:"В первый месяц не покупать.",
+   limits:"Plus ≈ 24–30 $, 10 000 кредитов ≈ 30 клипов по 10 с в 720p. У Ray3 по справке Luma звука нет.",
+   links:[["Тарифы",LINKS.lumaprice],["Открыть",LINKS.luma]],plans:["Plus"]}
 ];
-const TIER_L = {core:["Основной","a"],opt:["По результату теста","line"],have:["Уже есть","o"]};
+const TIER_L = {core:["Основной","a"],opt:["По результату теста","line"],have:["Уже есть","o"],alt:["Резерв","line"]};
 
 /* ---- академия ---- */
 const ACADEMY = [
@@ -544,10 +574,11 @@ const ACADEMY = [
     {id:"a7",t:"Силуэты в контровом свете",do:["3 клипа: идут, несут плиту, стоят на лесах","Золотой час, анаморф 35 мм"],pass:"Ни одного видимого лица, а люди читаются."},
     {id:"a8",t:"Руки без лишних пальцев",do:["Перчатки, одно простое действие","Фокус чуть на инструменте"],pass:"3 клипа рук без артефактов."}]},
   {n:"V",t:"Цвет и монтаж",d:"Три генератора — один фильм.",ls:[
-    {id:"a9",t:"Пресет «MS Basalt»",do:["Значения из «Вселенной» → «Цвет»","Подстрой на V01 и сохрани"],pass:"Клипы Veo, Kling и Nano Banana стоят рядом и не спорят."},
+    {id:"a9",t:"Пресет «MC Basalt»",do:["Значения из «Вселенной» → «Цвет»","Подстрой на V01 и сохрани"],pass:"Клипы Veo, Kling и Nano Banana стоят рядом и не спорят."},
     {id:"a10",t:"Ритм 1,5 секунды",do:["Режь начало каждого клипа","Первый кадр — уже действие","Финал стыкуется с началом"],pass:"Ролик короче на 15% без потери смысла."}]},
-  {n:"VI",t:"Звуковой дизайн",d:"Звук продаёт дороговизну.",ls:[
-    {id:"a11",t:"Библиотека звуков",do:["7 звуков из «Вселенной»","Слои: гул + фактура + логотип"],pass:"Слепой тест: по звуку без картинки понятно, что это MS.",links:[["ElevenLabs",LINKS.eleven]]}]},
+  {n:"VI",t:"Звук и голос",d:"Звук продаёт дороговизну, голос — доверие.",ls:[
+    {id:"a11",t:"Библиотека звуков",do:["7 звуков из «Вселенной»","Слои: гул + фактура + логотип"],pass:"Слепой тест: по звуку без картинки понятно, что это MC.",links:[["ElevenLabs",LINKS.eleven]]},
+    {id:"a15",t:"Голос бренда",do:["Одна строка V09 — живым голосом с телефона и ИИ-диктором","Живую запись прогони через Voice Isolator","Покажи обе версии ребятам из бригады"],pass:"Выбран голос для V08–V09, проверено на живых людях.",links:[["Voice Isolator",LINKS.isolator],["Text to Speech",LINKS.tts]]}]},
   {n:"VII",t:"Аналитика пирамиды",d:"У каждого яруса — своя метрика.",ls:[
     {id:"a12",t:"График удержания",do:["Studio → ролик → удержание","Секунда, где падает","Гипотеза и правка в следующем"],pass:"У каждого ролика вывод в ретро.",links:[["Studio",LINKS.studio]]},
     {id:"a13",t:"Конвейер",do:["5 роликов за неделю","Засеки время этапов"],pass:"5 роликов за 10 часов или быстрее."}]}
@@ -586,17 +617,21 @@ const SRC = {
   gpro:["GIGA: Google AI Pro 21,99 €","https://www.giga.de/tech/irres-google-abo-kostet-250-euro-im-monat-das-bekommt-ihr-dafuer--01JVS4AC826SHZ5GRGVMANME8E"],
   kling3:["Dzine: Kling 3.0","https://www.dzine.ai/blog/kling-3-0-vs-kling-2-6/"],
   sora:["GlobalGPT: Sora 2 и Европа","https://www.glbgpt.com/hub/openai-sora-2-availability-in-europe-how-to-access-sora-2-across-countries/"],
-  eleven:["BIGVU: цены ElevenLabs","https://bigvu.tv/blog/elevenlabs-pricing-2026-plans-credits-commercial-rights-api-costs/"]
+  eleven:["BIGVU: цены ElevenLabs","https://bigvu.tv/blog/elevenlabs-pricing-2026-plans-credits-commercial-rights-api-costs/"],
+  luma:["eesel: цены Luma 2026","https://eesel.ai/blog/luma-ai-pricing"],
+  runway:["Creatify: цены Runway 2026","https://creatify.ai/blog/runway-pricing-(2026)-plans-credits-and-what-you-ll-actually-pay"],
+  runway_audio:["AwesomeAgents: Gen-4.5 и звук","https://awesomeagents.ai/models/runway-gen-4-5/"],
+  el_v3:["ElevenLabs: модель Eleven v3","https://elevenlabs.io/docs/help-center/product/core-capabilities/text-to-speech/what-is-eleven-v3-alpha"]
 };
 const INSIGHTS = [
   {t:"Сюжет сильнее спектакля",b:"Самая известная вирусная реклама на Veo 3 (Kalshi) выстрелила историей, а не красотой кадров. Практики сходятся: сложно не сгенерировать, а сделать фильм, который попадает в бренд.",i:"Каждый ролик — одна мысль в одной фразе. Красивые кадры без мысли не публикуем.",s:["kalshi","artlist"]},
   {t:"Satisfying — топливо охвата",b:"ИИ-ASMR на Veo 3 набирал по 30 млн за 3 недели: звук генерируется вместе с движением и совпадает с ним. Процесс укладки, клей, идеальные стыки на стройке и так собирают миллионы.",i:"Ярус I и II — макро-ремесло со звуком. V02 «Миллиметр» — чистый satisfying.",s:["asmr","c_projul"]},
   {t:"ИИ-таймлапс стройки — живой тренд",b:"Таймлапсы «из сырого бетона в готовый интерьер» — отдельный жанр. Главный сигнал у них — сохранения. Практики советуют честность: показывать как визуализацию.",i:"V04 «За одну ночь» с подписью «KI-Visualisierung».",s:["tl_runway","tl_alici"]},
   {t:"Фотореализм ломается на лицах и руках",b:"Лица плывут от кадра к кадру, руки — главный источник артефактов. Работают объектив и свет в промпте, простые жесты, правка одной переменной за раз.",i:"Закон II: лиц нет. Руки — в перчатках и с одним действием. Конструктор промптов фиксирует оптику и свет.",s:["forvideo","veo_guide"]},
-  {t:"Повторяется не персонаж, а ДНК",b:"ИИ-сериалы держатся на узнаваемости: зритель возвращается к знакомому. Fruit Love Island собирал около 10 млн на эпизод именно за счёт повторяющегося мира.",i:"Узнаваемость MS — свет, цвет, лазерная линия и звуковой логотип в каждом ролике.",s:["fli"]},
+  {t:"Повторяется не персонаж, а ДНК",b:"ИИ-сериалы держатся на узнаваемости: зритель возвращается к знакомому. Fruit Love Island собирал около 10 млн на эпизод именно за счёт повторяющегося мира.",i:"Узнаваемость MC — свет, цвет, лазерная линия и звуковой логотип в каждом ролике.",s:["fli"]},
   {t:"Диаспора узнаёт себя",b:"Румынский и русскоязычный TikTok о работе в Германии держится на узнавании: ранние подъёмы, расчётки, «немецкий порядок», дорога домой.",i:"Ярус III «Братство»: V08 «5:40» — мы встаём раньше города.",s:["ro_tt","ro_sal","ru_memes"]},
   {t:"Ремесло ищет людей через соцсети",b:"Handwerkskammer и отраслевая пресса: TikTok и Instagram достают тех, кто не ищет работу активно. Работают истории изнутри профессии и простой путь связаться с телефона. Главная причина провалов — нет системы и ответственного.",i:"V09 — понятный призыв: одно слово в сообщения. Штаб и есть система.",s:["dhz","hwk","htd","rec_coal"]},
-  {t:"Найди разницу — комментарии от профи",b:"Форматы «найди ошибку» и «я бы сделал лучше» вызывают споры мастеров в комментариях, а комментарии — сильный сигнал.",i:"V06 «Стандарт MS»: две стены рядом.",s:["c_projul","c_fcp"]},
+  {t:"Найди разницу — комментарии от профи",b:"Форматы «найди ошибку» и «я бы сделал лучше» вызывают споры мастеров в комментариях, а комментарии — сильный сигнал.",i:"V06 «Стандарт MC»: две стены рядом.",s:["c_projul","c_fcp"]},
   {t:"Алгоритм: досмотр, повторы, репосты",b:"Досмотр, повторные просмотры, репосты и сохранения важнее лайков. Хук — в первые 2 секунды, конец зациклен. Пороги в источниках расходятся.",i:"12–25 с, хук в первом кадре, финальная карточка стыкуется с началом.",s:["algo","algo2"]},
   {t:"ИИ-контент под подозрением",b:"В TikTok есть ползунок «меньше ИИ», с июля 2026 идёт поиск аккаунтов с массовым ИИ-спамом. 36% людей меньше доверяют брендам с ИИ-видео.",i:"Качество вместо количества. Метка ИИ всегда. Со второго месяца — добавлять реальные кадры бригады.",s:["slider","spam","animoto"]},
   {t:"Закон: маркировка и правда",b:"С 2 августа 2026 действует ст. 50 AI Act: реалистичный синтетический контент (дипфейки) нужно маркировать. Общей обязанности маркировать всё нет, но для фирмы безопаснее маркировать всегда. В вакансиях — (m/w/d), у коммерческого аккаунта — Impressum.",i:"Метка TikTok + «KI-Visualisierung» в подписи. ИИ-кадр не выдаём за выполненный объект.",s:["aiact","mimi"]},
@@ -606,7 +641,7 @@ const FORMATS = [
   {n:"Фильм о материале",d:"Камень, вода, пыль в свете. Без людей.",fit:5,eff:2,vir:4,use:"Ярус I — основа охвата"},
   {n:"Макро-ремесло ASMR",d:"Шпатель, клипсы, уровень, звук.",fit:5,eff:2,vir:5,use:"Ярусы I–II"},
   {n:"ИИ-таймлапс",d:"Сырой бетон → готовый интерьер за ночь.",fit:4,eff:3,vir:4,use:"V04, с подписью «визуализация»"},
-  {n:"Найди разницу",d:"Обычная работа против стандарта MS.",fit:4,eff:2,vir:3,use:"V06, комментарии профи"},
+  {n:"Найди разницу",d:"Обычная работа против стандарта MC.",fit:4,eff:2,vir:3,use:"V06, комментарии профи"},
   {n:"Силуэты бригады",d:"Люди как форма на фоне света.",fit:5,eff:3,vir:3,use:"Ярус III"},
   {n:"Призыв",d:"Кого ищем и как написать за 10 секунд.",fit:5,eff:2,vir:2,use:"V09 — конверсия"},
   {n:"Фильм-манифест",d:"Всё лучшее + знак + слоган.",fit:4,eff:5,vir:3,use:"V10 — вершина пирамиды"},
@@ -633,7 +668,7 @@ const HOOKS = [
   {l:"de",t:"Null Toleranz."},{l:"ro",t:"Toleranță zero."},{l:"ru",t:"Ноль допусков."}
 ];
 const HASHTAGS = {
-  de:"#fliesenleger #fliesen #handwerk #baustelle #großformat #präzision #msinfrastructure",
+  de:"#fliesenleger #fliesen #handwerk #baustelle #großformat #präzision #mcinfrastructure",
   ro:"#romaniingermania #santier #faianta #gresie #meserias",
   ru:"#плиточник #стройка #германия #работавгермании #мастер"
 };
@@ -643,7 +678,7 @@ const FIXES = [
   ["Плитка «плывёт», швы гнутся","Строка «Реализм» на месте? Камера «Статика» или «Слайдер», клип короче, движение медленнее."],
   ["Лишние пальцы","Перчатки, одно действие, фокус на инструменте, руки частично вне кадра."],
   ["Картинка «пластиковая», дешёвая","Добавь фактуру: dust, fine scratches, film grain. Поменяй свет на синий или золотой час."],
-  ["Клипы разных генераторов не стыкуются","Пресет «MS Basalt» на все клипы, одинаковый свет в промптах соседних кадров."],
+  ["Клипы разных генераторов не стыкуются","Пресет «MC Basalt» на все клипы, одинаковый свет в промптах соседних кадров."],
   ["Буквы и логотипы в кадре","Строка «No text, no logos» есть всегда. Надписи — только PNG-титром из штаба."],
   ["Слишком быстро и суетливо","В промпт: «slow», «very slow camera move». В CapCut — замедление 0,8×."],
   ["Кончились кредиты","Gemini — ~3 видео в день, Kling — бесплатные дневные кредиты. Генерируй понемногу каждый день."]
@@ -660,7 +695,8 @@ const S = {
 function normState(d){
   const o = Object.assign({tools:{},steps:{},academy:{},decisions:{},retro:{},fieldNotes:"",quota:{},brand:{}}, d||{});
   for (const k of ["tools","steps","academy","decisions","retro","quota","brand"]) if (!o[k]||typeof o[k]!=="object") o[k]={};
-  o.brand = Object.assign({handle:"@ms.infrastructure",contact:"",region:"",claim:"de1"}, o.brand);
+  o.brand = Object.assign({handle:"@mc.infrastructure.de",email:"mc.infrastructure.de@gmail.com",contact:"",region:"",claim:"de1"}, o.brand);
+  if (o.brand.handle==="@ms.infrastructure") o.brand.handle = "@mc.infrastructure.de";
   if (typeof o.fieldNotes!=="string") o.fieldNotes="";
   return o;
 }
@@ -721,6 +757,7 @@ function stSet(p,v){ setPath(S.state,p,v); queueSave("state"); }
 function vSave(v,delay){ queueSave("v:"+v.id, delay); }
 
 async function boot(){
+  const rl = $("#railLogo"); if (rl) rl.innerHTML = mcLogo(62);
   route(); renderAll(); tick(); setInterval(tick,1000);
   const c = window.claude;
   if (!c || typeof c.use!=="function"){ S.mode="local"; loadLocal(); setSave("local"); renderAll(); return; }
@@ -789,7 +826,7 @@ function tick(){
 }
 function sh(code, title, lead, sheet){
   return `<header class="sh"><div><div class="code">${esc(code)}</div><h1>${title}</h1>${lead?`<p>${lead}</p>`:""}</div>
-  <div class="tb" aria-hidden="true"><span>Objekt<b>MONOLITH</b></span><span>Blatt<b>${esc(sheet)}/8</b></span><span>Bauherr<b>MS INFRA</b></span><span>Stand<b>${esc(fmtD(today()))}</b></span></div></header>`;
+  <div class="tb" aria-hidden="true"><span>Objekt<b>MONOLITH</b></span><span>Blatt<b>${esc(sheet)}/8</b></span><span>Bauherr<b>MC INFRA</b></span><span>Stand<b>${esc(fmtD(today()))}</b></span></div></header>`;
 }
 function promptBox(label,text,id){ return `<div style="min-width:0"><div class="pr-h"><span class="eb">${esc(label)}</span><button class="btn s" data-act="copy" data-src="${id}">Копировать</button></div><pre class="prompt" id="${id}">${esc(text)}</pre></div>`; }
 function dots(n){ return `<span class="dots" aria-label="${n} из 5">${[1,2,3,4,5].map(i=>`<i class="${i<=n?"on":""}"></i>`).join("")}</span>`; }
@@ -882,42 +919,49 @@ function rOps(){
 }
 
 /* ---------- ВСЕЛЕННАЯ ---------- */
-function logoSVG(size, opts){
-  const o = Object.assign({bg:false, word:false}, opts||{});
-  const w = o.word ? 520 : 120, h = 184;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${Math.round(size*h/w)}" viewBox="0 0 ${w} ${h}">${o.bg?`<rect width="${w}" height="${h}" fill="#0E1012"/>`:""}<rect x="38" y="6" width="44" height="172" fill="#ECE5D8"/><rect x="38" y="6" width="9" height="172" fill="#B5AEA1"/><line x1="4" y1="112" x2="${o.word?150:116}" y2="112" stroke="#FF5A3C" stroke-width="5"/>${o.word?`<text x="150" y="86" font-family="Forum, 'Times New Roman', serif" font-size="58" letter-spacing="9" fill="#ECE5D8">MS INFRA</text><text x="152" y="150" font-family="'JetBrains Mono', monospace" font-size="21" letter-spacing="7" fill="#B5AEA1">STRUCTURE</text>`:""}</svg>`;
-}
 function ctorPrompt(){ const c = S.ctor; return {kf:kfPrompt(c), vid:vidPrompt(c)}; }
 function rUniverse(){
   const b = S.state.brand, cl = claim(), c = S.ctor, cp = ctorPrompt();
-  return `${sh("02 · Вселенная","Monolith","Вселенная MS Infrastructure. Мы не снимаем мультфильмы: мы снимаем материал, свет и точность. Здесь закон, знак, цвет, звук и конструктор, по которым делается каждый кадр.","2")}
+  return `${sh("02 · Вселенная","Monolith","Вселенная MC Infrastructure. Мы не снимаем мультфильмы: мы снимаем материал, свет и точность. Здесь закон, знак, цвет, звук и конструктор, по которым делается каждый кадр.","2")}
   <section class="pn mk mani"><div><div class="eb a">Манифест</div><div class="word">Monolith</div><div class="lsr"></div>
     <p class="t2" style="font-size:17px;max-width:52ch">Монолит отливают один раз и навсегда. Без швов, без компромиссов, без «и так сойдёт». Так мы кладём плитку и так снимаем каждый кадр: тишина, материал, свет и одна точная линия.</p></div>
-    <div class="stack"><div class="eb">Слоган</div><div style="font:400 34px/1.1 var(--f-display);letter-spacing:.04em;text-transform:uppercase">${esc(cl.de)}</div><div class="t2">${esc(cl.ro)} · ${esc(cl.ru)}</div></div></section>
+    <div class="stack"><span class="plaque" style="padding:16px 20px;justify-self:start;align-self:flex-start">${mcLogo(190)}</span><div class="eb">Слоган</div><div style="font:400 34px/1.1 var(--f-display);letter-spacing:.04em;text-transform:uppercase">${esc(cl.de)}</div><div class="t2">${esc(cl.ro)} · ${esc(cl.ru)}</div></div></section>
   <section class="pn stack"><div class="eb a">Настройки бренда · подставляются в титры и подписи</div>
     <div class="fg"><label class="f c2">Ник в TikTok<input type="text" id="bHandle" data-st="brand.handle" value="${esc(b.handle)}"></label>
       <label class="f c2">Контакт для откликов<input type="text" id="bContact" data-st="brand.contact" value="${esc(b.contact)}" placeholder="WhatsApp +49 … или @telegram"></label>
-      <label class="f c2">Регион работ<input type="text" id="bRegion" data-st="brand.region" value="${esc(b.region)}" placeholder="например, Bayern"></label>
-      <label class="f c6">Слоган<select id="bClaim" data-st="brand.claim">${opt(Object.entries(CLAIMS).map(([k,v])=>[k,`${v.de} · ${v.ru}`]),b.claim)}</select></label></div></section>
+      <label class="f c2">E-mail фирмы<input type="text" id="bEmail" data-st="brand.email" value="${esc(b.email)}"></label>
+      <label class="f c3">Регион работ<input type="text" id="bRegion" data-st="brand.region" value="${esc(b.region)}" placeholder="например, Bayern"></label>
+      <label class="f c3">Слоган<select id="bClaim" data-st="brand.claim">${opt(Object.entries(CLAIMS).map(([k,v])=>[k,`${v.de} · ${v.ru}`]),b.claim)}</select></label></div></section>
   <section class="stack"><div class="eb a">Пять законов вселенной</div><div class="pn laws">${LAWS.map(([t,d])=>`<div class="law"><div><div class="h3">${esc(t)}</div><p class="t2 sm" style="margin-top:4px">${esc(d)}</p></div></div>`).join("")}</div></section>
   <div class="grid g2" style="align-items:start">
-    <section class="pn stack"><div class="eb a">Знак</div><div class="logo-box">${logoSVG(320,{word:true})}</div>
-      <p class="sm t2">Монолит, рассечённый лазерной линией: цельность и точность. Знак без текста — для аватара и финальной карточки.</p>
-      <div class="row"><button class="btn s pri" data-act="dl-logo" data-k="svg">Скачать SVG</button><button class="btn s" data-act="dl-logo" data-k="png">Скачать PNG 1080</button><button class="btn s" data-act="dl-logo" data-k="avatar">Аватар PNG</button></div>
+    <section class="pn stack"><div class="eb a">Знак · закреплён</div>
+      <div class="grid g2"><div class="logo-box light">${mcLogo(230)}</div><div class="logo-box"><span class="plaque" style="padding:18px 22px">${mcLogo(160)}</span></div></div>
+      <p class="sm t2">mc² — энергия, умноженная на точность; оранжевая кривая — экспоненциальный рост. Зелёные буквы читаются только на светлом, поэтому на тёмных кадрах знак всегда стоит на травертиновой плашке — как табличка на камне.</p>
+      <div class="row"><button class="btn s pri" data-act="dl-logo" data-k="svg">Оригинал SVG</button><button class="btn s" data-act="dl-logo" data-k="clear">PNG прозрачный</button><button class="btn s" data-act="dl-logo" data-k="plate">PNG на плашке</button><button class="btn s" data-act="dl-logo" data-k="avatar">Аватар</button></div>
       <p class="xs mut">${S.dl?"Файл попросит подтверждение и сохранится на устройство.":"Скачивание работает, когда штаб открыт на claude.ai."}</p></section>
-    <section class="pn stack"><div class="eb a">Цвет · базальт, травертин, натрий</div>
+    <section class="pn stack"><div class="eb a">Цвет · базальт, травертин, MC Orange</div>
       <div class="sw">${PALETTE.map(([n,h,u])=>`<button data-act="copy-text" data-text="${h}" title="${esc(u)}"><i style="background:${h}"></i><b>${n}</b><span>${h}</span></button>`).join("")}</div>
-      <div class="eb" style="margin-top:6px">Пресет CapCut «MS Basalt» · стартовые значения</div>
+      <div class="eb" style="margin-top:6px">Пресет CapCut «MC Basalt» · стартовые значения</div>
       <div class="tw"><table class="tb2"><tbody>${GRADE_CAPCUT.map(([k,v])=>`<tr><td>${esc(k)}</td><td class="mono num" style="text-align:right">${esc(v)}</td></tr>`).join("")}</tbody></table></div>
       <p class="xs mut">Подстрой на V01 и сохрани как пресет. Дальше — без изменений на всех роликах.</p></section>
   </div>
   <div class="grid g2" style="align-items:start">
     <section class="pn stack"><div class="eb a">Шрифты</div>
-      <div class="spec"><div><div class="a">Gebaut</div><span class="xs mut mono">FORUM — заголовки и титры, только прописные</span></div><div><div class="b">Миллиметр решает всё</div><span class="xs mut mono">ONEST — строки RO и RU, подписи</span></div><div><div class="c">MS INFRASTRUCTURE · 01/10</div><span class="xs mut mono">JETBRAINS MONO — служебные метки</span></div></div>
+      <div class="spec"><div><div class="a">Gebaut</div><span class="xs mut mono">FORUM — заголовки и титры, только прописные</span></div><div><div class="b">Миллиметр решает всё</div><span class="xs mut mono">ONEST — строки RO и RU, подписи</span></div><div><div class="c">MC INFRASTRUCTURE · 01/10</div><span class="xs mut mono">JETBRAINS MONO — служебные метки</span></div></div>
       <p class="sm t2">Ставить шрифты в CapCut не нужно: титры штаб отдаёт готовыми PNG. Для визитки и документов — <a href="${LINKS.fForum}" target="_blank" rel="noopener">Forum</a> и <a href="${LINKS.fOnest}" target="_blank" rel="noopener">Onest</a>.</p></section>
     <section class="pn stack"><div class="eb a">Звук · ДНК</div><p class="sm t2">Каждый ролик: гул-подложка + фактуры материалов + лазер + звуковой логотип в финале. Музыки нет — звук свой, поэтому ограничения бизнес-аккаунта нам не мешают.</p>
       ${SFX.map(([n,p],i)=>promptBox(n,p,"sfx-"+i)).join("")}<div><a class="btn s pri" href="${LINKS.eleven}" target="_blank" rel="noopener">Открыть ElevenLabs SFX</a></div></section>
   </div>
+  <section class="pn mk stack"><div><div class="eb a">Голос · ElevenLabs</div><h2 class="h2" style="margin-top:6px">Кто говорит в нашей вселенной</h2></div>
+    <div class="tw"><table class="tb2"><thead><tr><th>Ярус</th><th>Голос</th><th>Почему</th></tr></thead><tbody>
+      <tr><td class="mono">I–II</td><td><b>Без голоса</b></td><td class="sm t2">Материал и звук понятны без перевода всем трём аудиториям. Голос на одном языке отрезал бы две другие.</td></tr>
+      <tr><td class="mono">III</td><td><b>Живой голос</b> бати или твой · RU и RO</td><td class="sm t2">Рекрутинг держится на доверии. Настоящий голос поверх ИИ-кадров закрывает главный минус ИИ-видео: 36% людей меньше верят брендам с ИИ.</td></tr>
+      <tr><td class="mono">IV</td><td><b>ИИ-диктор DE</b> + строки RO и RU на экране</td><td class="sm t2">Манифест для немецкого рынка: низкий спокойный голос, один и тот же во всех будущих фильмах бренда.</td></tr>
+    </tbody></table></div>
+    <div class="callout r"><b>Два запрета.</b> Не клонировать ничей голос без письменного согласия. И не заставлять клон говорить на языке, которым человек не владеет: в рекламе это обман.</div>
+    <div class="row"><a class="btn s pri" href="${LINKS.tts}" target="_blank" rel="noopener">Text to Speech</a><a class="btn s" href="${LINKS.voicelib}" target="_blank" rel="noopener">Voice Library</a><a class="btn s" href="${LINKS.isolator}" target="_blank" rel="noopener">Voice Isolator</a></div>
+    ${srcLinks(["el_v3","eleven","animoto"])}
+  </section>
   <section class="stack"><div class="eb a">Грамматика кадра</div><div class="tw"><table class="tb2"><thead><tr><th>План</th><th>Что показывает</th><th>Оптика · свет</th><th>Риск ИИ</th></tr></thead><tbody>${SHOT_GRAMMAR.map(r=>`<tr><td><b>${esc(r[0])}</b></td><td class="sm t2">${esc(r[1])}</td><td class="sm">${esc(r[2])}</td><td class="sm t2">${esc(r[3])}</td></tr>`).join("")}</tbody></table></div></section>
   <section class="pn mk stack" id="ctor"><div><div class="eb a">Конструктор промптов</div><h2 class="h2" style="margin-top:6px">Собери кадр по ДНК</h2></div>
     <div class="fg">
@@ -934,7 +978,7 @@ function rUniverse(){
     <div class="row">${S.videos.length?`<select id="ctorVid" aria-label="Ролик" style="max-width:280px">${S.videos.map(v=>`<option value="${esc(v.id)}"${v.id===(c.vid||S.vid)?" selected":""}>${vcode(v)} · ${esc(v.title)}</option>`).join("")}</select><button class="btn pri s" data-act="ctor-add">Добавить кадр в ролик</button>`:""}
       <a class="btn s" href="${LINKS.gemini}" target="_blank" rel="noopener">Gemini</a><a class="btn s" href="${LINKS.flow}" target="_blank" rel="noopener">Flow</a></div>
   </section>
-  <section class="stack"><div class="eb a">Строительные блоки промптов · вставляются автоматически</div><div class="grid g2">${promptBox("Цвет",DNA.grade,"dna-g")}${promptBox("Реализм",DNA.real,"dna-r")}${promptBox("Люди",DNA.people,"dna-p")}${promptBox("Подпись MS",DNA.laser,"dna-l")}</div></section>`;
+  <section class="stack"><div class="eb a">Строительные блоки промптов · вставляются автоматически</div><div class="grid g2">${promptBox("Цвет",DNA.grade,"dna-g")}${promptBox("Реализм",DNA.real,"dna-r")}${promptBox("Люди",DNA.people,"dna-p")}${promptBox("Подпись MC",DNA.laser,"dna-l")}</div></section>`;
 }
 
 /* ---------- ПИРАМИДА ---------- */
@@ -1037,13 +1081,23 @@ function checklist(v, key, items){
   return `<div class="check">${items.map((t,i)=>`<label class="${ch[i]?"on":""}"><input type="checkbox" class="tick" data-act="chk" data-id="${esc(v.id)}" data-k="${key}" data-i="${i}"${ch[i]?" checked":""}><span>${esc(t)}</span></label>`).join("")}</div>`;
 }
 function stSound(v){
-  return `<div><div class="eb a">Этап 05 · Звук</div><p class="t2" style="margin-top:6px">Звук Veo оставляем, если он совпадает с действием. Остальное — из библиотеки 00_sfx. Звук делает ИИ-кадр дорогим.</p></div>
-  ${checklist(v,"sound",["Гул-подложка на всю длину ролика, тихо под фактурами","Фактуры материалов совпадают с движением","Звук включения лазера там, где появляется линия","Звуковой логотип на финальной карточке","Ни музыки, ни голосов"])}
-  <div class="row"><a class="btn s pri" href="${LINKS.eleven}" target="_blank" rel="noopener">ElevenLabs SFX</a><a class="btn s ghost in" href="#universe">Промпты звуков во «Вселенной» →</a></div>`;
+  const id = esc(v.id), vo = v.voice||{}, mode = vo.mode||"none";
+  const words = t => String(t||"").trim().split(/\s+/).filter(Boolean).length;
+  const howto = mode==="real"
+    ? `<div class="callout"><b>Живой голос.</b> Запиши батю или себя на телефон: тихая комната, телефон в 20 см ото рта, 3 дубля каждой строки. Файл — в Voice Isolator, чистый звук — в CapCut поверх гула. Живой голос поверх ИИ-кадров даёт доверие, которого ИИ-видео не хватает.</div><div class="row"><a class="btn s pri" href="${LINKS.isolator}" target="_blank" rel="noopener">Voice Isolator</a></div>`
+    : mode==="ai"
+    ? `<div class="callout"><b>ИИ-диктор.</b> ElevenLabs → Text to Speech, самая новая мультиязычная модель. Голос низкий и спокойный, без рекламного напора — выбери в Voice Library и держи один и тот же во всех роликах. Старт: стабильность 50–60, сходство 75, стиль 10–20, скорость 0,9. Паузы — точками.</div><div class="row"><a class="btn s pri" href="${LINKS.tts}" target="_blank" rel="noopener">Text to Speech</a><a class="btn s" href="${LINKS.voicelib}" target="_blank" rel="noopener">Voice Library</a></div>`
+    : `<p class="sm t2">${Number(v.tier)<=2?"Ярусы I–II без голоса: материал и звук понятны всем трём аудиториям без перевода.":"Голос выключен. Для яруса "+roman(v.tier)+" он сильно помогает — выбери режим."}</p>`;
+  const fields = mode==="none" ? "" : `<div class="fg">${["de","ro","ru"].map(k=>`<label class="f c2">Текст ${k.toUpperCase()} · ${words(vo[k])} сл. ≈ ${Math.round(words(vo[k])/2.3)} с<textarea rows="4" data-v="${id}" data-vo="${k}">${esc(vo[k]||"")}</textarea></label>`).join("")}</div>`;
+  return `<div><div class="eb a">Этап 05 · Звук и голос</div><p class="t2" style="margin-top:6px">Звук Veo оставляем, если он совпадает с действием. Остальное — из библиотеки 00_sfx. Звук делает ИИ-кадр дорогим, голос — честным.</p></div>
+  ${checklist(v,"sound",["Гул-подложка на всю длину ролика, тихо под фактурами","Фактуры материалов совпадают с движением","Звук включения лазера там, где появляется линия","Звуковой логотип на финальной карточке","Никакой музыки"])}
+  <div class="stack"><div class="row between"><div class="eb a">Голос</div><label class="f" style="min-width:240px">Режим<select data-v="${id}" data-vo="mode">${opt(VO_MODES,mode)}</select></label></div>${howto}${fields}
+    ${mode!=="none"?checklist(v,"voice",["Текст проверен носителем языка (RO — ребята из бригады)","3 дубля или 3 генерации, выбран лучший","Живая запись очищена в Voice Isolator","Голос громче гула, фактуры не глушат слова","Строки на экране совпадают с голосом"]):""}</div>
+  <div class="row"><a class="btn s" href="${LINKS.eleven}" target="_blank" rel="noopener">ElevenLabs SFX</a><a class="btn s ghost in" href="#universe">Промпты звуков и правила голоса →</a></div>`;
 }
 function stEdit(v){
   return `<div><div class="eb a">Этап 06 · Монтаж</div><p class="t2" style="margin-top:6px">CapCut: клипы встык, пресет цвета, титр сверху, финальная карточка в конце. Титр и карточка — готовые PNG ниже, с прозрачным фоном и шрифтами бренда.</p></div>
-  ${checklist(v,"edit",["Первые 0,5 с — уже движение, никакой заставки","Пресет «MS Basalt» на всех клипах","PNG-титр поверх первых 2,5 с","Склейки каждые 1,5–3 с, начало каждого клипа подрезано","Финальная карточка 1,5 с + звуковой логотип","Последний кадр стыкуется с первым — петля","Экспорт 1080×1920, 30 fps"])}
+  ${checklist(v,"edit",["Первые 0,5 с — уже движение, никакой заставки","Пресет «MC Basalt» на всех клипах","PNG-титр поверх первых 2,5 с","Склейки каждые 1,5–3 с, начало каждого клипа подрезано","Финальная карточка 1,5 с + звуковой логотип","Последний кадр стыкуется с первым — петля","Экспорт 1080×1920, 30 fps"])}
   <div class="stack"><div class="eb a">Титры · PNG 1080×1920</div>
     <div class="canv"><figure><canvas id="cvHook" width="1080" height="1920" aria-label="Превью титра"></canvas><button class="btn s pri" data-act="dl-canvas" data-k="hook" data-id="${esc(v.id)}">Скачать титр</button></figure>
     <figure><canvas id="cvEnd" width="1080" height="1920" aria-label="Превью финальной карточки"></canvas><button class="btn s" data-act="dl-canvas" data-k="end" data-id="${esc(v.id)}">Скачать карточку</button></figure>
@@ -1051,7 +1105,7 @@ function stEdit(v){
 }
 function caption(v){
   const cl = claim(), b = S.state.brand;
-  const lines = [v.hookDe||"", [v.hookRo,v.hookRu].filter(Boolean).join(" · "), "", Number(v.tier)>=3&&b.contact?"✉ "+b.contact:"", `${cl.de} · KI-Visualisierung · MS Infrastructure`, "", `${HASHTAGS.de} ${HASHTAGS.ro} ${HASHTAGS.ru}`];
+  const lines = [v.hookDe||"", [v.hookRo,v.hookRu].filter(Boolean).join(" · "), "", Number(v.tier)>=3?"✉ "+(b.contact||b.email):"", `${cl.de} · KI-Visualisierung · MC Infrastructure`, "", `${HASHTAGS.de} ${HASHTAGS.ro} ${HASHTAGS.ru}`];
   return lines.join("\n").replace(/\n{3,}/g,"\n\n").trim();
 }
 function stAir(v){
@@ -1091,7 +1145,17 @@ function rArsenal(){
         <label class="f c2">Плачу €/мес<input type="number" step="0.01" min="0" data-st="tools.${t.id}.paid" value="${s.paid!=null?esc(s.paid):""}" placeholder="${(t.price*(t.cur==="$"?USD_EUR:1)).toFixed(2)}"></label>
         <label class="f c2">Отменить до<input type="date" data-st="tools.${t.id}.cancelBy" value="${esc(s.cancelBy||"")}"></label></div>
       <div class="row">${t.links.map(([l,u],i)=>`<a class="btn s${i===t.links.length-1?" pri":""}" href="${esc(u)}" target="_blank" rel="noopener">${esc(l)}</a>`).join("")}</div></article>`; }).join("")}</div>
-  <section class="pn ghost sm t2 stack">Цены — по сторонним агрегаторам на октябрь 2026, источники расходятся: проверяй на официальной странице перед оплатой. Sora 2 в ЕС официально недоступна, Runway дорог за секунду и без звука. ${srcLinks(["gpro","mjp","kling3","eleven","sora","veo_ingr","veo_vert"])}</section>`;
+  <section class="pn mk stack"><div><div class="eb a">Почему Veo, а не Runway Gen-3 Alpha или Luma Dream Machine</div><h2 class="h2" style="margin-top:6px">Цена секунды со звуком</h2></div>
+    <div class="tw"><table class="tb2"><thead><tr><th></th><th>Veo 3.1 · Google AI Pro</th><th>Runway Standard</th><th>Luma Plus</th></tr></thead><tbody>
+      <tr><td class="eb">Цена</td><td>≈ 21,99 €</td><td>≈ 15 $</td><td>≈ 24–30 $</td></tr>
+      <tr><td class="eb">Объём</td><td class="sm">≈ 3 видео по 8 с в день в Gemini + кредиты Flow + кадры Nano Banana</td><td class="sm">625 кредитов ≈ 52 с Gen-4.5 или ≈ 125 с Gen-4 Turbo</td><td class="sm">10 000 кредитов ≈ 30 клипов по 10 с в 720p</td></tr>
+      <tr><td class="eb">Звук</td><td class="sm">Генерируется вместе с видео и совпадает с движением</td><td class="sm">Источники противоречат: одни пишут о звуке с мая 2026, другие — что в API его нет</td><td class="sm">Зависит от модели; у Ray3 по справке Luma звука нет</td></tr>
+      <tr><td class="eb">Что советовали</td><td class="sm">—</td><td class="sm">Gen-3 Alpha — модель 2024 года, сейчас Gen-4 и Gen-4.5</td><td class="sm">Dream Machine теперь называется Luma Agents, модели Ray3.x</td></tr>
+      <tr><td class="eb">Наш расход</td><td colspan="3" class="sm">41 кадр × 2–3 попытки × ~5 с ≈ 400–600 секунд генерации. Veo при ежедневной работе закрывает это одной подпиской и со звуком. Runway Standard даёт от десятой до трети объёма, Luma Plus — половину–три четверти, и звук не гарантирован.</td></tr>
+    </tbody></table></div>
+    <p class="sm t2">Runway и Luma — сильные инструменты, просто дороже на секунду для нашего объёма. Они в резерве: если в тест-драйве Veo провалит конкретный тип кадра, пробуем этот кадр в бесплатных кредитах Runway или Luma.</p>
+    ${srcLinks(["runway","runway_audio","luma","gpro","veo_ingr"])}</section>
+  <section class="pn ghost sm t2 stack">Цены — по сторонним агрегаторам на октябрь 2026, источники расходятся: проверяй на официальной странице перед оплатой. Sora 2 в ЕС официально недоступна. ${srcLinks(["mjp","kling3","eleven","sora","veo_vert"])}</section>`;
 }
 
 /* ---------- АКАДЕМИЯ ---------- */
@@ -1149,7 +1213,7 @@ function drawHook(cv,v){
   const ctx = cv.getContext("2d"), W = 1080; ctx.clearRect(0,0,W,1920);
   ctx.save(); ctx.shadowColor = "rgba(0,0,0,.6)"; ctx.shadowBlur = 28; ctx.textAlign = "center";
   ctx.fillStyle = "rgba(236,229,216,.78)"; ctx.font = "500 28px 'JetBrains Mono', monospace"; lsp(ctx,"8px");
-  ctx.fillText(`MS INFRASTRUCTURE · ${pad2(v.num)}/10`, W/2, 250);
+  ctx.fillText(`MC INFRASTRUCTURE · ${pad2(v.num)}/10`, W/2, 250);
   ctx.fillStyle = "#ECE5D8"; ctx.font = "400 92px Forum, 'Times New Roman', serif"; lsp(ctx,"6px");
   let y = 370;
   for (const l of wrapText(ctx, String(v.hookDe||"").toUpperCase(), 940)){ ctx.fillText(l, W/2, y); y += 104; }
@@ -1161,18 +1225,21 @@ function drawHook(cv,v){
   for (const t of [v.hookRo, v.hookRu].filter(Boolean)){ for (const l of wrapText(ctx,t,900)){ ctx.fillText(l, W/2, y); y += 58; } y += 8; }
   ctx.restore();
 }
-function drawEnd(cv,v){
+async function drawEnd(cv,v){
+  const img = await logoImg();
   const ctx = cv.getContext("2d"), W = 1080, H = 1920, b = S.state.brand, cl = claim();
   const g = ctx.createLinearGradient(0,0,0,H); g.addColorStop(0,"#121518"); g.addColorStop(1,"#0B0D0F"); ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
-  const rg = ctx.createRadialGradient(W/2,760,40,W/2,760,700); rg.addColorStop(0,"rgba(242,165,65,.10)"); rg.addColorStop(1,"rgba(242,165,65,0)"); ctx.fillStyle = rg; ctx.fillRect(0,0,W,H);
-  const sx = W/2-70, sy = 420, sw = 140, sh2 = 560;
-  const sg = ctx.createLinearGradient(sx,0,sx+sw,0); sg.addColorStop(0,"#B5AEA1"); sg.addColorStop(.22,"#ECE5D8"); sg.addColorStop(1,"#D9D1C3"); ctx.fillStyle = sg; ctx.fillRect(sx,sy,sw,sh2);
-  ctx.save(); ctx.strokeStyle = "#FF5A3C"; ctx.lineWidth = 6; ctx.shadowColor = "#FF5A3C"; ctx.shadowBlur = 24; ctx.beginPath(); ctx.moveTo(W/2-330, sy+sh2*0.62); ctx.lineTo(W/2+330, sy+sh2*0.62); ctx.stroke(); ctx.restore();
-  ctx.textAlign = "center"; ctx.fillStyle = "#ECE5D8"; ctx.font = "400 78px Forum, 'Times New Roman', serif"; lsp(ctx,"12px"); ctx.fillText("MS INFRASTRUCTURE", W/2, 1160);
-  ctx.fillStyle = "rgba(236,229,216,.86)"; ctx.font = "400 52px Forum, 'Times New Roman', serif"; lsp(ctx,"4px"); ctx.fillText(cl.de.toUpperCase(), W/2, 1260);
-  ctx.fillStyle = "rgba(181,174,161,.9)"; ctx.font = "500 38px Onest, system-ui, sans-serif"; lsp(ctx,"0px"); ctx.fillText(`${cl.ro} · ${cl.ru}`, W/2, 1330);
-  ctx.fillStyle = "#F2A541"; ctx.font = "500 34px 'JetBrains Mono', monospace"; lsp(ctx,"3px");
-  [b.handle, Number(v.tier)>=3 ? b.contact : "", b.region].filter(Boolean).forEach((l,i)=>ctx.fillText(l, W/2, 1470+i*54));
+  const rg = ctx.createRadialGradient(W/2,760,40,W/2,760,720); rg.addColorStop(0,"rgba(232,130,30,.12)"); rg.addColorStop(1,"rgba(232,130,30,0)"); ctx.fillStyle = rg; ctx.fillRect(0,0,W,H);
+  ctx.save(); ctx.strokeStyle = "#FF5A3C"; ctx.lineWidth = 6; ctx.shadowColor = "#FF5A3C"; ctx.shadowBlur = 24; ctx.beginPath(); ctx.moveTo(80, 760); ctx.lineTo(W-80, 760); ctx.stroke(); ctx.restore();
+  const pw = 600, ph = 400, px = (W-pw)/2, py = 560;
+  ctx.save(); ctx.shadowColor = "rgba(0,0,0,.6)"; ctx.shadowBlur = 44; ctx.shadowOffsetY = 18;
+  const pg = ctx.createLinearGradient(px,py,px+pw,py+ph); pg.addColorStop(0,"#F1EBDF"); pg.addColorStop(1,"#DDD4C4"); ctx.fillStyle = pg; ctx.fillRect(px,py,pw,ph); ctx.restore();
+  if (img){ const lw = 480, lh = lw*LOGO_RATIO; ctx.drawImage(img, (W-lw)/2, py+(ph-lh)/2, lw, lh); }
+  ctx.textAlign = "center"; ctx.fillStyle = "#ECE5D8"; ctx.font = "400 72px Forum, 'Times New Roman', serif"; lsp(ctx,"12px"); ctx.fillText("MC INFRASTRUCTURE", W/2, 1110);
+  ctx.fillStyle = "rgba(236,229,216,.86)"; ctx.font = "400 50px Forum, 'Times New Roman', serif"; lsp(ctx,"4px"); ctx.fillText(cl.de.toUpperCase(), W/2, 1200);
+  ctx.fillStyle = "rgba(181,174,161,.92)"; ctx.font = "500 36px Onest, system-ui, sans-serif"; lsp(ctx,"0px"); ctx.fillText(`${cl.ro} · ${cl.ru}`, W/2, 1266);
+  ctx.fillStyle = "#E8821E"; ctx.font = "500 32px 'JetBrains Mono', monospace"; lsp(ctx,"2px");
+  [b.handle, b.email, Number(v.tier)>=3 ? b.contact : "", b.region].filter(Boolean).forEach((l,i)=>ctx.fillText(l, W/2, 1400+i*52));
   ctx.fillStyle = "rgba(126,121,111,.9)"; ctx.font = "500 24px 'JetBrains Mono', monospace"; lsp(ctx,"4px"); ctx.fillText("KI-VISUALISIERUNG", W/2, 1760);
 }
 let drawSeq = 0;
@@ -1180,7 +1247,8 @@ async function afterRender(){
   if (S.view!=="prod") return;
   const v = vById(S.vid); if (!v || curStage(v)!=="edit") return;
   const my = ++drawSeq; await fontsReady(); if (my!==drawSeq) return;
-  const a = $("#cvHook"), b = $("#cvEnd"); if (a) drawHook(a,v); if (b) drawEnd(b,v);
+  await logoImg(); if (my!==drawSeq) return;
+  const a = $("#cvHook"), b = $("#cvEnd"); if (a) drawHook(a,v); if (b) await drawEnd(b,v);
 }
 function canvasBlob(cv){ return new Promise(r=>cv.toBlob(r,"image/png")); }
 async function saveFile(filename, data){
@@ -1188,13 +1256,12 @@ async function saveFile(filename, data){
   try { await S.dl.save({filename, data}); toast("Файл передан на сохранение"); }
   catch(e){ const c = e&&e.code; if (c==="declined") return; toast(c==="rate_limited"?"Окно сохранения уже открыто":"Не удалось сохранить файл"); }
 }
-async function logoPng(size, avatar){
+async function logoPng(mode){
+  const img = await logoImg(); const size = 1080;
   const cv = document.createElement("canvas"); cv.width = size; cv.height = size; const ctx = cv.getContext("2d");
-  ctx.fillStyle = "#0E1012"; ctx.fillRect(0,0,size,size);
-  const s = size/184*(avatar?0.62:0.72), w = 120*s, h = 184*s, ox = (size-w)/2, oy = (size-h)/2;
-  ctx.fillStyle = "#ECE5D8"; ctx.fillRect(ox+38*s, oy+6*s, 44*s, 172*s);
-  ctx.fillStyle = "#B5AEA1"; ctx.fillRect(ox+38*s, oy+6*s, 9*s, 172*s);
-  ctx.save(); ctx.strokeStyle = "#FF5A3C"; ctx.lineWidth = 5*s; ctx.shadowColor = "#FF5A3C"; ctx.shadowBlur = 10*s; ctx.beginPath(); ctx.moveTo(ox+4*s, oy+112*s); ctx.lineTo(ox+116*s, oy+112*s); ctx.stroke(); ctx.restore();
+  if (mode!=="clear"){ const g = ctx.createLinearGradient(0,0,size,size); g.addColorStop(0,"#F1EBDF"); g.addColorStop(1,"#DDD4C4"); ctx.fillStyle = g; ctx.fillRect(0,0,size,size); }
+  const lw = mode==="avatar" ? 720 : (mode==="plate" ? 860 : 980), lh = lw*LOGO_RATIO;
+  if (img) ctx.drawImage(img, (size-lw)/2, (size-lh)/2, lw, lh);
   return canvasBlob(cv);
 }
 
@@ -1211,7 +1278,7 @@ async function aiRun(v, kind){
   if (!S.sample || S.aiBusy) return;
   const ctl = new AbortController(); S.aiCtl = ctl; S.aiBusy = v.id; S.ai[v.id] = {busy:true,chars:0}; render();
   const t = TIERS.find(x=>x.n===Number(v.tier))||TIERS[0];
-  const base = `You are the creative director of "Monolith", the cinematic brand universe of MS Infrastructure, a premium tiling company in Germany. Videos are photorealistic, generated shot by shot with Google Veo 3.1 from keyframes, vertical 9:16, for TikTok.\nAUDIENCE: Romanian, Moldovan and Russian-speaking tile layers and helpers in Germany (recruitment), plus German private clients.\nLAWS: material is the hero; NO visible faces (only silhouettes, people from behind, gloved hands); light only blue-hour dawn, golden hour or sodium-lit night; a thin red laser-level line is the MS signature; AI images are brand imagery, never claimed as real finished projects.\nThis video is tier ${t.code} "${t.name}" of a 4-3-2-1 promo pyramid. Tier goal: ${t.goal} Main metric: ${t.kpi}.\nVIDEO\nTitle: ${v.title}\nWhat happens (Russian): ${v.concept||"-"}\nGoal: ${v.goal||"-"}\nEmotion: ${v.emotion||"-"}\nTarget length: ${v.dur||20} seconds\nCurrent lines: DE "${v.hookDe||""}" / RO "${v.hookRo||""}" / RU "${v.hookRu||""}"\n`;
+  const base = `You are the creative director of "Monolith", the cinematic brand universe of MC Infrastructure, a premium tiling company in Germany. Videos are photorealistic, generated shot by shot with Google Veo 3.1 from keyframes, vertical 9:16, for TikTok.\nAUDIENCE: Romanian, Moldovan and Russian-speaking tile layers and helpers in Germany (recruitment), plus German private clients.\nLAWS: material is the hero; NO visible faces (only silhouettes, people from behind, gloved hands); light only blue-hour dawn, golden hour or sodium-lit night; a thin red laser-level line is the MC signature; AI images are brand imagery, never claimed as real finished projects.\nThis video is tier ${t.code} "${t.name}" of a 4-3-2-1 promo pyramid. Tier goal: ${t.goal} Main metric: ${t.kpi}.\nVIDEO\nTitle: ${v.title}\nWhat happens (Russian): ${v.concept||"-"}\nGoal: ${v.goal||"-"}\nEmotion: ${v.emotion||"-"}\nTarget length: ${v.dur||20} seconds\nCurrent lines: DE "${v.hookDe||""}" / RO "${v.hookRo||""}" / RU "${v.hookRu||""}"\n`;
   const prompt = kind==="shots"
     ? base + `Write a storyboard of 3 to 6 shots, each 2-8 seconds, totalling close to the target length. Shot 1 must stop the scroll in under 2 seconds. Each shot = one simple visual idea. No readable text, letters or logos in the image. Hands only in gloves with one simple action.\nUse ONLY these ids:\ntype: macro, hands, silhouette, topdown, timelapse, aerial, detail, wide, object\nlight: dawn, golden, sodium, overcast, lamp\nlens: macro100, ana35, wide24, tele85, drone\nmove: static, dollyin, push, slider, orbit, crane\nReply with only JSON: {"hooks":{"de":["3 options, max 6 words"],"ro":["3 options"],"ru":["3 options"]},"shots":[{"desc":"short Russian description","type":"macro","light":"dawn","lens":"macro100","move":"push","laser":false,"subject":"one vivid English sentence describing subject and action","audio":"English sound effects for this shot","dur":4}]}`
     : base + `Write on-screen lines for this video: 5 German main lines (max 6 words, calm, confident, premium), and 5 Romanian and 5 Russian lines that mean the same. Reply with only JSON: {"de":["..."],"ro":["..."],"ru":["..."]}`;
@@ -1266,7 +1333,7 @@ document.addEventListener("click", ev=>{
     case "hook-lang": S.hookLang = a.dataset.l; render(); break;
     case "ctor-add": { const sv = $("#ctorVid"); const target = sv ? vById(sv.value) : null; if (!target) break; const c = S.ctor;
       target.shots = target.shots||[]; target.shots.push(newShot({desc:"Из конструктора", type:c.type, light:c.light, lens:c.lens, move:c.move, laser:c.laser, subject:c.subject, audio:c.audio, dur:Number(c.dur)||5})); vSave(target,0); toast("Кадр добавлен в "+vcode(target)); break; }
-    case "dl-logo": (async()=>{ const k = a.dataset.k; if (k==="svg") await saveFile("ms-infrastructure-logo.svg", logoSVG(1080,{word:true,bg:true})); else await saveFile(k==="avatar"?"ms-avatar.png":"ms-logo-1080.png", await logoPng(1080, k==="avatar")); })(); break;
+    case "dl-logo": (async()=>{ const k = a.dataset.k; if (k==="svg") await saveFile("mc-infrastructure-logo.svg", LOGO_ORIG); else await saveFile({clear:"mc-logo-transparent.png",plate:"mc-logo-plate.png",avatar:"mc-avatar.png"}[k]||"mc-logo.png", await logoPng(k)); })(); break;
     case "dl-canvas": (async()=>{ const cv = a.dataset.k==="hook" ? $("#cvHook") : $("#cvEnd"); if (!cv||!v) return; await saveFile(`${vcode(v)}_${a.dataset.k==="hook"?"titr":"endcard"}.png`, await canvasBlob(cv)); })(); break;
     case "timer":
       if (S.timer.run){ clearInterval(S.timer.h); S.timer.run=false; }
@@ -1307,6 +1374,7 @@ function handleInput(t){
   if (t.dataset.st){ let val = t.value; if (t.type==="number") val = val===""?null:Number(val); stSet(t.dataset.st, val); return; }
   const v = t.dataset.v ? vById(t.dataset.v) : null; if (!v) return;
   if (t.dataset.metric){ v.metrics = v.metrics||{}; v.metrics[t.dataset.metric] = t.value===""?null:Number(t.value); vSave(v,900); return; }
+  if (t.dataset.vo){ v.voice = Object.assign({mode:"none"}, v.voice||{}); v.voice[t.dataset.vo] = t.value; vSave(v); return; }
   const f = t.dataset.f; if (!f) return; let val = t.value; if (t.type==="number") val = val===""?null:Number(val);
   if (t.dataset.shot){ const s = (v.shots||[]).find(x=>x.id===t.dataset.shot); if (!s) return; s[f] = val; } else v[f] = val;
   vSave(v);
