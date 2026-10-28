@@ -482,9 +482,8 @@ const LINKS = {
   eleven:"https://elevenlabs.io/app/sound-effects", elevenprice:"https://elevenlabs.io/pricing",
   capcut:"https://www.capcut.com/tools/desktop-video-editor",
   studio:"https://www.tiktok.com/tiktokstudio", upload:"https://www.tiktok.com/tiktokstudio/upload",
-  ttbiz:"https://support.tiktok.com/en/using-tiktok/growing-your-audience/switching-to-a-business-account",
   cc:"https://ads.tiktok.com/business/creativecenter/inspiration/popular/hashtag/pc/en",
-  claude:"https://claude.ai/", carrd:"https://carrd.co/",
+  claude:"https://claude.ai/",
   tts:"https://elevenlabs.io/app/speech-synthesis/text-to-speech", isolator:"https://elevenlabs.io/app/voice-isolator", voicelib:"https://elevenlabs.io/app/voice-library",
   runway:"https://app.runwayml.com/", runwayprice:"https://runwayml.com/pricing", luma:"https://dream-machine.lumalabs.ai/", lumaprice:"https://lumalabs.ai/pricing",
   fForum:"https://fonts.google.com/specimen/Forum", fOnest:"https://fonts.google.com/specimen/Onest"
@@ -579,7 +578,7 @@ const PHASES = [
   {n:"Монолит",a:"2026-11-17",b:"2026-11-18",d:"V10 — фильм-манифест, отчёт бате"}
 ];
 const DECISIONS = [
-  ["firm","Получить у бати данные фирмы для Impressum и контакт для откликов"],
+  ["firm","Номер бати для звонков — вписать во «Вселенную» → «Настройки бренда»"],
   ["claim","Выбрать слоган во «Вселенной» → «Настройки бренда»"],
   ["facts","Факты для V09: регион, кого ищем, что даём. Без выдумок"],
   ["lang","Язык роликов — русский. Решить, нужна ли вторая строка DE или RO в титрах («Вселенная» → «Настройки бренда»)"],
@@ -628,8 +627,8 @@ const GLOSSARY = [
   ["fps","Кадров в секунду. У нас 30."],["Экспорт","Сохранение готового ролика одним файлом MP4."],["Титр","Надпись поверх видео. Штаб отдаёт титры готовыми картинками PNG."],
   ["PNG","Формат картинки, который бывает с прозрачным фоном."],["SFX","Звуковые эффекты: удары, щелчки, шумы."],["TTS","Text to Speech: нейросеть читает текст голосом."],
   ["Хук","Первые 1–2 секунды, которые останавливают палец."],["Досмотр","Какую часть ролика в среднем смотрят."],["Удержание","График: на какой секунде зрители уходят."],
-  ["Метка ИИ","Отметка «Создано ИИ» при публикации. Ставим всегда."],["Отложенная публикация","Ролик выйдет сам в выбранные дату и время."],["Бизнес-аккаунт","Тип аккаунта TikTok для фирмы: аналитика, категория, контакты."],
-  ["Impressum","Обязательные данные фирмы на коммерческих страницах в Германии."],["Наставник","Claude внутри штаба: объясняет и сам правит сценарии по твоим словам."]
+  ["Метка ИИ","Отметка «Создано ИИ» при публикации. Ставим всегда."],["Отложенная публикация","Ролик выйдет сам в выбранные дату и время."],["Открытый аккаунт","Ролики видят все, а не только подписчики. Закрытый аккаунт нам не подходит."],
+  ["Раскрытие контента","Переключатель при публикации. «Ваш бренд» честно помечает, что ролик рекламирует твою фирму."],["Наставник","Claude внутри штаба: объясняет и сам правит сценарии по твоим словам."]
 ];
 const TOURS = {
   gemini:{id:"r2-tour-gemini",t:"Экскурсия: экран Gemini",min:5,why:"Прежде чем делать кадры, разберись, где что лежит. Интерфейс — как прорабская: всё на своих местах.",
@@ -665,10 +664,10 @@ const CLICK = {
   motion:["Вкладка **04 Движение**. Здесь картинка становится видео со звуком.","У кадра S1 нажми **Копировать** (промпт видео).","Нажми **Открыть Veo 3.1 · Flow** и войди аккаунтом фирмы.","Открой проект **MC Monolith** на главной Flow или нажми **Новый проект**.","Внизу экрана строка ввода. Рядом с ней переключатель режима — выбери **Frames to Video** («Кадры в видео»).","Нажми **+** у поля первого кадра → «Загрузить» → выбери **kf/s1.png** из папки ролика.","Кликни в строку и вставь промпт [[MOD+V]].","Открой настройки (значок шестерёнки или ползунков): модель **Veo 3.1 – Fast**, формат **9:16**, вариантов **2**.","Нажми стрелку **➤**. Ждать 1–3 минуты — можно пока запускать следующий кадр.","Посмотри оба варианта. Лучший — **↓ Скачать** (если предлагает качество — 1080p).","Переименуй в **s1_v1.mp4** и перенеси в папку ролика → **clips**.","В штабе: **Клип готов ✓** и **+1 к лимиту дня**. Лимит кончился — продолжишь завтра.","Кадры «Text→Video»: режим **Text to Video**, картинку не загружаешь.","Все клипы готовы — **Этап выполнен · далее**."],
   sound:["Вкладка **05 Звук и голос**. Сначала послушай клипы: Veo уже сделал звук. Подходит — оставляешь.","Звуки бренда (гул, звуковой логотип) ты сделал в модуле 2 — они в папках 00_brand и 00_sfx.","Нужен новый звук: ElevenLabs → **Sound Effects** → вставь описание по-английски (готовые — во «Вселенной» → «Звук») → **Generate** → ▶ послушай → **↓** скачай → в папку ролика → **audio**.","Голос нужен только в V08–V10. Живой голос: запись на телефон → Voice Isolator → скачать в **audio**. ИИ-голос: ElevenLabs → **Text to Speech** → вставь русский текст → **Generate** → скачать в **audio**.","Отметь галочки чек-листа и нажми **Этап выполнен · далее**."],
   edit:["Вкладка **06 Монтаж**. Сначала скачай титр и финальную карточку кнопками внизу этапа и перенеси в папку ролика → **titles**.","Открой CapCut → **Создать проект**.","Нажми **Импорт** и выбери файлы ролика: всё из **clips**, **titles**, **audio** и звуки из **00_brand** и **00_sfx**. Они появятся слева в медиатеке.","Над окном просмотра нажми **Соотношение** (Ratio) → **9:16**.","Перетащи клипы s1, s2, s3… мышкой на шкалу времени внизу — по порядку, вплотную.","Подрезать край клипа: выдели клип и потяни его край. Разрезать: поставь бегунок в нужное место, нажми [[MOD+B]], лишний кусок выдели и нажми [[Delete]].","Цвет: выдели клип → справа вкладка **Настройка** (Adjust) → выставь значения «MC Basalt» из «Вселенной» → «Цвет» или примени сохранённый пресет. Так для каждого клипа.","Титр: перетащи **titr.png** на дорожку **над** клипами, в самое начало, и потяни его правый край до 2,5 секунды.","Финальная карточка: **endcard.png** — в конец основной дорожки, длина 1,5 секунды.","Звук: **drone.mp3** — на дорожку под всеми клипами; **sonic_logo.mp3** — под финальной карточкой. Выдели гул → справа **Громкость** → около −15 дБ, чтобы он стал фоном.","Нажми [[Space]] и посмотри ролик целиком. Первые полсекунды — уже движение? Конец стыкуется с началом?","Справа вверху **Экспорт**: 1080p, 30 кадров/с, MP4, папка ролика, имя **final** → **Экспорт**.","Просит Pro при экспорте — где-то стоит платный эффект (значок короны). Найди его и удали.","Готово — **Этап выполнен · далее**."],
-  air:["Вкладка **07 Эфир**. Нажми **Копировать** у блока «Подпись к ролику».","Нажми **Загрузить в TikTok Studio** (аккаунт фирмы).","Перетащи файл **final.mp4** в окно загрузки или нажми «Выбрать файл».","Поле «Описание»: кликни и вставь подпись [[MOD+V]].","**Обложка** → «Изменить» → выбери самый сильный кадр.","Открой **Показать больше** (дополнительные настройки) → включи **Контент, созданный ИИ**.","**Когда опубликовать** → **Запланировать** → дата из штаба, время **19:30** → **Запланировать**.","В день выхода нажми в штабе **Отметить: вышел в эфир**."],
+  air:["Вкладка **07 Эфир**. Нажми **Копировать** у блока «Подпись к ролику».","Нажми **Загрузить в TikTok Studio** (аккаунт фирмы).","Перетащи файл **final.mp4** в окно загрузки или нажми «Выбрать файл».","Поле «Описание»: кликни и вставь подпись [[MOD+V]].","**Обложка** → «Изменить» → выбери самый сильный кадр.","Открой **Показать больше** (дополнительные настройки) → включи **Контент, созданный ИИ**.","Там же включи **Раскрытие контента** → **Ваш бренд**: ролик рекламирует фирму, и TikTok честно пометит его как рекламный. Одна галочка, документы не нужны.","**Когда опубликовать** → **Запланировать** → дата из штаба, время **19:30** → **Запланировать**.","В день выхода нажми в штабе **Отметить: вышел в эфир**."],
   check:["Через 48 часов после выхода открой **TikTok Studio** → **Аналитика** (или «Публикации») → нажми на ролик.","Перепиши в штаб, вкладка **07 Эфир**, блок «Цифры»: просмотры, средний досмотр, лайки, комментарии, репосты, сохранения, подписки.","Найди график удержания: на какой секунде линия резко падает — там зритель ушёл.","Запиши вывод в «Эфир» → «Ретро». Не понимаешь цифры — спроси Наставника: «что значат мои цифры у V01?»"]
 };
-const BIO = "Плитка. Точность. Построено, чтобы стоять.\nFliesen in Deutschland · MC Infrastructure\n✉ mc.infrastructure.de@gmail.com";
+function bioText(){ const c = String(S.state.brand.contact||"").trim(); return "Плитка · точность · работа в Германии\n☎ " + (c || "[номер бати]"); }
 /* ---- маршрут с нуля ---- */
 const ROUTE = [
  {id:"mA",n:"А",t:"Азбука",d:"Что это всё такое и как работает. Без этого остальное — набор кнопок.",steps:ABC.map(x=>Object.assign({lesson:true},x))},
@@ -710,9 +709,9 @@ const ROUTE = [
   {id:"r1-capcut",t:"CapCut на компьютер",min:10,why:"Здесь клипы склеиваются в готовый ролик. Бесплатной версии хватает.",
    do:[{mac:"Нажми **CapCut** ниже → **Скачать бесплатно** → открой в «Загрузках» файл .dmg → перетащи CapCut в «Программы».",win:"Нажми **CapCut** ниже → **Скачать бесплатно** → запусти в «Загрузках» установщик → **Установить**."},{mac:"Запусти CapCut: [[Cmd+Space]] → напечатай CapCut → [[Enter]].",win:"Запусти CapCut с рабочего стола или через [[Win]] → CapCut."},"Справа вверху **Войти** → через Google (аккаунт фирмы) или через TikTok.","Платить не нужно."],
    result:"CapCut открывается, ты в нём вошёл.",links:[["CapCut","https://www.capcut.com/tools/desktop-video-editor"]]},
-  {id:"r1-tiktok",t:"TikTok MC Infrastructure",min:15,widget:"bio",why:"Канал фирмы. Регистрируем на почту фирмы, работаем из браузера — приложение на телефоне не нужно.",
-   do:["Нажми **TikTok** ниже → **Зарегистрироваться** → «Телефон или эл. почта» → вкладка **Эл. почта**.","Почта **mc.infrastructure.de@gmail.com**, придумай пароль. Код придёт в Gmail фирмы — открой Gmail в соседней вкладке и вставь код.","Имя пользователя: **mc.infrastructure.de**. Занято — **mc.infrastructure** или **mcinfrastructure.de**.","Открой **TikTok Studio** (кнопка ниже) → профиль → **Изменить профиль**: имя «MC Infrastructure», описание — скопируй ниже. Фото поставишь в модуле 2.","Переключи на бизнес-аккаунт: **Настройки** → **Аккаунт** → **Переключиться на бизнес-аккаунт** → категория «Строительство». Нет такого пункта в браузере — поставь приложение TikTok на телефон, войди, переключи там (Профиль → ☰ → Настройки и конфиденциальность → Аккаунт) и удали приложение.","Ссылку на визитку с Impressum добавишь, когда батя даст данные фирмы."],
-   result:"Профиль MC Infrastructure с описанием, тип — бизнес-аккаунт.",links:[["TikTok","https://www.tiktok.com/signup"],["TikTok Studio","https://www.tiktok.com/tiktokstudio"]]},
+  {id:"r1-tiktok",t:"TikTok MC Infrastructure",min:15,widget:"bio",why:"Обычный открытый аккаунт: без бизнес-настроек и без документов. Регистрируем на почту фирмы, работаем из браузера — приложение на телефоне не нужно.",
+   do:["Нажми **TikTok** ниже → **Зарегистрироваться** → «Телефон или эл. почта» → вкладка **Эл. почта**.","Почта **mc.infrastructure.de@gmail.com**, придумай пароль. Код придёт в Gmail фирмы — открой Gmail в соседней вкладке и вставь код.","Имя пользователя: **mc.infrastructure.de**. Занято — **mc.infrastructure** или **mcinfrastructure.de**.","Впиши номер бати во «Вселенной» → «Настройки бренда» → «Контакт для звонков» — он сам появится в описании выше.","Открой **TikTok Studio** (кнопка ниже) → профиль → **Изменить профиль**: имя «MC Infrastructure», описание — скопируй выше кнопкой «Копировать». Фото поставишь в модуле 2.","Проверь, что аккаунт открытый: **Настройки** → **Конфиденциальность** → «Закрытый аккаунт» выключен. Иначе ролики увидят только подписчики.","Бизнес-аккаунт не включай: нам он ничего не даёт. Аналитика и отложенная публикация есть и в обычном."],
+   result:"Открытый профиль MC Infrastructure: описание и номер для звонков.",links:[["TikTok","https://www.tiktok.com/signup"],["TikTok Studio","https://www.tiktok.com/tiktokstudio"]]},
   TOURS.studio
  ]},
  {id:"m2",n:"2",t:"Бренд",d:"Знак, звуки, цвет, голос и первый тест нейросетей.",steps:[
@@ -807,9 +806,9 @@ const TOOLS = [
   {id:"tiktok",name:"TikTok Studio",tier:"core",price:0,cur:"€",role:"Эфир и аналитика",
    what:"Загрузка с компьютера, отложенная публикация до 10 дней, метка ИИ, график удержания.",
    why:"Работа из браузера — без ленты и без приложения на телефоне.",
-   first:"Бизнес-аккаунт фирмы + Impressum в профиле.",
-   limits:"У бизнес-аккаунта только коммерческая музыкальная библиотека. Нам это не мешает: звук свой.",
-   links:[["Studio",LINKS.studio],["Загрузить",LINKS.upload]],plans:["Business"]},
+   first:"Обычный открытый аккаунт на почту фирмы, номер бати в описании.",
+   limits:"Отложенная публикация — до 10 дней вперёд, только с компьютера. Описание профиля — до 80 знаков.",
+   links:[["Studio",LINKS.studio],["Загрузить",LINKS.upload]],plans:["Обычный аккаунт"]},
   {id:"claude",name:"Claude Pro",tier:"have",price:0,cur:"€",role:"Режиссёр штаба",
    what:"Раскадровки, хуки, промпты, проверка текстов. Кнопки «Claude» в производстве работают на твоей подписке.",
    why:"Уже оплачен.",first:"Ничего покупать не нужно.",
@@ -1059,7 +1058,7 @@ function rRoute(){
   let widget = "";
   if (cur.widget==="os") widget = `<div class="row"><button class="btn xl${S.state.os==="mac"?" pri":""}" data-act="os" data-os="mac">⌘ Mac</button><button class="btn xl${S.state.os==="win"?" pri":""}" data-act="os" data-os="win">⊞ Windows</button></div>`;
   if (cur.widget==="tree") widget = promptBox(S.state.os==="mac"?"Команда для Терминала":"Команда для PowerShell", treeCmd(S.state.os), "cmd-tree", true) + `<p class="xs mut">Команда создаёт папки в «Документах» и открывает их. Запускать повторно безопасно — она ничего не удаляет.</p>`;
-  if (cur.widget==="bio") widget = promptBox("Описание профиля TikTok", BIO, "bio", true);
+  if (cur.widget==="bio"){ const t = bioText(); widget = promptBox("Описание профиля TikTok", t, "bio", true) + `<p class="xs mut">${t.length}/80 знаков — больше TikTok не пустит. ${String(S.state.brand.contact||"").trim()?"Номер взят из «Настроек бренда».":"Сначала впиши номер бати во «Вселенной» → «Настройки бренда» → «Контакт для звонков»."}</p>`; }
   if (cur.widget==="quiz") widget = quizHTML();
   if (cur.widget==="pipeline") widget = pipelineHTML();
   if (cur.widget==="glossary") widget = glossaryHTML();
@@ -1535,7 +1534,7 @@ function rUniverse(){
     <div class="stack"><span class="plaque" style="padding:16px 20px;justify-self:start;align-self:flex-start">${mcLogo(190)}</span><div class="eb">Слоган</div><div style="font:400 34px/1.1 var(--f-display);letter-spacing:.04em;text-transform:uppercase">${esc(cl.ru)}</div><div class="t2">${esc(cl.de)} · ${esc(cl.ro)}</div></div></section>
   <section class="pn stack"><div class="eb a">Настройки бренда · подставляются в титры и подписи</div>
     <div class="fg"><label class="f c2">Ник в TikTok<input type="text" id="bHandle" data-st="brand.handle" value="${esc(b.handle)}"></label>
-      <label class="f c2">Контакт для откликов<input type="text" id="bContact" data-st="brand.contact" value="${esc(b.contact)}" placeholder="WhatsApp +49 … или @telegram"></label>
+      <label class="f c2">Контакт для звонков<input type="text" id="bContact" data-st="brand.contact" value="${esc(b.contact)}" placeholder="номер бати: +49 …"></label>
       <label class="f c2">E-mail фирмы<input type="text" id="bEmail" data-st="brand.email" value="${esc(b.email)}"></label>
       <label class="f c2">Регион работ<input type="text" id="bRegion" data-st="brand.region" value="${esc(b.region)}" placeholder="например, Bayern"></label>
       <label class="f c2">Слоган<select id="bClaim" data-st="brand.claim">${opt(Object.entries(CLAIMS).map(([k,v])=>[k,`${v.ru} · ${v.de}`]),b.claim)}</select></label>
@@ -1557,8 +1556,8 @@ function rUniverse(){
   <div class="grid g2" style="align-items:start">
     <section class="pn stack"><div class="eb a">Шрифты</div>
       <div class="spec"><div><div class="a">Построено</div><span class="xs mut mono">FORUM — заголовки и титры, только прописные</span></div><div><div class="b">Миллиметр решает всё</div><span class="xs mut mono">ONEST — вторые строки, подписи</span></div><div><div class="c">MC INFRASTRUCTURE · 01/10</div><span class="xs mut mono">JETBRAINS MONO — служебные метки</span></div></div>
-      <p class="sm t2">Ставить шрифты в CapCut не нужно: титры штаб отдаёт готовыми PNG. Для визитки и документов — <a href="${LINKS.fForum}" target="_blank" rel="noopener">Forum</a> и <a href="${LINKS.fOnest}" target="_blank" rel="noopener">Onest</a>.</p></section>
-    <section class="pn stack"><div class="eb a">Звук · ДНК</div><p class="sm t2">Каждый ролик: гул-подложка + фактуры материалов + лазер + звуковой логотип в финале. Музыки нет — звук свой, поэтому ограничения бизнес-аккаунта нам не мешают.</p>
+      <p class="sm t2">Ставить шрифты в CapCut не нужно: титры штаб отдаёт готовыми PNG. Для документов — <a href="${LINKS.fForum}" target="_blank" rel="noopener">Forum</a> и <a href="${LINKS.fOnest}" target="_blank" rel="noopener">Onest</a>.</p></section>
+    <section class="pn stack"><div class="eb a">Звук · ДНК</div><p class="sm t2">Каждый ролик: гул-подложка + фактуры материалов + лазер + звуковой логотип в финале. Музыки нет — звук свой: узнаваемый и без проблем с правами.</p>
       ${SFX.map(([n,p],i)=>promptBox(n,p,"sfx-"+i)).join("")}<div><a class="btn s pri" href="${LINKS.eleven}" target="_blank" rel="noopener">Открыть ElevenLabs SFX</a></div></section>
   </div>
   <section class="pn mk stack"><div><div class="eb a">Голос · ElevenLabs</div><h2 class="h2" style="margin-top:6px">Кто говорит в нашей вселенной</h2></div>
@@ -1726,14 +1725,14 @@ function stEdit(v){
 function caption(v){
   const cl = claim(), b = S.state.brand;
   const tags2 = b.lang2==="de" ? HASHTAGS.de : (b.lang2==="ro" ? HASHTAGS.ro : "#fliesenleger #mcinfrastructure");
-  const lines = [v.hookRu||v.hookDe||"", line2(v)||"", "", Number(v.tier)>=3?"✉ "+(b.contact||b.email):"", `${cl.ru} · Создано ИИ · KI-Visualisierung · MC Infrastructure`, "", `${HASHTAGS.ru} ${tags2}`];
+  const lines = [v.hookRu||v.hookDe||"", line2(v)||"", "", Number(v.tier)>=3?(b.contact?"☎ "+b.contact:"✉ "+b.email):"", `${cl.ru} · Создано ИИ · KI-Visualisierung · MC Infrastructure`, "", `${HASHTAGS.ru} ${tags2}`];
   return lines.join("\n").replace(/\n{3,}/g,"\n\n").trim();
 }
 function stAir(v){
   const m = v.metrics||{}, t = TIERS.find(x=>x.n===Number(v.tier))||TIERS[0];
   const inp = (f,l) => `<label class="f c1">${l}<input type="number" min="0" inputmode="numeric" data-v="${esc(v.id)}" data-metric="${f}" value="${m[f]!=null?esc(m[f]):""}"></label>`;
   return `${guideHTML("air",v)}<div><div class="eb a">Этап 07 · Эфир</div><p class="t2" style="margin-top:6px">TikTok Studio → Загрузить. Отложенная публикация: будни 19:30, выходные 11:30.</p></div>
-  <div class="grid g2" style="align-items:start"><div class="stack">${checklist(v,"air",["Метка «Создано ИИ» включена","Подпись скопирована из блока справа","Обложка — самый сильный кадр, без текста","Публикация запланирована на "+fmtD(v.plannedAt)+", 19:30","Первый час после выхода: ответить на комментарии одной сессией"])}
+  <div class="grid g2" style="align-items:start"><div class="stack">${checklist(v,"air",["Метка «Создано ИИ» и «Раскрытие контента → Ваш бренд» включены","Подпись скопирована из блока справа","Обложка — самый сильный кадр, без текста","Публикация запланирована на "+fmtD(v.plannedAt)+", 19:30","Первый час после выхода: ответить на комментарии одной сессией"])}
     <div class="row"><a class="btn pri" href="${LINKS.upload}" target="_blank" rel="noopener">Загрузить в TikTok Studio</a><button class="btn" data-act="publish" data-id="${esc(v.id)}">${isPub(v)?"В эфире с "+esc(fmtD(v.publishedAt))+" · снять":"Отметить: вышел в эфир"}</button></div></div>
     ${promptBox("Подпись к ролику",caption(v),"cap-"+v.id)}</div>
   <div class="stack"><div class="eb a">Цифры через 48 часов · главная метрика яруса: ${esc(t.kpi)}</div>
@@ -1804,7 +1803,7 @@ function rAir(){
   return `${sh("08 · Эфир","Публикация и цифры","Календарь пирамиды, правила выхода и метрики каждого яруса. Цифры — через 48 часов после публикации, раньше они ничего не значат.","8")}
   <div class="grid g4">${tierSum.map(x=>`<section class="pn stack"><div class="eb a">Ярус ${x.t.code} · ${esc(x.t.name)}</div><div class="big num">${x.sum}<small>${esc(x.t.unit)}</small></div><span class="xs mut mono">в эфире ${x.n}/${x.all}</span></section>`).join("")}</div>
   <div class="grid g3"><section class="pn stack"><div class="eb a">Когда</div><p><b>Будни 19:30</b>, выходные 11:30, CET. Отложенная публикация до 10 дней вперёд.</p><p class="xs mut">Через 2 недели: Studio → Аналитика → Подписчики → активность по часам.</p></section>
-    <section class="pn stack"><div class="eb a">Всегда</div><ul class="sm" style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px"><li>Метка «Создано ИИ» + «KI-Visualisierung» в подписи</li><li>В вакансиях — (m/w/d)</li><li>Impressum в профиле</li><li>Неудачный ролик не удалять 7 дней</li></ul></section>
+    <section class="pn stack"><div class="eb a">Всегда</div><ul class="sm" style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px"><li>Метка «Создано ИИ» + «KI-Visualisierung» в подписи</li><li>В вакансиях — (m/w/d)</li><li>«Раскрытие контента» → «Ваш бренд»</li><li>Неудачный ролик не удалять 7 дней</li></ul></section>
     <section class="pn stack"><div class="eb a">Первый толчок</div><p class="sm">Ролик — в чаты бригады и знакомым. Пересылки — самый ценный сигнал. Никаких накруток: TikTok режет охват всему аккаунту.</p></section></div>
   <section class="pn stack"><div class="eb a">Хэштеги · 4–6 на ролик</div>${Object.entries(HASHTAGS).map(([k,v])=>promptBox(k.toUpperCase(),v,"ht-"+k)).join("")}</section>
   <section class="stack"><div class="eb a">Календарь и цифры</div>${S.videos.length?`<div class="tw"><table class="tb2"><thead><tr><th>Ролик</th><th>Эфир</th><th>Ярус</th><th>Статус</th><th>Просм.</th><th>Досм. %</th><th>Сохр.</th><th>Репосты</th><th>Подп.</th><th>Сообщ.</th></tr></thead><tbody>
